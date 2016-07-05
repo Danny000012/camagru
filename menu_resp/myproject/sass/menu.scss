@@ -1,0 +1,131 @@
+@import "compass";
+
+$menu_color: rgb(16, 38, 132);
+
+html, body {
+	font-size: 16px;
+	line-height: 1.4;
+	height: 100%;
+	font-family: 'Raleway';
+	margin: 0;
+	padding: 0;
+}
+
+.site-content {
+	padding-top: 66px;
+}
+
+.container {
+	margin: 0 20px;
+	@include clearfix;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 66px;
+
+	line-height: 66px;
+	color: #fff;
+	background-color: $menu_color;
+
+}
+
+.header__logo {
+	font-weight: bold;
+	padding: 0 25px;
+	float: left;
+}
+
+.menu {
+	float: left;
+
+	a {padding: 0 10px;}
+	a:hover{color: Darkred;}
+}
+
+
+/* RESPONSIVE */
+$menu-width: 250px!default;
+
+@media only screen and (max-width: 750px) {
+	.site-container {height: 100%; overflow: hidden;}
+	.site-pusher {
+		height: 100%;
+		@include transition-duration(0.3s);
+		@include transform(translateX(0px));
+	}
+
+	.header {
+		position: static;
+	}
+
+	.site-content {
+		position: absolute;
+		top: 66px;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		padding-top: 0;
+		overflow-y: scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.header__icon {
+		position: relative;
+		display: block;
+		float: left;
+		width: 66px;
+		height: 66px;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 1rem;
+			height: 0;
+			top: 16px;
+			left: 23px;
+			@include box-shadow(0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff);
+		}
+	}
+
+	.menu {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		background-color: lighten($menu_color, 5%);
+		width: $menu-width;
+		@include transform(translateX($menu-width * -1));
+		@include transition-duration(0.3s);
+
+		a {
+			display: block;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			border-bottom: 1px solid #fff;
+		}
+	}
+
+	.width--sidebar {
+		.site-pusher {@include transform(translateX($menu-width));}
+		.site-cache {
+			cursor: pointer;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+	}
+}
