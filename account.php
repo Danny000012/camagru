@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <title>Camagru</title>
     <link href="stylesheets/menu.css" rel="stylesheet">
+    <link href="stylesheets/account.css" rel="stylesheet">
     <link href="stylesheets/sign_in.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
@@ -30,10 +31,15 @@
             <div class="site-content">
                 <div class="site-cache" id="site-cache" onClick="hide()">
                     <div class="container" align="center" onClick="hide()">
-                        <video id="video"></video>
-                        <button id="startbutton">Prendre une photo</button>
-                        <canvas id="canvas"></canvas>
-                        <img src="http://placekitten.com/g/320/261" id="photo" alt="photo">
+                        <div class="separator"></div>
+                       <div class="box" id="border-fix">
+                           <img src="img/edit.png" class="account-logo" alt="pencil">
+                           <a href="#">Modify a post</a>
+                           </div>
+                        <div class="box">
+                            <img src="img/settings.png" class="account-logo" alt="mechanism">
+                            <a href="#">Settings</a>
+                           </div>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,14 @@ body {
     height: 100%;
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(240, 240, 240);
     margin: 0;
     padding: 0;
+}
+
+.separator {
+    width: 100%;
+    height: 50px;
 }
 
 
@@ -33,7 +38,7 @@ a {
     height: 66px;
     line-height: 66px;
     color: #fff;
-    background-color: #5C6BC0;
+    background-color: #885fa6;
 }
 
 .header__logo {
@@ -114,7 +119,7 @@ a {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #5C6BC0;
+        background-color: #885fa6;
         width: 250px;
         -moz-transform: translateX(-250px);
         -ms-transform: translateX(-250px);
@@ -140,7 +145,7 @@ a {
     }
 
     .menu div{
-        height: 56px;
+        height: 58px;
         width: 250px;
     }
 
@@ -163,11 +168,11 @@ a {
     }
     
     .a1 {
-    background-color: #5C6BC0;
+    background-color: #885fa6;
 }
 
 .a2 {
-    background-color: #7986CB;
+    background-color: #7d5898;
 }
 
 }

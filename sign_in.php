@@ -52,6 +52,7 @@
                         </div>
                         <div class="new-account">
                             <a href="#" class="fdp">New to camagru ? Create an account here</a>
+                            <div class="separator"></div>
                         </div>
                     </div>
                 </div>

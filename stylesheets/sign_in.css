@@ -34,7 +34,7 @@ input {
     text-align: center;
     height: 35px;
     border: none;
-    background-color: #9FA8DA;
+    background-color: #7d5898;
     width: 104%;
     color: #fff;
     padding-top: 8px;
@@ -43,7 +43,7 @@ input {
 }
 
 .button:hover {
-    background-color: #C5CAE9;
+    background-color: purple;
 }
 
 .fdp {
