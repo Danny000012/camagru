@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <title>Camagru</title>
     <link href="stylesheets/menu.css" rel="stylesheet">
-    <link href="stylesheets/account.css" rel="stylesheet">
     <link href="stylesheets/sign_in.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
@@ -24,23 +23,37 @@
                     <a href="#" class="a2">Feed</a>
                     <a href="#" class="a1">My gallery</a>
                     <a href="#" class="a2">Post</a>
-                    <a href="#" class="a1">Account</a>
+                    <a href="account.php" class="a1">Account</a>
                     <a href="sign_in.php" class="a2">Sign in</a>
                 </nav>
             </header>
             <div class="site-content">
                 <div class="site-cache" id="site-cache" onClick="hide()">
                     <div class="container" align="center" onClick="hide()">
-                        <div class="separator"></div>
-                       <div class="box" id="border-fix">
-                           <img src="img/edit.png" class="account-logo" alt="pencil">
-                           <a href="#">Modify a post</a>
-                           </div>
-                        <div class="box">
-                            <img src="img/settings.png" class="account-logo" alt="mechanism">
-                            <a href="#">Settings</a>
-                           </div>
-                        <div class="separator"></div>
+                        <div class="form-content" onClick="hide()">
+                            <img text-align="center" src="img/user.png" alt="user_logo" class="img_form">
+                            <form method="get" action="" class="form" onClick="hide()">
+                                <div class="item">Login</div>
+                                <input type="text" name="login">
+                                <div class="item">Password</div>
+
+                                <input type="password" name="password">
+
+
+                                <div align="center">
+                                    <div>
+                                        <input type="submit" name="button" value="sign in" class="button" >
+                                    </div>
+
+                                    
+                                    <a href="#" class="fdp">Forgot your password ?</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="new-account">
+                            <a href="#" class="fdp">New to camagru ? Create an account here</a>
+                            <div class="separator"></div>
+                        </div>
                     </div>
                 </div>
             </div>

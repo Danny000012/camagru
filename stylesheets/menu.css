@@ -38,7 +38,7 @@ a {
     height: 66px;
     line-height: 66px;
     color: #fff;
-    background-color: #885fa6;
+    background-color: #00a99d;
 }
 
 .header__logo {
@@ -119,7 +119,7 @@ a {
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #885fa6;
+        background-color: #00a99d;
         width: 250px;
         -moz-transform: translateX(-250px);
         -ms-transform: translateX(-250px);
@@ -168,11 +168,11 @@ a {
     }
     
     .a1 {
-    background-color: #885fa6;
+    background-color: #00a99d;
 }
 
 .a2 {
-    background-color: #7d5898;
+    background-color: #009287;
 }
 
 }

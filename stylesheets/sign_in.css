@@ -1,10 +1,11 @@
 
 .form {
-    padding: 70px;
+    padding: 50px;
+    height: 200px;
 }
 
 .form-content {
-    margin-top: 90px;
+    margin-top: 66px;
     font-size: 10px;
     width: 80%;
     max-width: 300PX;
@@ -34,7 +35,7 @@ input {
     text-align: center;
     height: 35px;
     border: none;
-    background-color: #7d5898;
+    background-color: #009287;
     width: 104%;
     color: #fff;
     padding-top: 8px;
@@ -43,7 +44,7 @@ input {
 }
 
 .button:hover {
-    background-color: purple;
+    background-color: #00a99d;
 }
 
 .fdp {
