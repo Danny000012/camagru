@@ -56,7 +56,7 @@ a {
 }
 
 .menu a:hover {
-    color: #E8EAF6;
+    color: skyblue;
 }
 
 @media only screen and (max-width: 750px) {

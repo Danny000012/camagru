@@ -4,10 +4,13 @@
 <head>
     <meta charset="utf8">
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Camagru</title>
     <link href="stylesheets/menu.css" rel="stylesheet">
     <link href="stylesheets/sign_in.css" rel="stylesheet">
+    <link href="stylesheets/footer.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
@@ -20,7 +23,7 @@
                 </a>
                 <nav class="menu">
                     <div class="a1" class="fix"></div>
-                    <a href="#" class="a2">Feed</a>
+                    <a href="feed.php" class="a2">Feed</a>
                     <a href="#" class="a1">My gallery</a>
                     <a href="#" class="a2">Post</a>
                     <a href="account.php" class="a1">Account</a>
@@ -42,10 +45,10 @@
 
                                 <div align="center">
                                     <div>
-                                        <input type="submit" name="button" value="sign in" class="button" >
+                                        <input type="submit" name="button" value="sign in" class="button">
                                     </div>
 
-                                    
+
                                     <a href="#" class="fdp">Forgot your password ?</a>
                                 </div>
                             </form>
@@ -56,6 +59,11 @@
                         </div>
                     </div>
                 </div>
+                <footer>
+                    <nav class="footer">
+                        <a href="#">Contact</a>
+                    </nav>
+                </footer>
             </div>
         </div>
     </div>

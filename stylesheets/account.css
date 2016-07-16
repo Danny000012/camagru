@@ -1,11 +1,9 @@
 .box {
     height: 100px;
     width: 90%;
-    margin: 16px;
     font-size: 10px;
     background-color: #fff;
     text-align: left;
-    margin-bottom: 40px;
     padding: 20px;
     margin: auto;
     border: 1px solid #DDD;
