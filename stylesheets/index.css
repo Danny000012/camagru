@@ -1,0 +1,45 @@
+.site-content {
+    padding-top: 0px;
+    position: relative;
+}
+
+h1 {
+    color: lightblue;
+}
+
+.form-content {
+    background: rgb(250 250, 250);
+    border: none;
+}
+
+.continue {
+    color: white;
+    font-size: 19px;
+    padding: 5px;
+}
+
+.continue:hover {
+    color: rgb(0, 169, 157);
+    border: 3px solid rgb(0, 169, 157);
+}
+
+.container {
+    margin: 0px 0px;
+}
+
+.welcome img {
+    width: 250px;
+    display: block;
+}
+
+.container .welcome, .container .form-content  {
+    display: inline-block;
+    text-align: top;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 750px) {
+    .site-content {
+        top: 0;
+    }
+}

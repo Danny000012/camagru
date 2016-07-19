@@ -2,10 +2,11 @@ html,
 body {
     font-size: 16px;
     line-height: 1.4;
+    width: 100%;
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    background: rgb(220, 220, 220);
     letter-spacing: 1px;
-    background-color: rgb(240, 240, 240);
     margin: 0;
     padding: 0;
 }
@@ -18,6 +19,8 @@ body {
 
 .site-content {
     padding-top: 66px;
+    height: 100%;
+    width: 100%;
 }
 
 .container {
@@ -60,6 +63,7 @@ a {
 }
 
 @media only screen and (max-width: 750px) {
+    
     .site-container {
         height: 100%;
         overflow: hidden;

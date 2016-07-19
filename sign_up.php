@@ -8,6 +8,7 @@
     <link href="stylesheets/sign_in.css" rel="stylesheet">
     <link href="stylesheets/menu.css" rel="stylesheet">
     <link href="stylesheets/index.css" rel="stylesheet">
+    <link href="stylesheets/reset_password.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
 
@@ -25,20 +26,20 @@
                     <form method="get" action="" class="form" onClick="hide()">
                         <div class="item">Login</div>
                         <input type="text" name="login">
+                        <div class="item">Email</div>
+                        <input type="text" name="email">
                         <div class="item">Password</div>
                         <input type="password" name="password">
+                        <div class="item">Confirm password</div>
+                        <input type="password" name="confirmpassword">
                         <div align="center">
                             <div>
                                 <input type="submit" name="button" value="sign in" class="button">
                             </div>
-                            <a href="forgot_password.php" class="fdp">Forgot your password ?</a>
                         </div>
                     </form>
                 </div>
-                <div class="new-account">
-                    <a href="sign_up.php" class="fdp">New to camagru ? Create an account here</a>
                     <div class="separator"></div>
-                </div>
             </div>
         </div>
 

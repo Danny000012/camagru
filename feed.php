@@ -19,7 +19,7 @@
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
                 <a href="#" class="header__logo">
-                    <object type="image/svg+xml" data="logo.svg" width="80px"></object>
+                <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
                     <div class="a1" class="fix"></div>

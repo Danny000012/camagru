@@ -17,14 +17,14 @@
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
                 <a href="#" class="header__logo">
-                    <object type="image/svg+xml" data="logo.svg" width="80px"></object>
+                <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
                     <div class="a1" class="fix"></div>
-                    <a href="#" class="a2">Feed</a>
+                    <a href="feed.php" class="a2">Feed</a>
                     <a href="#" class="a1">My gallery</a>
                     <a href="#" class="a2">Post</a>
-                    <a href="#" class="a1">Account</a>
+                    <a href="account.php" class="a1">Account</a>
                     <a href="sign_in.php" class="a2">Sign in</a>
                 </nav>
             </header>
@@ -38,7 +38,7 @@
                            </div>
                         <div class="box">
                             <img src="img/settings.png" class="account-logo" alt="mechanism">
-                            <a href="#">Settings</a>
+                            <a href="reset_password.php">Reset password</a>
                            </div>
                         <div class="separator"></div>
                     </div>

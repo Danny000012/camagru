@@ -19,7 +19,7 @@
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
                 <a href="#" class="header__logo">
-                    <object type="image/svg+xml" data="logo.svg" width="80px"></object>
+                <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
                     <div class="a1" class="fix"></div>
@@ -49,21 +49,16 @@
                                     </div>
 
 
-                                    <a href="#" class="fdp">Forgot your password ?</a>
+                                    <a href="forgot_password.php" class="fdp">Forgot your password ?</a>
                                 </div>
                             </form>
                         </div>
                         <div class="new-account">
-                            <a href="#" class="fdp">New to camagru ? Create an account here</a>
+                            <a href="sign_up.php" class="fdp">New to camagru ? Create an account here</a>
                             <div class="separator"></div>
                         </div>
                     </div>
                 </div>
-                <footer>
-                    <nav class="footer">
-                        <a href="#">Contact</a>
-                    </nav>
-                </footer>
             </div>
         </div>
     </div>
