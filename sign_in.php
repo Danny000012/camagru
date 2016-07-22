@@ -25,7 +25,7 @@
                     <div class="a1" class="fix"></div>
                     <a href="feed.php" class="a2">Feed</a>
                     <a href="#" class="a1">My gallery</a>
-                    <a href="#" class="a2">Post</a>
+                    <a href="post.php" class="a2">Post</a>
                     <a href="account.php" class="a1">Account</a>
                     <a href="sign_in.php" class="a2">Sign in</a>
                 </nav>

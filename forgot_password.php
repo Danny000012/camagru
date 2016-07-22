@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf8">
     <link href="stylesheets/sign_in.css" rel="stylesheet">
-    <link href="stylesheets/reset_password.css" rel="stylesheet">
     <link href="stylesheets/menu.css" rel="stylesheet">
-    
+    <link href="stylesheets/reset_password.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Reset Password</title>
 </head>
 
@@ -14,9 +14,9 @@
     <div class="site-content">
         <div class="site-cache" id="site-cache" onClick="hide()">
             <div class="container" align="center" onClick="hide()">
-                <h1>Reset your Password</h1>
                 <div class="form-content" onClick="hide()">
                     <img text-align="center" src="img/locked.png" alt="user_logo" class="img_form">
+                    <div class="title" align="center">Reset password</div>
                     <form class="form" method="get" action="">
                         <div class="item">Login</div>
                         <input type="text" name="login">                      
