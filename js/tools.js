@@ -1,6 +1,5 @@
 function reset() {
     var elem = document.body;
-
     if (elem.className.match(/(?:^|\s)width--sidebar(?!\S)/))
         elem.className = '';
 }
@@ -12,4 +11,8 @@ function hide() {
         body.className = '';
     else
         body.className = 'width--sidebar';
+}
+
+function deleteCom() {
+    alert("Do you really want to delete this comment ? Tis action will be permanent.");
 }

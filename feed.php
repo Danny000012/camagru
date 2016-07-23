@@ -43,6 +43,20 @@
                                     <div class="num">0</div><img src="img/flag.png">
                                     <div class="info">Posted by : kiefer 22/12/1992</div>
                                 </div>
+                                <div class="commentaire" id="b1" onClick="deleteCom()">
+                                    <div class="login">kiefer</div> : alazob ca commente !
+                                    
+                                </div>
+                                <div class="commentaire" id="b2" onClick="deleteCom()">
+                                    <div class="login">FDP</div> : pue sam !
+                                </div>
+                                <div class="commentaire" id="b1" onClick="deleteCom()">
+                                    <div class="login">mangeCUL</div> :  oui oui oui oui!
+                                </div>
+                                <div class="commentaire" id="b2" onClick="deleteCom()">
+                                    <div class="login">leFANNEUR</div> : un bon gros commentaire un bon gros commentaireun bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire
+                                </div>
+                                
                                 <form method="get" action="" class="comment">
                                     <textarea type="text" name="comment"></textarea>
                                     <br/>
@@ -50,7 +64,7 @@
                                     <br/>
                                     <br/>
                                 </form>
-                            </div>
+                             </div>
                         </div>
                         <div class="separator"></div>
                         <div class="post">

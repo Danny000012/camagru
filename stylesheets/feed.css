@@ -7,15 +7,15 @@
 }
 
 .feed {
-    display: inline-block;
+    display: block;
+    margin-top: 20px;
     padding-left: 10%;
     padding-right: 10%;
-    background: rgb(240, 240, 240);
+    background: rgb(230, 230, 230);
 }
 
 .post-container {
     background: #fff;
-    border: 1px solid #ddd;
 }
 
 .comment textarea {
@@ -71,4 +71,35 @@
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 8px;
+}
+
+.commentaire div {
+    display: inline-block;
+    padding: 4px;
+}
+
+.commentaire {
+    
+    padding: 5%;
+    max-width: 500px;
+    height: auto;
+    width: 90%;
+}
+
+#b1 {
+    background-color: white;
+}
+
+#b2 {
+    background-color: rgb(240, 240, 240);
+}
+
+.login {
+    height: 100%;
+    color: rgb(0, 167, 159);
+}
+
+#b1:hover, #b2:hover
+{
+    background-color: rgb(240, 200, 200);
 }
