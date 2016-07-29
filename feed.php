@@ -19,10 +19,10 @@
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
                 <a href="#" class="header__logo">
-                <img src="img/logo.png" alt="logo">
+                    <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
-                    <div class="a1" class="fix"></div>
+                    <div class="a0" class="fix"></div>
                     <a href="#" class="a2">Feed</a>
                     <a href="#" class="a1">My gallery</a>
                     <a href="post.php" class="a2">Post</a>
@@ -34,57 +34,93 @@
                 <div class="site-cache" id="site-cache" onClick="hide()">
                     <div class="container" align="center" onClick="hide()">
                         <div class="feed">
-                        <div class="separator"></div>
-                        <div class="post">
-                            <img src="img/test.jpg">
-                            <div class="post-container">
-                                <div class="marks">
-                                    <div class="num">0</div><img src="img/like.png">
-                                    <div class="num">0</div><img src="img/flag.png">
-                                    <div class="info">Posted by : kiefer 22/12/1992</div>
+
+
+
+
+
+
+                            <div class="post">
+                                <img src="img/test.jpg">
+                                <div class="post-container">
+                                    <div class="marks">
+                                        <div class="num">0</div><img src="img/like.png">
+                                        <div class="num">0</div><img src="img/flag.png">
+                                        <div class="info">Posted by : kiefer 22/12/1992</div>
+                                    </div>
+                                    <div class="commentaire" id="b1" onClick="deleteCom()">
+                                        <div class="login">kiefer</div>
+                                        <p>alazob ca commente !</p>
+
+                                    </div>
+                                    <div class="commentaire" id="b2" onClick="deleteCom()">
+                                        <div class="login">FDP</div>
+                                        <p>pue sam !</p>
+                                    </div>
+                                    <div class="commentaire" id="b1" onClick="deleteCom()">
+                                        <div class="login">mangeCUL</div>
+                                        <p>oui oui oui oui!</p>
+                                    </div>
+                                    <div class="commentaire" id="b2" onClick="deleteCom()">
+                                        <div class="login">leFANNEUR</div>
+                                        <p>un bon gros commentaire un bon gros commentaireun bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire</p>
+                                    </div>
+
+                                    <form method="get" action="" class="comment">
+                                        <textarea type="text" name="comment"></textarea>
+                                        <br/>
+                                        <input type="submit" name="envoyer" value="Envoyer" class="envoyer">
+                                        <br/>
+                                        <br/>
+                                    </form>
                                 </div>
-                                <div class="commentaire" id="b1" onClick="deleteCom()">
-                                    <div class="login">kiefer</div> : alazob ca commente !
-                                    
-                                </div>
-                                <div class="commentaire" id="b2" onClick="deleteCom()">
-                                    <div class="login">FDP</div> : pue sam !
-                                </div>
-                                <div class="commentaire" id="b1" onClick="deleteCom()">
-                                    <div class="login">mangeCUL</div> :  oui oui oui oui!
-                                </div>
-                                <div class="commentaire" id="b2" onClick="deleteCom()">
-                                    <div class="login">leFANNEUR</div> : un bon gros commentaire un bon gros commentaireun bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire
-                                </div>
-                                
-                                <form method="get" action="" class="comment">
-                                    <textarea type="text" name="comment"></textarea>
-                                    <br/>
-                                    <input type="submit" name="envoyer" value="envoyer" class="envoyer">
-                                    <br/>
-                                    <br/>
-                                </form>
-                             </div>
-                        </div>
-                        <div class="separator"></div>
-                        <div class="post">
-                            <img src="img/test.jpg">
-                            <div class="post-container">
-                                <div class="marks">
-                                    <div class="num">0</div><img src="img/like.png">
-                                    <div class="num">0</div><img src="img/flag.png">
-                                    <div>Posted by : kiefer 22/12/1992</div>
-                                </div>
-                                <form method="get" action="" class="comment">
-                                    <textarea type="text" name="comment"></textarea>
-                                    <br/>
-                                    <input type="submit" name="envoyer" value="envoyer" class="envoyer">
-                                    <br/>
-                                    <br/>
-                                </form>
                             </div>
-                        </div>
-                        <div class="separator"></div>
+
+
+
+                            <div class="separator"></div>
+                            <div class="separator"></div>
+
+
+
+                            <div class="post">
+                                <img src="img/test.jpg">
+                                <div class="post-container">
+                                    <div class="marks">
+                                        <div class="num">0</div><img src="img/like.png">
+                                        <div class="num">0</div><img src="img/flag.png">
+                                        <div class="info">Posted by : kiefer 22/12/1992</div>
+                                    </div>
+                                    <div class="commentaire" id="b1" onClick="deleteCom()">
+                                        <div class="login">kiefer</div> : alazob ca commente !
+
+                                    </div>
+                                    <div class="commentaire" id="b2" onClick="deleteCom()">
+                                        <div class="login">FDP</div> : pue sam !
+                                    </div>
+                                    <div class="commentaire" id="b1" onClick="deleteCom()">
+                                        <div class="login">mangeCUL</div> : oui oui oui oui!
+                                    </div>
+                                    <div class="commentaire" id="b2" onClick="deleteCom()">
+                                        <div class="login">leFANNEUR</div> : un bon gros commentaire un bon gros commentaireun bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire un bon gros commentaire
+                                    </div>
+
+                                    <form method="get" action="" class="comment">
+                                        <textarea type="text" name="comment"></textarea>
+                                        <br/>
+                                        <input type="submit" name="envoyer" value="Envoyer" class="envoyer">
+                                        <br/>
+                                        <br/>
+                                    </form>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="separator"></div>
+                            <div class="separator"></div>
+
                         </div>
                     </div>
                 </div>

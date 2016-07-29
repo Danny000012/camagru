@@ -5,7 +5,7 @@ body {
     width: 100%;
     height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: rgb(210, 210, 210);
+    background: rgb(26, 26, 26);
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
@@ -15,7 +15,6 @@ body {
     width: 100%;
     height: 50px;
 }
-
 
 .site-content {
     padding-top: 66px;
@@ -41,7 +40,7 @@ a {
     height: 66px;
     line-height: 66px;
     color: #fff;
-    background: #00a99d;
+    background: rgb(225, 82, 85);
 }
 
 .header__logo {
@@ -52,7 +51,6 @@ a {
 
 .menu {
     float: left;
-    
 }
 
 .menu a {
@@ -64,12 +62,10 @@ a {
 }
 
 @media only screen and (max-width: 750px) {
-    
     .site-container {
         height: 100%;
         overflow: hidden;
     }
-
     .site-pusher {
         height: 100%;
         -moz-transition-duration: 0.3s;
@@ -81,11 +77,9 @@ a {
         -webkit-transform: translateX(0px);
         transform: translateX(0px);
     }
-
     .header {
         position: static;
     }
-
     .site-content {
         position: absolute;
         top: 66px;
@@ -96,7 +90,6 @@ a {
         overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
     }
-
     .header__icon {
         position: relative;
         display: block;
@@ -105,7 +98,6 @@ a {
         height: 66px;
         cursor: pointer;
     }
-
     .header__icon:after {
         content: '';
         position: absolute;
@@ -118,13 +110,12 @@ a {
         -webkit-box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
         box-shadow: 0 10px 0 1px #fff, 0 16px 0 1px #fff, 0 22px 0 1px #fff;
     }
-
     .menu {
         position: absolute;
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: #00a99d;
+        background-color: #212121;
         width: 250px;
         -moz-transform: translateX(-250px);
         -ms-transform: translateX(-250px);
@@ -136,31 +127,27 @@ a {
         transition-duration: 0.3s;
         overflow-y: scroll;
     }
-
-    .menu a, .menu div {
+    .menu a,
+    .menu div {
         display: block;
         height: 40px;
         text-align: center;
         padding-top: 8px;
         line-height: 40px;
     }
-    
     .menu a {
         padding-bottom: 0px;
     }
-
-    .menu div{
+    .menu div {
         height: 58px;
         width: 250px;
     }
-
     .width--sidebar .site-pusher {
         -moz-transform: translateX(250px);
         -ms-transform: translateX(250px);
         -webkit-transform: translateX(250px);
         transform: translateX(250px);
     }
-
     .width--sidebar .site-cache {
         cursor: pointer;
         position: absolute;
@@ -171,13 +158,13 @@ a {
         height: 200%;
         background-color: rgba(0, 0, 0, 0.6);
     }
-    
     .a1 {
-    background-color: #00a99d;
-}
-
-.a2 {
-    background-color: #009287;
-}
-
+        background-color: #323232;
+    }
+    .a2 {
+        background-color: #272727;
+    }
+    .a0 {
+        background: rgb(225, 82, 85);
+    }
 }
