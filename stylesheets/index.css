@@ -146,5 +146,6 @@ h1 {
     }
     .sign-bar img {
         float: none;
+        padding-left: 15%;
     }
 }
