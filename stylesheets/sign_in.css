@@ -8,15 +8,15 @@
 
 .form-content {
     margin-top: 66px;
+    max-width: 280px;
     font-size: 10px;
-    width: 100%;
-    max-width: 300px;
     border-radius: 6px;
     background-color: #303030;
     border: 1px solid lightgrey;
     text-align: left;
     display: block;
     padding-bottom: 40px;
+    margin: 0;
 }
 
 .form-content div {
