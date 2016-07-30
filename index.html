@@ -8,37 +8,75 @@
     <link href="stylesheets/sign_in.css" rel="stylesheet">
     <link href="stylesheets/menu.css" rel="stylesheet">
     <link href="stylesheets/index.css" rel="stylesheet">
+    <link href="stylesheets/reset_password.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+
+
+    <div class="sign-bar">
+        <form method="post" action="" id="sign_in">
+            <div>Login</div>
+
+            <input type="text" name="login>">
+            <div>Password</div>
+
+            <input type="password" name="password">
+            <input type="submit" name="submit" value="sign in" id="sign">
+
+        </form>
+    </div>
+
+
     <div class="site-content" id="site-content">
         <div class="site-cache" id="site-cache" onClick="hide()">
             <div class="container" align="center" onClick="hide()">
+
+
                 <div class="separator"></div>
+
+
+
+
+
+
                 <div class="welcome">
+                    <p class="warm-welcome">New to Camagu ?
+                        <br>Create your account here</p>
                     <img src="img/homelogo.png" alt="homelogo">
-                    <a href="feed.php" class="continue">Continue</a>
+
                 </div>
+
+
+
+
+
                 <div class="form-content" onClick="hide()">
                     <img text-align="center" src="img/user.png" alt="user_logo" class="img_form">
                     <form method="get" action="" class="form" onClick="hide()">
                         <div class="item">Login</div>
-                        <input type="text" name="login">
+                        <input class="input" type="text" name="login">
+                        <div class="item">Email</div>
+                        <input class="input" type="text" name="email">
                         <div class="item">Password</div>
-                        <input type="password" name="password">
+                        <input class="input" type="password" name="password">
+                        <div class="item">Confirm password</div>
+                        <input class="input" type="password" name="confirmpassword">
                         <div align="center">
                             <div>
-                                <input type="submit" name="button" value="sign in" class="button">
+                                <input type="submit" name="button" value="Sign up" class="button">
                             </div>
-                            <a href="forgot_password.php" class="fdp">Forgot your password ?</a>
                         </div>
                     </form>
                 </div>
-                <div class="new-account">
-                    <a href="sign_up.php" class="fdp">New to camagru ? Create an account here</a>
-                    <div class="separator"></div>
-                </div>
+
+
+
+
+                <div class="separator"></div>
+
+
             </div>
         </div>
 

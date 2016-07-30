@@ -27,19 +27,101 @@ h1 {
     margin: 0px 0px;
 }
 
+.welcome {
+    height 100%;
+    vertical-align: top;
+    padding-right: 100px;
+}
+
 .welcome img {
     width: 250px;
     display: block;
 }
 
-.container .welcome, .container .form-content  {
+.container .welcome,
+.container .form-content {
     display: inline-block;
     text-align: top;
     margin: 20px;
 }
 
+.sign-bar {
+    padding-top: 10px;
+    height: 130px;
+    width: 100%;
+    background-color: #e15255;
+    display: inline-block;
+}
+
+input {
+    margin-right: 30px;
+    padding: 3px;
+}
+
+.warm-welcome {
+    color: lightblue;
+    font-size: 17px;
+}
+
+#sign_in {
+    display: inline-block;
+    line-height: 25px;
+    float: right;
+    color: white;
+    font-size: 15px;
+}
+
+#sign {
+    border: none;
+    width: 60px;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    background-image: linear-gradient(#e15255, #e15255);
+    box-shadow: inset 0px 0px 0px 2px white;
+}
+
+#sign:hover {
+    color: #B3E5FC;
+    box-shadow: inset 0px 0px 0px 2px #B3E5FC;
+}
+
+.invisible {
+    display: none;
+}
+
 @media only screen and (max-width: 750px) {
     .site-content {
         top: 0;
+    }
+    .sign-bar {
+        height: inherit;
+        line-height: 15px;
+        height: 300px;
+    }
+    #sign {
+        width: 42%;
+        margin-top: 20px;
+    }
+    #sign_in {
+        width: 100%;
+        line-height: 40px;
+        margin-top: 40px;
+    }
+    input {
+        width: 40%;
+        margin-left: 30%;
+    }
+    #sign_in div {
+        margin-left: 30%;
+    }
+    .invisible {
+        display: none;
+        background-color: blue;
+        height: 10px;
+        width: 30px;
+    }
+    .welcome {
+        padding-right: 0px;
     }
 }
