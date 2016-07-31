@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-content" onClick="hide()">
                     <img text-align="center" src="img/user.png" alt="user_logo" class="img_form">
-                    <form method="get" action="" class="form" onClick="hide()">
+                    <form method="post" action="" class="form" onClick="hide()">
                         <div class="item">Login</div>
                         <input type="text" name="login">
                         <div class="item">Email</div>
