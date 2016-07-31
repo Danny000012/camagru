@@ -18,7 +18,7 @@
         <div class="site-pusher">
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
-                <a href="#" class="header__logo">
+                <a href="feed.php" class="header__logo">
                     <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
@@ -27,7 +27,7 @@
                     <a href="#" class="a1">My gallery</a>
                     <a href="post.php" class="a2">Post</a>
                     <a href="account.php" class="a1">Account</a>
-                    <a href="sign_in.php" class="a2">Sign in</a>
+                    <a href="index.html" class="a2">Sign out</a>
                 </nav>
             </header>
             <div class="site-content">

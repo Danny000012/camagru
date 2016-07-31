@@ -23,7 +23,7 @@
                     <a href="#">My gallery</a>
                     <a href="#">Post</a>
                     <a href="#">Account</a>
-                    <a href="sign_in.php">Sign in</a>
+                    <a href="index.html">Sign out</a>
                 </nav>
             </header>
             <div class="site-content">
