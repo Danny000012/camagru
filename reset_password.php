@@ -33,8 +33,9 @@
                         <input style="text-align:center;" class="input" type="password" name="confirmnewpassword">
                         <br>
                         <div align="center">
+						<div>
                             <input type="submit" name="button" value="Change password" class="button">
-                            <br>
+                            </div>
                             <a href="forgot_password.php" class="fdp">Forgot your password ?</a>
                         </div>
                     </form>

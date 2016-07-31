@@ -17,11 +17,10 @@
                 <div class="form-content" onClick="hide()">
                     <img text-align="center" src="img/locked.png" alt="user_logo" class="img_form">
                     <div class="title" align="center">Reset password</div>
-                    <form class="form" method="get" action="">
+                    <form align="center" class="form" method="get" action="">
                         <div class="item">Login</div>
-                        <input type="text" name="login">                      
-                        <div class="item">Email</div>
-                        <input type="text" name="confirmnewpassword">
+                        <input style="text-align:center;" class="input" type="text" name="login">										  <div class="item">Email</div>
+                        <input style="text-align:center;" class="input" type="text" name="confirmnewpassword">
                         <br>
                         <div align="center">
                             <div>
