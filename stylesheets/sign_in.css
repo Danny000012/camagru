@@ -1,7 +1,7 @@
 .form {
     height: auto;
     width: 100%;
-    margin-left: 10%;
+    margin-left: 0px;
     color: #e15255;
     font-size: 12px;
 }
@@ -28,8 +28,7 @@
     margin-left: 10%;
     height: 20px;
     border-radius: 0px;
-    width: 80%;
-    border: none;
+    width: 80% border: none;
     box-shadow: none;
     background-image: linear-gradient(#404040, #404040);
     margin: 0;
@@ -46,8 +45,8 @@
 .button {
     text-align: center;
     width: 50%;
-    margin-left: 15%;
-    margin-top: 10px;
+    margin-left: auto;
+    margin-top: 5px;
     background-image: linear-gradient(#e15255, #e15255);
     height: 35px;
     border: none;
