@@ -23,11 +23,11 @@
                 </a>
                 <nav class="menu">
                     <div class="a0" class="fix"></div>
-                    <a href="#" class="a2">Feed</a>
-                    <a href="#" class="a1">My gallery</a>
-                    <a href="post.php" class="a2">Post</a>
-                    <a href="account.php" class="a1">Account</a>
-                    <a href="index.html" class="a2">Sign out</a>
+                    <a href="#" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
+                        <a href="#" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
+                        <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye" </a>
+                            <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png" </a>
+                                <a href="index.html" class="a2"><img class="logo-menu" src="img/logout.png" </a>
                 </nav>
             </header>
             <div class="site-content">

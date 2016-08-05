@@ -17,29 +17,30 @@
             <header class="header">
                 <a href="#" class="header__icon" id="header__icon" onClick="hide()"></a>
                 <a href="feed.php" class="header__logo">
-                <img src="img/logo.png" alt="logo">
+                    <img src="img/logo.png" alt="logo">
                 </a>
                 <nav class="menu">
-                    <div class="a1" class="fix"></div>
-                    <a href="feed.php" class="a2">Feed</a>
-                    <a href="#" class="a1">My gallery</a>
-                    <a href="post.php" class="a2">Post</a>
-                    <a href="account.php" class="a1">Account</a>
-                    <a href="index.html" class="a2">Sign out</a>
+                    <div class="a0" class="fix"></div>
+                    <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
+                        <a href="#" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
+                        <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye" </a>
+                            <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png" </a>
+                                <a href="index.html" class="a2"><img class="logo-menu" src="img/logout.png" </a>
                 </nav>
+            </header>
             </header>
             <div class="site-content">
                 <div class="site-cache" id="site-cache" onClick="hide()">
                     <div class="container" align="center" onClick="hide()">
                         <div class="separator"></div>
-                       <div class="box" id="border-fix">
-                           <img src="img/edit.png" class="account-logo" alt="pencil">
-                           <a href="#">Modify a post</a>
-                           </div>
+                        <div class="box" id="border-fix">
+                            <img src="img/edit.png" class="account-logo" alt="pencil">
+                            <a href="#">Modify a post</a>
+                        </div>
                         <div class="box">
                             <img src="img/settings.png" class="account-logo" alt="mechanism">
                             <a href="reset_password.php">Reset password</a>
-                           </div>
+                        </div>
                         <div class="separator"></div>
                     </div>
                 </div>
