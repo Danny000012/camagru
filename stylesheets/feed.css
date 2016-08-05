@@ -7,7 +7,7 @@
 
 .post img {
     width: 100%;
-    height: 100%;
+    height: 600px;
     filter: none;
     -webkit-filter: none;
     -moz-filter: none;
@@ -107,6 +107,7 @@
     text-align: left;
     height: auto;
     width: 90%;
+    color: #222222;
 }
 
 #b1 {

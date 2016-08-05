@@ -1,32 +1,49 @@
+.user {
+    width: 25%;
+    min-width: 140px;
+    padding: 25px;
+    margin-top: 66px;
+    font-size: 25px;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
 .box {
-    height: 100px;
-    width: 90%;
-    font-size: 10px;
-    background-color: #fff;
-    text-align: left;
+    width: 60%;
+    min-width: 240px;
+    height: auto;
+    background: blue;
     padding: 20px;
-    margin: auto;
-    border: 1px solid #DDD;
+    background: #222222;
+    line-height: 25px;
 }
 
-#border-fix {
-    border-bottom: 1px solid white;
+.option_a {
+    background: #323232;
 }
 
-.account-logo {
-    height: 100px;
-    vertical-align: middle;
-    margin-right: 10%;
+.option_b {
+    background: #191919;
 }
 
-
-.box a {
-    margin-bottom: 40px;
-    font-size: 4vw;
-    margin-left: 10%;
-    color: skyblue;
+.option_a,
+.option_b {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.box a:hover {
-    color: lightgreen;
+.box img {
+    height: 25px;
+    vertical-align: text-bottom;
+    filter: invert();
+    -webkit-filter: invert();
+    -moz-filter: invert();
+    -ms-filter: invert();
+    -o-filter: invert();
+    padding-right: 10px;
+}
+
+.option_a a:hover,
+.option_b a:hover {
+    color: aquamarine;
 }

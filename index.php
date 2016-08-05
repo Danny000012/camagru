@@ -21,15 +21,15 @@
 
         <div class="sign-bar">
             <img src="img/logme.png" alt="log-logo" width="90px"> Welcome
-            <form method="post" action="" id="sign_in">
+            <form method="POST" action="" id="sign_in">
 
                 <div>Login</div>
 
-                <input class="input-bar" type="text" name="login>">
+                <input class="input-bar" type="text" name="login2" />
                 <div>Password</div>
 
-                <input class="input-bar" type="password" name="password">
-                <input type="submit" name="submit" value="sign in" id="sign">
+                <input class="input-bar" type="password" name="password2" />
+                <input type="submit" name="connect" value="sign in" id="sign" />
 
             </form>
 
@@ -63,37 +63,35 @@
 
                     <div class="form-content" onClick="hide()">
                         <img text-align="center" src="img/user.png" alt="user_logo" class="img_form">
-                        <form align="center" method="POST" action="index.php" class="form" onClick="hide()">
+                        <form align="center" method="POST" action="" class="form" onClick="hide()">
                             <div class="item">Login</div>
-                            <input style="text-align:center;" class="input" type="text" name="login">
+                            <input style="text-align:center;" class="input" type="text" name="login" />
                             <div class="item">Email</div>
-                            <input style="text-align:center;" class="input" type="text" name="email">
+                            <input style="text-align:center;" class="input" type="email" name="email" />
                             <div class="item">Password</div>
-                            <input style="text-align:center;" class="input" type="password" name="password">
+                            <input style="text-align:center;" class="input" type="password" name="password" />
                             <div class="item">Confirm password</div>
-                            <input style="text-align:center;" class="input" type="password" name="confirmpassword">
+                            <input style="text-align:center;" class="input" type="password" name="confirmpassword" />
 
                             <br>
-                            <input type="submit" value="signup" class="button">
+                            <input type="submit" name="inscription" value="signup" class="button" />
 
 
                         </form>
                     </div>
                     <?PHP
-                        echo "zdp";
-                        $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
-                        if ($_POST[submit] == "signup")
-                        {
-                            echo "zz champion du monde";
-                        }    
-                        
+                    include 'script/connexion.php';
                 ?>
 
 
 
                         <div class="separator"></div>
-
-                        <a href="feed.php">bypass door to website</a>
+                        <?php
+                        if (isset($ret))
+                        {
+                            echo $ret;
+                        }
+                    ?>
                 </div>
             </div>
 
