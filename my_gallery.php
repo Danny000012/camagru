@@ -26,7 +26,7 @@
                     </a>
                     <nav class="menu">
                         <div class="a0" class="fix"></div>
-                        <a href="#" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
+                        <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
                             <a href="my_gallery.php" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
                             <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
                             <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png"></a>
@@ -39,7 +39,7 @@
                             <div class="feed">
 
                                 <?php
-                                    include 'script/display_feed.php';
+                                    include 'script/display_my_gallery.php';
                                 ?>
 
                             </div>
