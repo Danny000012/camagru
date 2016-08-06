@@ -12,7 +12,7 @@
 
         <link href="stylesheets/reset_password.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Reset Password</title>
+        <title>Reset Email</title>
     </head>
 
     <body>
@@ -23,23 +23,17 @@
 
                     <div class="form-content" onClick="hide()">
                         <img text-align="center" src="img/locked.png" alt="user_logo" class="img_form">
-                        <div class="title" align="center">Modify password</div>
+                        <div class="title" align="center">Modify email</div>
                         <form align="center" class="form" method="post" action="">
-                            <div class="item">Login</div>
-                            <input style="text-align:center;" class="input" type="text" name="login" />
-                            <br>
-                            <div class="item">Old password</div>
-                            <input style="text-align:center;" class="input" type="password" name="oldpassword" />
-                            <br>
-                            <div class="item">New passord</div>
-                            <input style="text-align:center;" class="input" type="password" name="newpassword" />
+                            <div class="item">New email</div>
+                            <input style="text-align:center;" class="input" type="texte" name="newemail"/>
                             <br>
                             <div class="item">Confimation</div>
-                            <input style="text-align:center;" class="input" type="password" name="confirmnewpassword" />
+                            <input style="text-align:center;" class="input" type="text" name="confirmnewemail" />
                             <br>
                             <div align="center">
                                 <div>
-                                    <input type="submit" name="button" value="Change password" class="button" />
+                                    <input type="submit" name="reset" value="Change email" class="button" />
                                 </div>
                             </div>
                         </form>
@@ -52,6 +46,7 @@
                         {
                             echo $ret;
                         }
+                          echo "Your e-mail : ".$_SESSION['email'];
                     ?>
                 </div>
             </div>

@@ -17,7 +17,7 @@ if ($_POST['connect'] == "sign in")
             $_SESSION['login'] = $user_info['login'];
             $_SESSION['email'] = $user_info['email'];
             header("Location: account.php?id=".$_SESSION['id']);
-        } else {$ret = "User not registred";}
+        } else {$ret = "User not registred or wrong password";}
     } else {$ret = "Please complete all the areas";}
 }
 if (($_POST['inscription'] == "signup"))
@@ -26,14 +26,20 @@ if (($_POST['inscription'] == "signup"))
     {
         $login = htmlspecialchars($_POST['login']);
         $email = htmlspecialchars($_POST['email']);
-        $mdp = sha1(htmlspecialchars($_POST['password']));
-        $mdp2 = sha1(htmlspecialchars($_POST['confirmpassword']));
-        if ($mdp == $mdp2)
+        $checker = $bdd->prepare("SELECT * FROM users WHERE email= ?");
+        $checker->execute(array($email));
+        $email_exist =$checker->rowCount();
+        if ($email_exist == 0)
         {
-            $insert_user = $bdd->prepare("INSERT INTO users(login, email, password) VALUES(?, ?, ?)");
-            $insert_user->execute(array($login, $email, $mdp));
-            $ret = "Account create, you can now log in";                                    
-        } else {$ret = "Passwords doesn't match !";}
+            $mdp = sha1(htmlspecialchars($_POST['password']));
+            $mdp2 = sha1(htmlspecialchars($_POST['confirmpassword']));
+            if ($mdp == $mdp2)
+            {
+                $insert_user = $bdd->prepare("INSERT INTO users(login, email, password) VALUES(?, ?, ?)");
+                $insert_user->execute(array($login, $email, $mdp));
+                $ret = "Account create, you can now log in";          
+            } else {$ret = "Passwords doesn't match !";}
+        } else {$ret = "This email is already registred";}
     } else {$ret = "Please complete all the areas";}
 }    
 ?>

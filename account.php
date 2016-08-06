@@ -39,8 +39,7 @@
 
 
                             <?php
-    session_start();
-    echo '<div class="user">Welcome '.$_SESSION['login'].'</div>';
+    echo '<div class="user">'.$_SESSION['login'].'</div>';
 ?>
 
 
@@ -54,7 +53,7 @@
                                         <a href="reset_password.php"><img src="img/warning.png" alt="warning">Change Password</a>
                                     </div>
                                     <div class="option_b">
-                                        <a href="#"><img src="img/envelope.png" alt="warning">Change e-mail</a>
+                                        <a href="reset_email.php"><img src="img/envelope.png" alt="warning">Change e-mail</a>
                                     </div>
                                     <div class="option_a">
                                         <a href="#"><img src="img/garbage.png" alt="garbage">Delete account</a>

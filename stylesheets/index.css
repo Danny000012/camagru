@@ -72,7 +72,7 @@ h1 {
 
 .input-bar {
     margin-right: 30px;
-    height: 15px;
+    height: 20px;
     padding: 3px;
     border: none;
     border-radius: 0px;
@@ -120,7 +120,7 @@ h1 {
     .sign-bar {
         height: inherit;
         line-height: 15px;
-        height: 420px;
+        height: 450px;
     }
     #sign {
         width: 41%;
@@ -152,6 +152,7 @@ h1 {
     .sign-bar img {
         float: none;
         text-align: center;
+        max-width: 130px;
     }
     .nl {
         display: block;

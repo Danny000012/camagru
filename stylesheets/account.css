@@ -1,11 +1,12 @@
 .user {
     width: 25%;
-    min-width: 140px;
+    min-width: 160px;
     padding: 25px;
     margin-top: 66px;
     font-size: 25px;
-    border: 1px solid white;
+    border: 1px solid #e15255;
     border-radius: 25px;
+    color: #e15255;
 }
 
 .box {

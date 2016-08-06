@@ -20,7 +20,7 @@
 
 
         <div class="sign-bar">
-            <img src="img/logme.png" alt="log-logo" width="90px"> Welcome
+            <img src="img/logme.png" alt="log-logo" width="90px">Welcome
             <form method="POST" action="" id="sign_in">
 
                 <div>Login</div>

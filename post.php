@@ -26,9 +26,9 @@
                         <div class="a0" class="fix"></div>
                         <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
                             <a href="#" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
-                            <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye" </a>
-                                <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png" </a>
-                                    <a href="logout.php" class="a2"><img class="logo-menu" src="img/logout.png" </a>
+                            <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
+                            <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png"></a>
+                            <a href="logout.php" class="a2"><img class="logo-menu" src="img/logout.png"></a>
                     </nav>
                 </header>
                 <div class="site-content">
@@ -44,11 +44,18 @@
                                 <div class="menu-cam">
                                     <a href="#" type="button"><img src="img/cam.png" alt="camera>" class="img-logo"</a>
                                 </div>
-
-                                <form action="" method="get" class="tape">
-                                    <input type="file" name="file" class="custom-file-input" title=" ">
-                                    <input type="submit" name="file" value="upload" class="uploader">
-                                </form>
+                                <div class="upload">
+                                    <h2>Upload an image</h2>
+                                    <form method="post" enctype="multipart/form-data" class="upload-form">
+                                        <input type="file" name="image" />
+                                        <br>
+                                        <br>
+                                        <input type="submit" name="file" value="upload" class="upload-boutton" />
+                                    </form>
+                                    <?php
+                                    include 'upload.php';
+                                    ?>
+                                </div>
 
 
                             </div>
