@@ -29,6 +29,7 @@
                         <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
                         <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png"></a>
                         <a href="logout.php" class="a2"><img class="logo-menu" src="img/logout.png"></a>
+                        <?php echo '<p>'.$_SESSION['login'].'@camagru</p>'; ?>
                     </nav>
                 </header>
 

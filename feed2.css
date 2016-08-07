@@ -1,0 +1,100 @@
+.post {
+    width: 300px;
+    display: inline-block;
+    padding: 10px;
+}
+
+.post a {
+    color: black;
+}
+
+.post div {
+    display: inline-block;
+}
+
+.post img {
+    width: 300px;
+    height: 300px;
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -ms-filter: none;
+    -o-filter: none;
+}
+
+.date {
+    float: right;
+    padding-right: 15px;
+}
+
+.feed {
+    width: 960px;
+    margin-top: 5%;
+    background: #252525;
+    text-align: left;
+}
+
+.post-container {
+    background: #606060;
+    display: inline-block;
+    padding-bottom: 30px;
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+}
+
+.interact {
+    background: #707070;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+
+.interact:hover {
+    background: rgb(0, 169, 157);
+    color: white;
+}
+
+.info {
+    right: 0;
+}
+
+.marks {
+    width: 100%;
+    height: 33px;
+    background: #D32F2F;
+    line-height: 33px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+}
+
+.marks div,
+.marks img {
+    display: inline-block;
+}
+
+.marks div {
+    margin-left: 10px;
+}
+
+.marks img {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.login {
+    height: 100%;
+    color: #D32F2F;
+}
+
+@media only screen and (max-width: 800px) {
+    .feed {
+        width: auto;
+        text-align: center;
+    }
+}

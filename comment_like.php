@@ -38,9 +38,8 @@
                     <div class="site-cache" id="site-cache" onClick="hide()">
                         <div class="container" align="center" onClick="hide()">
                             <div class="feed">
-
                                 <?php
-                                    include 'script/display_my_gallery.php';
+                                    include 'interact.php';
                                 ?>
 
                             </div>

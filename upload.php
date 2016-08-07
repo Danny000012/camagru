@@ -2,6 +2,7 @@
     session_start();
     $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
     $ret = "Max file size : 4Mo";
+    $date = date('d/m/Y');
     if ($_POST['file'] == "upload")
     {
         if (getimagesize($_FILES['image']['tmp_name']) == FALSE)
@@ -15,8 +16,8 @@
             $name = addslashes($_FILES['image']['name']);
             $image = file_get_contents($image);
             $image = base64_encode($image);            
-            $req = $bdd->prepare("INSERT INTO post(login, image) VALUES(?, ?)");
-            $req->execute(array($login, $image));
+            $req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
+            $req->execute(array($login, $image, $date));
             $ret = "Upload succeed";
         }
     }
