@@ -39,7 +39,7 @@
                         <div class="container" align="center" onClick="hide()">
                             <div class="feed">
                                 <?php
-                                    include 'interact.php';
+                                    include 'script/interact.php';
                                 ?>
 
                             </div>

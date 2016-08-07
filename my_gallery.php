@@ -11,7 +11,7 @@
         <title>Camagru</title>
         <link href="stylesheets/menu.css" rel="stylesheet">
         <link href="stylesheets/footer.css" rel="stylesheet">
-        <link href="stylesheets/feed.css" rel="stylesheet">
+        <link href="stylesheets/feed2.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 
     </head>
@@ -37,8 +37,8 @@
                 <div class="site-content">
                     <div class="site-cache" id="site-cache" onClick="hide()">
                         <div class="container" align="center" onClick="hide()">
+                            <h2><?php echo $_SESSION['login']; ?>'s gallery</h2>
                             <div class="feed">
-
                                 <?php
                                     include 'script/display_my_gallery.php';
                                 ?>
