@@ -17,8 +17,8 @@
         echo '<img src="'.$src.'">';   
         echo '<div class="post-container">';
         echo '<div class="marks">';
-        echo '<div class="num">0</div><img src="img/like.png">';
-        echo '<div class="num">'.$image_set[$i]['nb_com'].'</div><img src="img/flag.png">';        
+        echo '<div class="num">'.$image_set[$i]['nb_likes'].'</div><img id="like" src="img/like.png">';
+        echo '<div class="num">'.$image_set[$i]['nb_com'].'</div><img id="com" src="img/flag.png">';        
         echo '</div>';
         echo '<a class="interact" href="comment_like.php?id_post='.$image_set[$i]['id'].'">interact</a>';
         echo '<div class="date">'.$image_set[$i]['date_post'].' </div>';

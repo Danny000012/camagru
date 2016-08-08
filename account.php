@@ -57,7 +57,7 @@
                                         <a href="reset_email.php"><img src="img/envelope.png" alt="warning">Change e-mail</a>
                                     </div>
                                     <div class="option_a">
-                                        <a href="#"><img src="img/garbage.png" alt="garbage">Delete account</a>
+                                        <a href="delete_account.php"><img src="img/garbage.png" alt="garbage">Delete account</a>
                                     </div>
 
                                 </div>

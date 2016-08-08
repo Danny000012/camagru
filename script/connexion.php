@@ -26,20 +26,26 @@ if (($_POST['inscription'] == "signup"))
     {
         $login = htmlspecialchars($_POST['login']);
         $email = htmlspecialchars($_POST['email']);
-        $checker = $bdd->prepare("SELECT * FROM users WHERE email= ?");
-        $checker->execute(array($email));
-        $email_exist =$checker->rowCount();
-        if ($email_exist == 0)
-        {
-            $mdp = sha1(htmlspecialchars($_POST['password']));
-            $mdp2 = sha1(htmlspecialchars($_POST['confirmpassword']));
-            if ($mdp == $mdp2)
+        $check_email = $bdd->prepare("SELECT * FROM users WHERE email= ?");
+        $check_email->execute(array($email));
+        $email_exist =$check_email->rowCount();
+        $check_login = $bdd->prepare("SELECT * FROM users WHERE login= ?");
+        $check_login->execute(array($login));
+        $login_exist =$check_login->rowCount();
+        if ($login_exist == 0)
+        {    
+            if ($email_exist == 0)
             {
-                $insert_user = $bdd->prepare("INSERT INTO users(login, email, password) VALUES(?, ?, ?)");
-                $insert_user->execute(array($login, $email, $mdp));
-                $ret = "Account create, you can now log in";          
-            } else {$ret = "Passwords doesn't match !";}
-        } else {$ret = "This email is already registred";}
+                $mdp = sha1(htmlspecialchars($_POST['password']));
+                $mdp2 = sha1(htmlspecialchars($_POST['confirmpassword']));
+                if ($mdp == $mdp2)
+                {
+                    $insert_user = $bdd->prepare("INSERT INTO users(login, email, password) VALUES(?, ?, ?)");
+                    $insert_user->execute(array($login, $email, $mdp));
+                    $ret = "Account create, you can now log in";          
+                } else {$ret = "Passwords doesn't match !";}
+            } else {$ret = "This email is already registred";}
+        } else {$ret = "This login is already used, please try another one";}
     } else {$ret = "Please complete all the areas";}
 }    
 ?>

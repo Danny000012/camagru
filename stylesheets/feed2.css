@@ -92,9 +92,27 @@
     color: #D32F2F;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 870px) {
     .feed {
         width: auto;
         text-align: center;
     }
+    .post {
+        width: 200px;
+    }
+    .post img {
+        width: 200px;
+        height: 200px;
+    }
+    #like,
+    #com {
+        height: 12px;
+        width: 12px;
+    }
+}
+
+.marks,
+.date,
+.interact {
+    font-size: 12px;
 }
