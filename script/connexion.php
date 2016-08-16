@@ -1,6 +1,5 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
-$ret = "a 42 school project 'instagram-like'";
 if ($_POST['connect'] == "sign in")
 {
     if (!empty($_POST['login2']) AND !empty($_POST['password2']))

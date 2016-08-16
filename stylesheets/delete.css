@@ -1,0 +1,50 @@
+h4, h6 {
+    text-align: center;
+    color: rgb(225, 82, 85);
+}
+
+a {
+    border: 3px solid white;
+    padding: 10px;
+}
+
+a:hover {
+    color: #00a99d;
+    border: 3px solid #00a99d;
+}
+
+.all {
+
+    width: 70%;
+}
+
+input {
+   height: 25px;
+    color: white;
+}
+
+.confirm {
+    border: none;
+    background-image: linear-gradient(#00a99d, #00a99d);
+}
+
+.confirm:hover {
+    background-image: linear-gradient(#e15255, #e15255);
+}
+
+.conf-email {
+    background: #424242;
+    border: none;
+}
+
+.deleted {
+    color: aquamarine;
+}
+
+.not-deleted {
+    color: #e15255;
+}
+
+.come-back {
+    color: yellow;
+}

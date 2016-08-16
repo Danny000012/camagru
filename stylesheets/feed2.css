@@ -1,3 +1,6 @@
+
+
+
 .post {
     width: 300px;
     display: inline-block;
@@ -21,6 +24,7 @@
     -ms-filter: none;
     -o-filter: none;
 }
+
 
 .date {
     float: right;

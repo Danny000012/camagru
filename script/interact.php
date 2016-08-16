@@ -22,7 +22,12 @@
         } else {$ret = "Please enter a comment";}
     }
 
-
+    if ($_GET['delete-com'])
+    {
+        $com_id = $_GET['delete-com'];
+        $req_del_com = $bdd->prepare("DELETE FROM commentaires WHERE id = ?");
+        $req_del_com->execute(array($com_id));
+    }
 
     if ($_GET['like'] == "Like")
     {
@@ -68,6 +73,12 @@
         $update_nb_like = $bdd->prepare("UPDATE post SET nb_likes = ? WHERE id = ?");
         $update_nb_like->execute(array($j, $id_post));
     }
+    
+    if ($_GET['delete-post'] == "Delete post")
+    {
+        $req_delete_post = $bdd->prepare("DELETE FROM post WHERE id = ?");
+        $req_delete_post->execute(array($_SESSION['id_post']));
+    }
 
     if ($_SESSION['id_post'])
     {
@@ -103,11 +114,18 @@
             while ($com_set[$i])
             {
                 if ($i % 2 == 1)
-                $style = "b2";
+                {
+                    $style = "b2";
+                }
                 else {$style = "b1";}
-                echo '<div class="commentaire" id="'.$style.'" onClick="deleteCom()">';
+                echo '<div class="commentaire" id="'.$style.'">';
                 echo '<div class="login">'.$com_set[$i][login].'</div>';
                 echo '<p>'.$com_set[$i]['value'].'</p>';
+                if ($com_set[$i]['login'] == $_SESSION['login'])
+                {
+                    echo '<a class="delete-com" href="comment_like.php?delete-com='.$com_set[$i]["id"].'"><img src="img/delete.png" id="delete-logo"></a>';
+                }
+                echo $id_com;
                 echo '</div>';
                 $i++;
             }
@@ -126,14 +144,16 @@
                 $value = "Like";
             } else {$value = "Dislike";}
             echo '<input type="submit" name="like" value="'.$value.'" class="envoyer">';
+            if ($post['login'] == $_SESSION['login'])
+            {
+                echo '<input type="submit" name="delete-post" value="Delete post" class="delete-button"/>';
+            }
             echo '<br/><br/>';
             echo '</form>';
             echo '</div>';
-            echo '</div>';
-            
-            
+            echo '</div>';  
             echo '<div class="separator"></div>';
-                 echo '<a href="feed.php">Back</a>';
+            echo '<a href="feed.php">Back</a>';
             echo '<div class="separator"></div>';
        
         } else {$ret = "This post doesn't exist";}
