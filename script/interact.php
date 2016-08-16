@@ -19,6 +19,7 @@
             $comment = $_GET['comment'];
             $req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
             $req_com->execute(array($id_post, $login, $comment));
+            header("Location: comment_like.php");
         } else {$ret = "Please enter a comment";}
     }
 
@@ -156,7 +157,7 @@
             echo '<a href="feed.php">Back</a>';
             echo '<div class="separator"></div>';
        
-        } else {$ret = "This post doesn't exist";}
+        } else {$ret = "This post was deleted, or dosen't exist";}
     } else {$ret = "Error when trying to find this post";}
     echo $ret;
 ?>

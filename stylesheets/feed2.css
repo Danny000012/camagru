@@ -99,14 +99,15 @@
 @media only screen and (max-width: 870px) {
     .feed {
         width: auto;
+        height: 200%;
         text-align: center;
     }
     .post {
-        width: 200px;
+        width: 270px;
     }
     .post img {
-        width: 200px;
-        height: 200px;
+        width: 270px;
+        height: 270px;
     }
     #like,
     #com {
