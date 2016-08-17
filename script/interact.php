@@ -120,13 +120,14 @@
                 }
                 else {$style = "b1";}
                 echo '<div class="commentaire" id="'.$style.'">';
-                echo '<div class="login">'.$com_set[$i][login].'</div>';
-                echo '<p>'.$com_set[$i]['value'].'</p>';
                 if ($com_set[$i]['login'] == $_SESSION['login'])
                 {
                     echo '<a class="delete-com" href="comment_like.php?delete-com='.$com_set[$i]["id"].'"><img src="img/delete.png" id="delete-logo"></a>';
                 }
-                echo $id_com;
+                echo '<div class="login">'.$com_set[$i][login].'</div>';
+                echo '<p>'.$com_set[$i]['value'].'</p>';
+                
+                echo '<br>';
                 echo '</div>';
                 $i++;
             }
@@ -134,6 +135,7 @@
             
             
             echo '<form method="get" action="" class="comment">';
+            echo '<br>';
             echo '<textarea type="text" name="comment"></textarea>';
             echo '<br/>';
             echo '<input type="submit" name="envoyer" value="Envoyer" class="envoyer">';
@@ -147,7 +149,7 @@
             echo '<input type="submit" name="like" value="'.$value.'" class="envoyer">';
             if ($post['login'] == $_SESSION['login'])
             {
-                echo '<input type="submit" name="delete-post" value="Delete post" class="delete-button"/>';
+                echo '<input type="submit" name="delete-post" value="Delete post" class="delete-button" onMouseHover="buttonHover()"/>';
             }
             echo '<br/><br/>';
             echo '</form>';

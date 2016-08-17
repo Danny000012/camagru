@@ -25,14 +25,22 @@
 }
 
 #delete-logo {
-    width: 25px;
-    height: 25px;
+    width: 10px;
+    height: 10px;
     vertical-align: top;
     float: right;
+    margin-right: -22.5px;
+    margin-bottom: -50px;
 }
 
 #delete-logo:hover {
-    background: url(https://img/delete2.png);
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+    width: 15px;
+    height: 15px;
+    padding: 2.5px;
 }
 
 
@@ -63,13 +71,13 @@
 
 .comment textarea {
     background-image: linear-gradient(#eee, #eee);
-    margin-top: 20px;
+   /* margin-top: 30px;*/
     width: 90%;
     height: 100px;
     border-radius: 0px;
     border: 1px solid #ddd;
     resize: none;
-    background: rgb(255, 240, 240);
+    background: rgb(240, 240, 240);
     padding-bottom: 20px;
     border-radius: 5px;
     font-size: 15px;
@@ -125,6 +133,7 @@
 .commentaire div,
 .commentaire p {
     display: inline;
+    line-height: 20px;
 }
 
 .commentaire div {
@@ -146,7 +155,6 @@
 
 #b1 {
     background-color: white;
-    max-width: 
 }
 
 #b2 {

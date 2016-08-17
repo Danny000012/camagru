@@ -13,6 +13,6 @@ function hide() {
         body.className = 'width--sidebar';
 }
 
-function deleteCom() {
-    alert("Do you really want to delete this comment ? Tis action will be permanent.");
+function buttonHover() {
+    this.src = "img/delete2.png";
 }
