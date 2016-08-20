@@ -8,7 +8,7 @@
 <html>
     <head>
         <link href="stylesheets/delete.css" rel="stylesheet">
-        <link href="stylesheets/menu.css" rel="stylesheet">
+        <link href="stylesheets/menu.css" rel="stylesheet"> 
         <meta charset="utf-8">
     </head>
     <body>
@@ -23,6 +23,9 @@
         ?>
         </div>
             <img src="img/homelogo.png" alt="camagru-logo" width="300px">
-        </center>
+			<div class="separator"></div>
+            <a class="back" href="account.php" class="back">Back</a>
+            <div class="separator"></div>
+		</center>
     </body>
 </html>

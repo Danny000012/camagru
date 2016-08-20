@@ -50,8 +50,10 @@
                     echo '<div class="come-back">It was a pleasure to have you aside us, come back when you wanted to. <br>Best regards, Camagru\'s team.</div>';
                 }
             ?>
-        </center>
         <div class="separator"></div>
+		<a class="back" href="../account.php" class="back">Back</a>
+            <div class="separator"></div>
+        </center>
     </body>
 
     </html>
