@@ -24,6 +24,9 @@
                     <div class="form-content" onClick="hide()">
                         <img text-align="center" src="img/locked.png" alt="user_logo" class="img_form">
                         <div class="title" align="center">Modify email</div>
+                        <?php
+                            echo '<center>actual email : '.$_SESSION['email'].'</center>';
+                        ?>
                         <form align="center" class="form" method="post" action="">
                             <div class="item">New email</div>
                             <input style="text-align:center;" class="input" type="texte" name="newemail"/>
@@ -46,7 +49,6 @@
                         {
                             echo $ret;
                         }
-                          echo "Your e-mail : ".$_SESSION['email'];
                     ?>
                 </div>
             </div>

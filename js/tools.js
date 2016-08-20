@@ -13,6 +13,10 @@ function hide() {
         body.className = 'width--sidebar';
 }
 
-function buttonHover() {
-    this.src = "img/delete2.png";
+function deleteCom() {
+    if (confirm("Are you sure you want to delete this comment ?")) {
+        document.load('script/delete-com.php');
+    }
+    else {
+    }
 }

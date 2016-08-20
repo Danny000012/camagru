@@ -30,6 +30,7 @@
         $req_del_com->execute(array($com_id));
     }
 
+
     if ($_GET['like'] == "Like")
     {
         $id_post = $_SESSION['id_post'];
@@ -79,6 +80,10 @@
     {
         $req_delete_post = $bdd->prepare("DELETE FROM post WHERE id = ?");
         $req_delete_post->execute(array($_SESSION['id_post']));
+        $req_delete_com = $bdd->prepare("DELETE FROM commentaires WHERE id_post = ?");
+        $req_delete_com->execute(array($_SESSION['id_post']));
+        $req_delete_like = $bdd->prepare("DELETE FROM like_dislike WHERE id_post = ?");
+        $req_delete_like->execute(array($_SESSION['id_post']));
     }
 
     if ($_SESSION['id_post'])
@@ -122,7 +127,7 @@
                 echo '<div class="commentaire" id="'.$style.'">';
                 if ($com_set[$i]['login'] == $_SESSION['login'])
                 {
-                    echo '<a class="delete-com" href="comment_like.php?delete-com='.$com_set[$i]["id"].'"><img src="img/delete.png" id="delete-logo"></a>';
+                    echo '<a class="delete-com" onClick="deleteCom()" href="comment_like.php?delete-com='.$com_set[$i]["id"].'"><img src="img/delete.png" id="delete-logo"></a>';
                 }
                 echo '<div class="login">'.$com_set[$i][login].'</div>';
                 echo '<p>'.$com_set[$i]['value'].'</p>';
@@ -151,12 +156,13 @@
             {
                 echo '<input type="submit" name="delete-post" value="Delete post" class="delete-button" onMouseHover="buttonHover()"/>';
             }
-            echo '<br/><br/>';
+            echo '<br><br>';
+            echo '<a class="back" href="feed.php">Return</a>';
             echo '</form>';
             echo '</div>';
             echo '</div>';  
             echo '<div class="separator"></div>';
-            echo '<a href="feed.php">Back</a>';
+           
             echo '<div class="separator"></div>';
        
         } else {$ret = "This post was deleted, or dosen't exist";}

@@ -5,6 +5,7 @@
     border-radius: 10px;
 }
 
+
 .post a {
     color: black;
 }
@@ -18,6 +19,14 @@
     font-size: 15px;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.back {
+    color: black;
+}
+
+.back:hover {
+    color: #00a77d;
 }
 
 .delete-button:hover {
