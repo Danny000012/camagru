@@ -6,11 +6,8 @@
     {
         $_SESSION['id_post'] = $_GET['id_post'];
     }
-
-
-
-
-    if ($_GET['envoyer']  == 'Envoyer')
+    
+	if ($_GET['envoyer']  == 'Envoyer')
     {
         if (!empty($_GET['comment']))
         {
@@ -19,7 +16,7 @@
             $comment = $_GET['comment'];
             $req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
             $req_com->execute(array($id_post, $login, $comment));
-            header("Location: comment_like.php");
+            //header("Location: comment_like.php");
         } else {$ret = "Please enter a comment";}
     }
 
@@ -29,7 +26,6 @@
         $req_del_com = $bdd->prepare("DELETE FROM commentaires WHERE id = ?");
         $req_del_com->execute(array($com_id));
     }
-
 
     if ($_GET['like'] == "Like")
     {
@@ -55,8 +51,6 @@
         $update_nb_like = $bdd->prepare("UPDATE post SET nb_likes = ? WHERE id = ?");
         $update_nb_like->execute(array($j, $id_post));
     }
-    
-
     
     if ($_GET['like'] == "Dislike")
     {
