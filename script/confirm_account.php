@@ -7,16 +7,18 @@ $req_user->execute(array('login' => $login, 'key' => $key));
 $req_user = $bdd->prepare('SELECT 1 FROM users WHERE login = :login AND password = :key');
 $req_user->execute(array('login' => $login, 'key' => $key));
 if ($user_info = $req_user->fetch()) {
-	echo "Your account has been validate!";
+	$ret = "Your account has been validate!";
 }
 else
 {
-	echo "<p style='color:red'>A mistake occure please try again, your account hasn't been validate</p>";
+	$ret ="A mistake occure please try again, your account hasn't been validate";
 }
+echo $ret;
 
 ?>
-<script>
+<script language="JavaScript">
 setTimeout(function(){
-		document.location.href="index.php";
-		},2000);
+document.location.href="../index.php";
+}, 4000);
 </script>
+

@@ -1,5 +1,5 @@
 <?php
-    $db_name = "db_vquesnel";
+    $db_name = "Camagru";
     $bdd = new PDO("mysql:host=localhost", 'root', 'root');
     $create_bdd = "CREATE DATABASE IF NOT EXISTS ".$db_name." CHARACTER SET utf8";
     $bdd->prepare($create_bdd)->execute();
