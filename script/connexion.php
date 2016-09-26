@@ -15,7 +15,9 @@ if ($_POST['connect'] == "sign in")
 			$_SESSION['id'] = $user_info['id'];
 			$_SESSION['login'] = $user_info['login'];
 			$_SESSION['email'] = $user_info['email'];
-			header("Location: account.php?id=".$_SESSION['id']);
+			echo '<script language="javascript">
+				document.location.href="feed.php";
+</script>';
 		} else {$ret = "User not registred or wrong password <br/> Don't forget to check your email in order to confirm your account!";}
 	} else {$ret = "Please complete all the areas";}
 }
