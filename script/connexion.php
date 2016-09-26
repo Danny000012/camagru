@@ -56,7 +56,7 @@ function send_email($mail, $login, $mdp)
 	else
 		$passage_ligne = "\n";
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://localhost:8080/camagru/script/confirm_account.php?login=".$login."&key=".$mdp."'>Validation de votre compte</a></body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://localhost:8080/branche_web/Camagru/script/confirm_account.php?login=".$login."&key=".$mdp."'>Validation de votre compte</a></body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Validation du compte Camagru";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
