@@ -12,9 +12,8 @@
     while ($image_set[$i])
     {
         $encode_image = $image_set[$i]['image'];
-        $src = 'data: '.mime_content_type($encode_image).';base64,'.$encode_image;
         echo '<div class="post">';   
-        echo '<img src="'.$src.'">';   
+        echo '<img src="./photos/'.$encode_image.'">';
         echo '<div class="post-container">';
         echo '<div class="marks">';
         echo '<div class="num">'.$image_set[$i]['nb_likes'].'</div><img id="like" src="img/like.png">';

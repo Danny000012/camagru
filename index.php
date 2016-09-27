@@ -1,5 +1,6 @@
 <?PHP 
-    session_start();
+session_start();
+include 'config/setup.php';
 ?>
     <html>
     <head>
@@ -15,7 +16,7 @@
     <body>
         <div class="sign-bar">
             <img src="img/logme.png" alt="log-logo" width="90px">Welcome
-            <form method="POST" action="" id="sign_in">
+			   <form method="POST" action="" id="sign_in">
                 <div>Login</div>
                 <input class="input-bar" type="text" name="login2" />
                 <div>Password</div>

@@ -100,9 +100,8 @@
         if ($verif == 1)
         {
             $post = $req_image->fetch();
-            $src = 'data: '.mime_content_type($post['image']).';base64,'.$post['image'];
             echo '<div class="post">';   
-            echo '<img src="'.$src.'">';   
+            echo '<img src="./photos/'.$post['image'].'">';   
             echo '<div class="post-container">';
             echo '<div class="marks">';
             echo '<div class="num">'.$post['nb_likes'].'</div><img src="img/like.png">';
