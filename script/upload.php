@@ -1,7 +1,7 @@
 <?PHP
 session_start();
 define('TARGET', './photos');
-define('MAX_SIZE', 100000);
+define('MAX_SIZE', 50000000);
 $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 $valid_ext =array('jpg', 'gif', 'png', 'jpeg');
 $img_info = array();
@@ -52,7 +52,7 @@ if ($_POST['file'] == "upload"){
 		}
 	}
 	else {
-		$message = "Please fill all the areas";
+		$message = "Please select a file";
 	}
 }
 echo $message;

@@ -47,7 +47,6 @@
 								<div class="upload">
                                     <h2>Upload an image</h2>
                                     <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
-										<input type="hidden" name="MAX_SIZE" value="250000" />
 										<input type="file" name="image" />
                                         <br>
                                         <br>

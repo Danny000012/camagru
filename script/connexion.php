@@ -41,11 +41,12 @@ if (($_POST['inscription'] == "signup"))
 				{
 					$mdp = sha1(htmlentities($_POST['password']));
 					$mdp2 = sha1(htmlentities($_POST['confirmpassword']));
+					$token = sha1(uniqid());
 					if ($mdp == $mdp2)
 					{
-						$insert_user = $bdd->prepare("INSERT INTO users(login, confirmation, email, password) VALUES(?, 0, ?, ?)");
-						$insert_user->execute(array($login, $email, $mdp));
-						send_email($email, $login, $mdp2);
+						$insert_user = $bdd->prepare("INSERT INTO users(login,confirmation, email, password, token) VALUES(?, 0, ?, ?, ?)");
+						$insert_user->execute(array($login, $email, $mdp, $token));
+						send_email($email, $login, $token);
 						$ret = "Account create, check your email to confirm your account !";
 					} else {$ret = "Passwords doesn't match !";}
 				} else {$ret = "Password is too weak !";}
@@ -54,14 +55,14 @@ if (($_POST['inscription'] == "signup"))
 	} else {$ret = "Please complete all the areas.";}
 }
 
-function send_email($mail, $login, $mdp)
+function send_email($mail, $login, $token)
 {
 	if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
 		$passage_ligne = "\r\n";
 	else
 		$passage_ligne = "\n";
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour".$login."</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://localhost:8080/branche_web/Camagru/script/confirm_account.php?login=".$login."&key=".$mdp."'>Validation de votre compte</a></body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour".$login."</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://localhost:8080/branche_web/Camagru/script/confirm_account.php?login=".$login."&token=".$token."'>Validation de votre compte</a></body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Validation du compte Camagru";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
@@ -111,7 +112,6 @@ $etape1 = $point / $longueur;
 $etape2 = $point_min + $point_maj + $point_chiffre + $point_caracteres;
 $resultat = $etape1 * $etape2;
 $final = $resultat * $longueur;
-echo $final;
 if ($final >= 50)
 	return (1);
 else
