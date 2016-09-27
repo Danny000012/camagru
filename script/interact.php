@@ -15,11 +15,17 @@
             $login = $_SESSION['login'];
             $comment = $_GET['comment'];
             $req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
-            $req_com->execute(array($id_post, $login, $comment));
-            //header("Location: comment_like.php");
+			$req_com->execute(array($id_post, $login, $comment));
+			$find_user = $bdd->prepare("SELECT * FROM post WHERE id = ?");
+			$find_user->execute(array($id_post));
+			$post = $find_user->fetch();
+			$login_to_find = $post['login'];
+			$find_mail = $bdd->prepare("SELECT * FROM users WHERE login = ?");
+			$find_mail->execute(array($login_to_find));
+			$mail = $find_mail->fetch();
+			send_email($mail['email'], $login, $login_to_find);
         } else {$ret = "Please enter a comment";}
-    }
-
+	}
     if ($_GET['delete-com'])
     {
         $com_id = $_GET['delete-com'];
@@ -71,8 +77,8 @@
     }
     
     if ($_GET['delete-post'] == "Delete post")
-    {
-        $req_name = $bdd->prepare("SELECT * FROM post WHERE id = ?");
+	{
+	  	$req_name = $bdd->prepare("SELECT * FROM post WHERE id = ?");
         $req_name->execute(array($_SESSION[id_post]));
         $post = $req_name->fetch();
         unlink('./photos/'.$post['image']);
@@ -164,5 +170,34 @@
        
         } else {$ret = "This post was deleted, or dosen't exist";}
     } else {$ret = "Error when trying to find this post";}
-    echo $ret;
+	echo $ret;
+	
+	function send_email($mail, $login, $login_to_find)
+{
+	if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
+		$passage_ligne = "\r\n";
+	else
+		$passage_ligne = "\n";
+	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
+	$message_html = "<html><head></head><body><b>Bonjour".$login_to_find."</b><br/>Un nouveau commentaire vient d'etre ecrit par ".$login." sur une de vos photos!</body></html>";
+	$boundary = "-----=".md5(rand());
+	$sujet = "Commentaire photos";
+	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
+	$header.= "Reply-to: \"Camagru\" <camagru@42.fr>".$passage_ligne;
+	$header.= "MIME-Version: 1.0".$passage_ligne;
+	$header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+	$message = $passage_ligne."--".$boundary.$passage_ligne;
+	$message.= "Content-Type: text/plain; charset=\"UTF-8\"".$passage_ligne;
+	$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+	$message.= $passage_ligne.$message_txt.$passage_ligne;
+	$message.= $passage_ligne."--".$boundary.$passage_ligne;
+	$message.= "Content-Type: text/html; charset=\"UTF-8\"".$passage_ligne;
+	$message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
+	$message.= $passage_ligne.$message_html.$passage_ligne;
+	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
+	mail($mail,$sujet,$message,$header);
+}
+
+
 ?>
