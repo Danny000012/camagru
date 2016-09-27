@@ -8,7 +8,6 @@
     $req->execute(array($login));
     $image_set = $req->fetchAll();
     $i = 0;
-	print_r ($image_set);
     if (!$image_set)
     {
         echo '<br>';
