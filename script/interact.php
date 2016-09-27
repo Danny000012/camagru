@@ -72,6 +72,10 @@
     
     if ($_GET['delete-post'] == "Delete post")
     {
+        $req_name = $bdd->prepare("SELECT * FROM post WHERE id = ?");
+        $req_name->execute(array($_SESSION[id_post]));
+        $post = $req_name->fetch();
+        unlink('./photos/'.$post['image']);
         $req_delete_post = $bdd->prepare("DELETE FROM post WHERE id = ?");
         $req_delete_post->execute(array($_SESSION['id_post']));
         $req_delete_com = $bdd->prepare("DELETE FROM commentaires WHERE id_post = ?");
