@@ -33,15 +33,21 @@ if ($_POST['reset'] == "Change email")
     {
         $newemail = $_POST['newemail'];
         $conf = $_POST['confirmnewemail'];
-        $req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
+	        $req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
         $req_user->execute(array($_SESSION['id']));
         $user_info = $req_user->fetch();
         if ($newemail == $conf)
         {
-            $insert_new_email = $bdd->prepare("UPDATE users SET email = ? WHERE id = ?");
-            $insert_new_email->execute(array($conf, $_SESSION['id']));
-            $_SESSION['email'] = $conf;
-            header("Location: reset_email.php");            
+            $check_emails = $bdd->prepare("SELECT * FROM users WHERE email = ?");
+			$check_emails->execute(array($conf));
+			$valid = $check_emails->rowCount();
+			if (!$valid) 
+			{
+				$insert_new_email = $bdd->prepare("UPDATE users SET email = ? WHERE id = ?");
+				$insert_new_email->execute(array($conf, $_SESSION['id']));
+				 $_SESSION['email'] = $conf;
+				 header("Location: reset_email.php");
+			} else {$ret = "Email already use by another account";}
         } else {$ret = "Emails dosen't match<br>";}
     } else {$ret = "Please type all the areas";}
 }

@@ -1,4 +1,6 @@
 <?php
+include 'script/security.php';
+session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 $login = (isset($_GET["login"])) ? htmlentities($_GET["login"]) : NULL;
 $token = (isset($_GET["token"])) ? htmlentities($_GET["token"]) : NULL;
