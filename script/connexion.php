@@ -36,19 +36,22 @@ if (($_POST['inscription'] == "signup"))
 		if ($login_exist == 0)
 		{    
 			if ($email_exist == 0)
-			{
-				$mdp = sha1(htmlentities($_POST['password']));
-				$mdp2 = sha1(htmlentities($_POST['confirmpassword']));
-				if ($mdp == $mdp2)
+			{	
+				if (testpassword($_POST['password']))
 				{
-					$insert_user = $bdd->prepare("INSERT INTO users(login, confirmation, email, password) VALUES(?, 0, ?, ?)");
-					$insert_user->execute(array($login, $email, $mdp));
-					send_email($email, $login, $mdp2);
-					$ret = "Account create, check your email to confirm your account !";          
-				} else {$ret = "Passwords doesn't match !";}
-			} else {$ret = "This email is already registred";}
-		} else {$ret = "This login is already used, please try another one";}
-	} else {$ret = "Please complete all the areas";}
+					$mdp = sha1(htmlentities($_POST['password']));
+					$mdp2 = sha1(htmlentities($_POST['confirmpassword']));
+					if ($mdp == $mdp2)
+					{
+						$insert_user = $bdd->prepare("INSERT INTO users(login, confirmation, email, password) VALUES(?, 0, ?, ?)");
+						$insert_user->execute(array($login, $email, $mdp));
+						send_email($email, $login, $mdp2);
+						$ret = "Account create, check your email to confirm your account !";
+					} else {$ret = "Passwords doesn't match !";}
+				} else {$ret = "Password is too weak !";}
+			} else {$ret = "This email is already registred.";}
+		} else {$ret = "This login is already used, please try another one.";}
+	} else {$ret = "Please complete all the areas.";}
 }
 
 function send_email($mail, $login, $mdp)
@@ -76,5 +79,42 @@ function send_email($mail, $login, $mdp)
 	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 	mail($mail,$sujet,$message,$header);
+}
+
+function testpassword($mdp)	
+{
+$longueur = strlen($mdp);
+if ($longueur >= 5) {
+	for($i = 0; $i < $longueur; $i++) 	{
+		$lettre = $mdp[$i];
+		if ($lettre>='a' && $lettre<='z'){
+			$point = $point + 1;
+			$point_min = 1;
+		}
+		else if ($lettre>='A' && $lettre <='Z'){
+			$point = $point + 2;
+			$point_maj = 2;
+		}
+		else if ($lettre>='0' && $lettre<='9'){
+			$point = $point + 3;
+			$point_chiffre = 3;
+		}
+		else {
+			$point = $point + 5;
+			$point_caracteres = 5;
+		}
+	}
+}
+else 
+	return (0);
+$etape1 = $point / $longueur;
+$etape2 = $point_min + $point_maj + $point_chiffre + $point_caracteres;
+$resultat = $etape1 * $etape2;
+$final = $resultat * $longueur;
+echo $final;
+if ($final >= 50)
+	return (1);
+else
+	return (0);
 }
 ?>
