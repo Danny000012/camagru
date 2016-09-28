@@ -35,6 +35,8 @@
     width: 960px;
     margin-top: 5%;
     background: #252525;
+    display: inline-flex;
+    flex-flow: row-reverse;
     text-align: left;
 }
 

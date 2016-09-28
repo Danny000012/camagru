@@ -56,3 +56,67 @@ h2 {
 .upload-boutton:hover {
     background: rgb(225, 82, 85);
 }
+
+.selector {
+    width: 200px;
+    height: 785px;
+    background: #424242;
+    margin-right: 15px;
+    overflow: scroll;
+}
+
+.selector input {
+    border: none;
+    width: 200px;
+    height: 40px;
+    color: white;
+    background: #505050;
+    font-size: 15px;
+}
+
+.selector input:hover {
+    background: rgb(225, 82, 85);
+}
+
+.selector, .hud {
+    display: inline-block;
+    vertical-align: top;
+    
+}
+
+.collage-item {
+    width: 120px;
+    padding: 20px;
+}
+
+.collage-item img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+    .selector {
+        height: 200px;
+        width: 640px;
+        margin-right: 0;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    
+    .collage-item {
+        display: inline-block;
+        width: 120px;
+    }
+    
+    .pkg {
+        height: 180px;
+        width: 200px;
+        background: #606060;
+        display: inline-block;
+    }
+    
+    .pkg input {
+        display: block;
+    }
+}

@@ -36,7 +36,54 @@
                         <div class="container" align="center" onClick="hide()">
                             <div class="separator"></div>
 
-
+                            <div class="selector">
+                                <form method="get">
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/1.png"></div>
+                                        <input type="submit" name="plane" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/2.png"></div>
+                                        <input type="submit" name="maillot" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/3.png"></div>
+                                        <input type="submit" name="bird" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/4.png"></div>
+                                        <input type="submit" name="medal" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/5.png"></div>
+                                        <input type="submit" name="cup" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/6.png"></div>
+                                        <input type="submit" name="diamond" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/7.png"></div>
+                                        <input type="submit" name="donut" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/8.png"></div>
+                                        <input type="submit" name="eye" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/9.png"></div>
+                                        <input type="submit" name="egg" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/10.png"></div>
+                                        <input type="submit" name="game" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/11.png"></div>
+                                        <input type="submit" name="gift" value="select"/>
+                                    </div>
+                                </form>
+                            </div>
                             <div class="hud">
                                 <video autoplay="true" id="videoElement">
 
@@ -44,19 +91,21 @@
                                 <div class="menu-cam">
                                     <a href="#" type="button"><img src="img/cam.png" alt="camera>" class="img-logo"></a>
                                 </div>
-								<div class="upload">
+                                <div class="upload">
                                     <h2>Upload an image</h2>
                                     <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
-										<input type="file" name="image" />
+                                        <input type="file" name="image" />
                                         <br>
                                         <br>
-										<input type="submit" name="file" value="upload" class="upload-boutton" />
-									 </form>
-								<?php
+                                        <input type="submit" name="file" value="upload" class="upload-boutton" />
+                                    </form>
+                                    <?php
 									include 'script/upload.php';
 								?>
                                 </div>
                             </div>
+                            
+
 
                             <div class="separator"></div>
                         </div>
