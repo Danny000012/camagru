@@ -60,11 +60,10 @@ h2 {
 .upload-boutton:hover {
     background: rgb(225, 82, 85);
 }
-<<<<<<< HEAD
 
 .selector {
     width: 200px;
-    height: 785px;
+    height: 832px;
     background: #424242;
     margin-right: 15px;
     overflow: scroll;
@@ -101,7 +100,7 @@ h2 {
 @media only screen and (max-width: 900px) {
     .selector {
         height: 200px;
-        width: 640px;
+        width: 700px;
         margin-right: 0;
         margin-bottom: 15px;
         overflow-y: hidden;
@@ -125,5 +124,4 @@ h2 {
         display: block;
     }
 }
-=======
->>>>>>> 17141269ac4ce7861a452bde5d62e0cb105b392e
+
