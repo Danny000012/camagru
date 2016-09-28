@@ -22,16 +22,21 @@
     color: white;
 }
 
-#videoElement {
+#video {
+	display: block;
     width: 100%;
     max-width: 700px;
     background-color: #666;
 }
 
-#videoElement:after {
+#video:after {
     content: "";
     display: block;
     padding-bottom: 100%;
+}
+
+#canvas {
+	display: none;
 }
 
 .upload {

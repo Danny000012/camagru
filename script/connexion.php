@@ -16,7 +16,7 @@ if ($_POST['connect'] == "sign in")
 			$_SESSION['login'] = $user_info['login'];
 			$_SESSION['email'] = $user_info['email'];
 			echo '<script language="javascript">
-				document.location.href="feed.php";
+				document.location.href="post.php";
 </script>';
 		} else {$ret = "User not registred or wrong password <br/> Don't forget to check your email in order to confirm your account!";}
 	} else {$ret = "Please complete all the areas";}

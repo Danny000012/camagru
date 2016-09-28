@@ -38,12 +38,14 @@
 
 
                             <div class="hud">
-                                <video autoplay="true" id="videoElement">
-
-                                </video>
-                                <div class="menu-cam">
-                                    <a href="#" type="button"><img src="img/cam.png" alt="camera>" class="img-logo"></a>
-                                </div>
+								<video id="video"></video>
+								<canvas id="canvas"></canvas>
+								<div class="menu-cam">
+									<a id="startbutton" type="button"><img src="img/cam.png" alt="camera" class="img-logo"></a>
+									<a href="post.php" type="button"><img src="img/garbage.png" alt="camera" class="img-logo"></a>
+									<a id="cancel montage" type="button"><img src="img/flag.jpg" alt="camera" class="img-logo"></a>
+								</div>
+							</div>
 								<div class="upload">
                                     <h2>Upload an image</h2>
                                     <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
