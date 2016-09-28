@@ -40,71 +40,71 @@
                                 <form method="get">
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/1.png"></div>
-                                        <input type="submit" name="plane" value="select"/>
+                                        <input type="submit" name="plane" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/2.png"></div>
-                                        <input type="submit" name="maillot" value="select"/>
+                                        <input type="submit" name="maillot" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/3.png"></div>
-                                        <input type="submit" name="bird" value="select"/>
+                                        <input type="submit" name="bird" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/4.png"></div>
-                                        <input type="submit" name="medal" value="select"/>
+                                        <input type="submit" name="medal" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/5.png"></div>
-                                        <input type="submit" name="cup" value="select"/>
+                                        <input type="submit" name="cup" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/6.png"></div>
-                                        <input type="submit" name="diamond" value="select"/>
+                                        <input type="submit" name="diamond" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/7.png"></div>
-                                        <input type="submit" name="donut" value="select"/>
+                                        <input type="submit" name="donut" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/8.png"></div>
-                                        <input type="submit" name="eye" value="select"/>
+                                        <input type="submit" name="eye" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/9.png"></div>
-                                        <input type="submit" name="egg" value="select"/>
+                                        <input type="submit" name="egg" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/10.png"></div>
-                                        <input type="submit" name="game" value="select"/>
+                                        <input type="submit" name="game" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/11.png"></div>
-                                        <input type="submit" name="gift" value="select"/>
+                                        <input type="submit" name="gift" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/12.png"></div>
-                                        <input type="submit" name="heart" value="select"/>
+                                        <input type="submit" name="heart" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/13.png"></div>
-                                        <input type="submit" name="flotter" value="select"/>
+                                        <input type="submit" name="flotter" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/14.png"></div>
-                                        <input type="submit" name="champion" value="select"/>
+                                        <input type="submit" name="champion" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/15.png"></div>
-                                        <input type="submit" name="speaker" value="select"/>
+                                        <input type="submit" name="speaker" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/16.png"></div>
-                                        <input type="submit" name="hat" value="select"/>
+                                        <input type="submit" name="hat" value="Select"/>
                                     </div>
                                     <div class="pkg">
                                         <div class="collage-item"><img src="contents/17.png"></div>
-                                        <input type="submit" name="spaceship" value="select"/>
+                                        <input type="submit" name="spaceship" value="Select"/>
                                     </div>
                                 </form>
                             </div>
@@ -112,9 +112,10 @@
 								<video id="video"></video>
 								<canvas id="canvas"></canvas>
 								<div class="menu-cam">
-									<a id="startbutton" type="button"><img src="img/cam.png" alt="camera" class="img-logo"></a>
-									<a href="post.php" type="button"><img src="img/garbage.png" alt="camera" class="img-logo"></a>
-									<a id="cancel montage" type="button"><img src="img/flag.jpg" alt="camera" class="img-logo"></a>
+									<a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo"></a>
+									<a href="post.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
+									<a id="cancel montage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
+                                    <a id="finish"><img src="img/check.png" class="img-logo"></a>
 								</div>
 								<div class="upload">
                                     <h2>Upload an image</h2>

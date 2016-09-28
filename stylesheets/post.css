@@ -9,6 +9,16 @@
 .img-logo {
     width: 46px;
     padding-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menu-cam img:hover {
+    filter: invert();
+    -webkit-filter: invert();
+    -moz-filter: invert();
+    -ms-filter: invert();
+    -o-filter: invert();
 }
 
 .tape {
