@@ -85,6 +85,7 @@
                                 </form>
                             </div>
                             <div class="hud">
+<<<<<<< HEAD
                                 <video autoplay="true" id="videoElement">
 
                                 </video>
@@ -92,6 +93,17 @@
                                     <a href="#" type="button"><img src="img/cam.png" alt="camera>" class="img-logo"></a>
                                 </div>
                                 <div class="upload">
+=======
+								<video id="video"></video>
+								<canvas id="canvas"></canvas>
+								<div class="menu-cam">
+									<a id="startbutton" type="button"><img src="img/cam.png" alt="camera" class="img-logo"></a>
+									<a href="post.php" type="button"><img src="img/garbage.png" alt="camera" class="img-logo"></a>
+									<a id="cancel montage" type="button"><img src="img/flag.jpg" alt="camera" class="img-logo"></a>
+								</div>
+							</div>
+								<div class="upload">
+>>>>>>> 17141269ac4ce7861a452bde5d62e0cb105b392e
                                     <h2>Upload an image</h2>
                                     <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
                                         <input type="file" name="image" />

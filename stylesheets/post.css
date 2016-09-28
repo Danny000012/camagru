@@ -22,16 +22,20 @@
     color: white;
 }
 
-#videoElement {
-    width: 100%;
+#video {
+	display: block;
     max-width: 700px;
     background-color: #666;
 }
 
-#videoElement:after {
+#video:after {
     content: "";
     display: block;
     padding-bottom: 100%;
+}
+
+#canvas {
+	display: none;
 }
 
 .upload {
@@ -56,6 +60,7 @@ h2 {
 .upload-boutton:hover {
     background: rgb(225, 82, 85);
 }
+<<<<<<< HEAD
 
 .selector {
     width: 200px;
@@ -120,3 +125,5 @@ h2 {
         display: block;
     }
 }
+=======
+>>>>>>> 17141269ac4ce7861a452bde5d62e0cb105b392e

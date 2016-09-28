@@ -28,12 +28,18 @@
                             <div class="item">Login</div>
                             <input style="text-align:center;" class="input" type="text" name="login" />
                             <br>
-                            <div class="item">email</div>
-                            <input style="text-align:center;" class="input" type="email" name="email" />
+                            <div class="item">Old password</div>
+                            <input style="text-align:center;" class="input" type="password" name="oldpassword" />
+                            <br>
+                            <div class="item">New passord</div>
+                            <input style="text-align:center;" class="input" type="password" name="newpassword" />
+                            <br>
+                            <div class="item">Confimation</div>
+                            <input style="text-align:center;" class="input" type="password" name="confirmnewpassword" />
                             <br>
                             <div align="center">
                                 <div>
-                                    <input type="submit" name="button" value="Send mail" class="button" />
+                                    <input type="submit" name="button" value="Change password" class="button" />
                                 </div>
                             </div>
                         </form>
