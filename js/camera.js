@@ -6,7 +6,7 @@ cover        = document.querySelector('#cover'),
 canvas       = document.querySelector('#canvas'),
 startbutton  = document.querySelector('#startbutton'),
 width = 700,
-height = 0;
+height = 220;
 
 navigator.getMedia = ( navigator.getUserMedia ||
 	navigator.webkitGetUserMedia ||
@@ -16,7 +16,7 @@ navigator.getMedia = ( navigator.getUserMedia ||
 navigator.getMedia(
 	{
 		video: true,
-	audio: false
+		audio: false
 	},
 	function(stream) {
 		if (navigator.mozGetUserMedia) {
