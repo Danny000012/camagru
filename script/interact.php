@@ -179,7 +179,7 @@
 	else
 		$passage_ligne = "\n";
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour".$login_to_find."</b><br/>Un nouveau commentaire vient d'etre ecrit par ".$login." sur une de vos photos!</body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour ".$login_to_find.",</b><br/>Un nouveau commentaire vient d'etre ecrit par ".$login." sur une de vos photos!</body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Commentaire photo";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
