@@ -181,7 +181,7 @@
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
 	$message_html = "<html><head></head><body><b>Bonjour".$login_to_find."</b><br/>Un nouveau commentaire vient d'etre ecrit par ".$login." sur une de vos photos!</body></html>";
 	$boundary = "-----=".md5(rand());
-	$sujet = "Commentaire photos";
+	$sujet = "Commentaire photo";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
 	$header.= "Reply-to: \"Camagru\" <camagru@42.fr>".$passage_ligne;
 	$header.= "MIME-Version: 1.0".$passage_ligne;
