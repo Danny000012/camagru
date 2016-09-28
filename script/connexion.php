@@ -25,8 +25,8 @@ if (($_POST['inscription'] == "signup"))
 {
 	if (!empty($_POST['login']) AND !empty($_POST['email']) AND !empty($_POST['password']) AND !empty($_POST['confirmpassword']))
 	{
-		$login = htmlentities($_POST['login']);
-		$email = htmlentities($_POST['email']);
+		$login = trim(htmlentities($_POST['login']));
+		$email = trim(htmlentities($_POST['email']));
 		$check_email = $bdd->prepare("SELECT * FROM users WHERE email= ?");
 		$check_email->execute(array($email));
 		$email_exist =$check_email->rowCount();
