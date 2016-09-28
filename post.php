@@ -82,6 +82,30 @@
                                         <div class="collage-item"><img src="contents/11.png"></div>
                                         <input type="submit" name="gift" value="select"/>
                                     </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/12.png"></div>
+                                        <input type="submit" name="heart" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/13.png"></div>
+                                        <input type="submit" name="flotter" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/14.png"></div>
+                                        <input type="submit" name="champion" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/15.png"></div>
+                                        <input type="submit" name="speaker" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/16.png"></div>
+                                        <input type="submit" name="hat" value="select"/>
+                                    </div>
+                                    <div class="pkg">
+                                        <div class="collage-item"><img src="contents/17.png"></div>
+                                        <input type="submit" name="spaceship" value="select"/>
+                                    </div>
                                 </form>
                             </div>
                             <div class="hud">
