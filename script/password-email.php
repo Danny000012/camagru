@@ -47,7 +47,7 @@ if ($_POST['reset'] == "Change email")
 				$insert_new_email->execute(array($conf, $_SESSION['id']));
 				 $_SESSION['email'] = $conf;
 				 header("Location: reset_email.php");
-			} else {$ret = "Email already use by another account";}
+			} else {$ret = "Email already used by another account";}
         } else {$ret = "Emails dosen't match<br>";}
     } else {$ret = "Please type all the areas";}
 }
