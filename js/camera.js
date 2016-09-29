@@ -4,6 +4,8 @@
 video        = document.querySelector('#video'),
 cover        = document.querySelector('#cover'),
 canvas       = document.querySelector('#canvas'),
+photo       = document.querySelector('#photo'),
+test       = document.querySelector('#test'),
 startbutton  = document.querySelector('#startbutton'),
 deletebutton  = document.querySelector('#deletebutton'),
 finish  = document.querySelector('#finish'),
@@ -50,8 +52,6 @@ function takepicture() {
 	canvas.width = width;
 	canvas.height = height;
 	canvas.getContext('2d').drawImage(video, 0, 0, width, height);
-	var data = canvas.toDataURL('image/png');
-	console.log(data);
 }
 
 startbutton.addEventListener('click', function(ev){
@@ -68,9 +68,10 @@ deletebutton.addEventListener('click', function(ev){
 }, false);
 
 finish.addEventListener('click', function(ev){
-// fonction pour enregistrer la photos dans ./photos comme dans le formulaire upload.php
+//fonction pour enregistrer la photos dans ./photos comme dans le formulaire upload.php
 // trouver en js fonction desencode base 64 puis uniqid() et move uploaded file
-
-
+		var data = canvas.toDataURL('image/png');
+		photo.setAttribute('src', data);
+		test.setAttribute('value', data);
 }, false);
 })();

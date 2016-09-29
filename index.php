@@ -62,6 +62,5 @@ include 'config/setup.php';
             </div>
 
         </div>
-        <script language="javascript" src="js/style.js"></script>
     </body>
     </html>
