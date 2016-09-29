@@ -10,6 +10,7 @@ $extension = '';
 $message = '';
 $img_name = '';
 $date = date ('d/m/Y');
+$posix = date ('d/m/Y H:i:s');
 if (!is_dir(TARGET)) {
 	if ( !mkdir(TARGET, 0755)){
 		exit("Problem with the repertory");
@@ -26,8 +27,8 @@ if (!empty($_FILES['image']['name']))
 					$img_name = md5(uniqid()).'.'.$extension;
 					if (move_uploaded_file($_FILES['image']['tmp_name'], './photos/'.$img_name)) {
 						$message = "Upload suceed";
-						$req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
-						$req->execute(array($login, $img_name, $date));
+						$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
+						$req->execute(array($login, $img_name, $date, $posix));
 					}
 					else {
 						$message = "Upload failed";
@@ -57,8 +58,8 @@ else if (isset($_POST['test']) && $_POST['test'] != "") {
 	file_put_contents( './photos/' .$image_name, $data);
 	$im = imagecreatefrompng('./photos/' .$image_name);
 	imagepng($im, './photos/'.$image_name);
-	$req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
-	$req->execute(array($login, $image_name, $date));
+	$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
+	$req->execute(array($login, $image_name, $date, $posix));
 	$message= "Upload suceed";
 }
 else {
