@@ -5,8 +5,8 @@ if ($_POST['button'] == "Send mail")
 	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 	if (!empty($_POST['login']) AND !empty($_POST['email']))
 	{
-		$login = $_POST['login'];
-		$email = $_POST['email'];
+		$login = htmlentities($_POST['login']);
+		$email = htmlentities($_POST['email']);
 		$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
 		$req_user->execute(array($_SESSION['id']));
 		$user_info = $req_user->fetch();
@@ -26,10 +26,10 @@ if ($_POST['button'] == "Change password")
 	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 	if (!empty($_POST['login']) AND !empty($_POST['oldpassword']) AND !empty($_POST['newpassword']) AND !empty($_POST['confirmnewpassword']))
 	{
-		$login = $_POST['login'];
-		$oldpassword = sha1($_POST['oldpassword']);
-		$newpassword = sha1($_POST['newpassword']);
-		$conf = sha1($_POST['confirmnewpassword']);
+		$login = htmlentities($_POST['login']);
+		$oldpassword = sha1(htmlentities($_POST['oldpassword']));
+		$newpassword = sha1(htmlentities($_POST['newpassword']));
+		$conf = sha1(htmlentities($_POST['confirmnewpassword']));
 		$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
 		$req_user->execute(array($_SESSION['id']));
 		$user_info = $req_user->fetch();
@@ -53,8 +53,8 @@ if ($_POST['reset'] == "Change email")
 	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 	if (!empty($_POST['newemail']) AND !empty($_POST['confirmnewemail']))
 	{
-		$newemail = $_POST['newemail'];
-		$conf = $_POST['confirmnewemail'];
+		$newemail = htmlentities($_POST['newemail']);
+		$conf = htmlentities($_POST['confirmnewemail']);
 		$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
 		$req_user->execute(array($_SESSION['id']));
 		$user_info = $req_user->fetch();

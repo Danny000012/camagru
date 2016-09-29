@@ -4,11 +4,15 @@
         {
             if ($_GET['confirm-email'] == $_SESSION['email'])
             {
-                $email = $_GET['confirm-email'];
+                $password = sha1(htmlentities($_GET['password']));
+				$email = htmlentities($_GET['confirm-email']);
+
                 $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
-               
-                
-                $req_delete_account = $bdd->prepare("DELETE FROM users WHERE login = ?");
+				$check_pw = $bdd->prepare("SELECT password FROM users WHERE login = ?");
+				$check_pw->execute(array($_SESSION['login']));
+				$verif = $check_pw->fetch();
+                if ($verif['password'] === $password) {
+				$req_delete_account = $bdd->prepare("DELETE FROM users WHERE login = ?");
                 $req_delete_account->execute(array($_SESSION['login']));
                 
                 $req_delete_post = $bdd->prepare("DELETE FROM post WHERE login = ?");
@@ -21,9 +25,9 @@
                 $req_delete_com->execute(array($_SESSION['login']));
                 
                 $ret =  '<div class="deleted">Account deleted</div>';
-                $salam =  '<br><br><a href="../logout.php">Finish</a>';
+				} else {$ret = '<div class="not-deleted">You made a mistake with your password try again.</div>';}
             } else {$ret = '<div class="not-deleted">The email you enter is not matching with the one registred to your account.<br>
-            If you don\'t remeber it you can find it on your account\'s page, just by clicking on change email';} 
+            If you don\'t remeber it you can find it on your account\'s page, just by clicking on change email</div>';} 
         }
    
 ?>
@@ -32,22 +36,31 @@
     <head>
         <link href="../stylesheets/menu.css" rel="stylesheet">
         <link href="../stylesheets/delete.css" rel="stylesheet">
-    </hea>
+    </head>
     <body>
         <div class="separator"></div>
         <center>
             <img src="../img/homelogo.png" alt="camagru's-logo" width="300px">
             <h6>Please type your mail to confirm your request :</h6>
         <form method="get" action="">
-            <input type="email" name="confirm-email" class="conf-email" />
-            <input type="submit" name="confirmed" value="confirmation" class="confirm"/>
+		<div class="item">Email</div>
+            <input style="text-align:center;" type="email" name="confirm-email" class="input" />
+		<div class="item">Password</div>
+		<input style="text-align:center;" class="input" type="password" name="password" />
+		<br>
+		<br>
+		<input type="submit" name="confirmed" value="confirmation" class="button"/>
         </form>
             <?php
                 echo $ret;
-                if ($ret[21] == 'A')
+                if (strlen($ret) === 42)
                 {
-                    echo $salam."<br><br><br>";
                     echo '<div class="come-back">It was a pleasure to have you aside us, come back when you wanted to. <br>Best regards, Camagru\'s team.</div>';
+					echo '<script language="javascript">
+							setTimeout(function(){
+							document.location.href="../logout.php";
+							}, 3000);
+							</script>';
                 }
             ?>
         <div class="separator"></div>

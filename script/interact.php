@@ -13,7 +13,7 @@
         {
             $id_post = $_SESSION['id_post'];
             $login = $_SESSION['login'];
-            $comment = $_GET['comment'];
+            $comment = htmlentities($_GET['comment']);
             $req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
 			$req_com->execute(array($id_post, $login, $comment));
 			$find_user = $bdd->prepare("SELECT * FROM post WHERE id = ?");

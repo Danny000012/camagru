@@ -113,7 +113,7 @@
 								<canvas id="canvas"></canvas>
 								<div class="menu-cam">
 									<a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo"></a>
-									<a href="post.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
+									<a id="deletebutton"><img src="img/erase.png" alt="camera" class="img-logo"></a>
 									<a id="cancel montage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
                                     <a id="finish"><img src="img/check.png" class="img-logo"></a>
 								</div>
