@@ -20,7 +20,7 @@ navigator.getMedia = ( navigator.getUserMedia ||
 navigator.getMedia(
 	{
 		video: true,
-		audio: false
+	audio: false
 	},
 	function(stream) {
 		if (navigator.mozGetUserMedia) {
@@ -68,10 +68,14 @@ deletebutton.addEventListener('click', function(ev){
 }, false);
 
 finish.addEventListener('click', function(ev){
-//fonction pour enregistrer la photos dans ./photos comme dans le formulaire upload.php
-// trouver en js fonction desencode base 64 puis uniqid() et move uploaded file
-		var data = canvas.toDataURL('image/png');
+	//fonction pour enregistrer la photos dans ./photos comme dans le formulaire upload.php
+	// trouver en js fonction desencode base 64 puis uniqid() et move uploaded file
+	var data = canvas.toDataURL('image/png');
+	var check = document.getElementById("video").getAttribute("style");
+	console.log(check);
+	if (check == "display:none") {
 		photo.setAttribute('src', data);
 		test.setAttribute('value', data);
+	}
 }, false);
 })();

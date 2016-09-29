@@ -15,58 +15,54 @@ if (!is_dir(TARGET)) {
 		exit("Problem with the repertory");
 	}
 }
-
-if ($_POST['file'] == "upload"){
-	if (!empty($_FILES['image']['name']))
-	{
-		$extension= pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
-		if (in_array(strtolower($extension), $valid_ext)) {
-			$img_info = getimagesize($_FILES['image']['tmp_name']);
-			if ($img_info[2] >= 1 && $img_info[2] <= 14) {
-				if ($_FILES['image']['size'] <= MAX_SIZE) {
-					if(isset($_FILES['image']['error']) && UPLOAD_ERR_OK === $_FILES['image']['error']) {
-						$img_name = md5(uniqid()).'.'.$extension;
-						if (move_uploaded_file($_FILES['image']['tmp_name'], './photos/'.$img_name)) {
-							$message = "Upload suceed";
-							$req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
-							$req->execute(array($login, $img_name, $date));
-						}
-						else {
-							$message = "Upload failed";
-						}
+if (!empty($_FILES['image']['name']))
+{
+	$extension= pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+	if (in_array(strtolower($extension), $valid_ext)) {
+		$img_info = getimagesize($_FILES['image']['tmp_name']);
+		if ($img_info[2] >= 1 && $img_info[2] <= 14) {
+			if ($_FILES['image']['size'] <= MAX_SIZE) {
+				if(isset($_FILES['image']['error']) && UPLOAD_ERR_OK === $_FILES['image']['error']) {
+					$img_name = md5(uniqid()).'.'.$extension;
+					if (move_uploaded_file($_FILES['image']['tmp_name'], './photos/'.$img_name)) {
+						$message = "Upload suceed";
+						$req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
+						$req->execute(array($login, $img_name, $date));
 					}
 					else {
-						$message = "Mistake happenned when uploading the file";
+						$message = "Upload failed";
 					}
 				}
 				else {
-					$message = "File is too big for us sorry";
+					$message = "Mistake happenned when uploading the file";
 				}
 			}
 			else {
-				$message = " File isn't an image";
+				$message = "File is too big for us sorry";
 			}
 		}
 		else {
-			$message = "Wrong extension";
+			$message = " File isn't an image";
 		}
 	}
 	else {
-		$message = "Please select a file";
+		$message = "Wrong extension";
 	}
 }
-
-if (isset($_POST['test']) && $_POST['test'] != "") {
-	print('bob');
+else if (isset($_POST['test']) && $_POST['test'] != "") {
 	list($type, $data) = explode(';', $_POST['test']);
 	list(, $data) = explode(',', $data);
 	$data = base64_decode($data);
-	file_put_contents( TARGET .'/tmp1.png', $data);
-	$im = imagecreatefrompng(TARGET .'/tmp1.png');
 	$image_name = md5(uniqid()).'.png';
+	file_put_contents( './photos/' .$image_name, $data);
+	$im = imagecreatefrompng('./photos/' .$image_name);
+	imagepng($im, './photos/'.$image_name);
 	$req = $bdd->prepare("INSERT INTO post(login, image, date_post) VALUES(?, ?, ?)");
 	$req->execute(array($login, $image_name, $date));
-	$message= "test ok";
+	$message= "Upload suceed";
+}
+else {
+	$message = "Please select a file";
 }
 echo $message;
 ?>

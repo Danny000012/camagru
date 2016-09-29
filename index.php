@@ -25,17 +25,17 @@ include 'config/setup.php';
             </form>
         </div>
         <div class="site-content" id="site-content">
-            <div class="site-cache" id="site-cache" onClick="hide()">
-                <div class="container" align="center" onClick="hide()">
+            <div class="site-cache" id="site-cache">
+                <div class="container" align="center">
                     <div class="separator"></div>
                     <div class="welcome">
                         <p class="warm-welcome">New to Camagru ?
                             <br>Create your account here</p>
                         <img src="img/homelogo.png" alt="homelogo">
                     </div>
-                    <div class="form-content" onClick="hide()">
+                    <div class="form-content">
                         <img text-align="center" src="img/user.png" alt="user_logo" class="img_form">
-                        <form align="center" method="POST" action="" class="form" onClick="hide()">
+                        <form align="center" method="POST" action="" class="form">
                             <div class="item">Login</div>
                             <input style="text-align:center;" class="input" type="text" name="login" />
                             <div class="item">Email</div>

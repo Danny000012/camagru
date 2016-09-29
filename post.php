@@ -26,7 +26,7 @@
                         <div class="a0" class="fix"></div>
                         <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
                             <a href="my_gallery.php" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
-                            <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
+                            <Ma?	a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
                             <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png"></a>
                             <a href="logout.php" class="a2"><img class="logo-menu" src="img/logout.png"></a>
                     </nav>
@@ -121,11 +121,11 @@
 								<div class="upload">
                                     <h2>Upload an image</h2>
                                 <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
-                                        <input id="file" type="file" name="image" />
+                                        <input id="file" type="file" name="image">
 										<br>
-										<input id="test" type="file" name="test" style="display:block" value="">
+										<input id="test" type="hidden" name="test"  value="">
                                         <br>
-                                        <input type="submit" name="file" value="upload" class="upload-boutton" />
+                                        <button type="submit"  class="upload-boutton" />Upload</button>
                                     </form>
                                     <?php
 									include 'script/upload.php';
