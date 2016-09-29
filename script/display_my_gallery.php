@@ -11,9 +11,10 @@
     if (!$image_set)
     {
         echo '<br>';
-        echo '<center><h4>Your gallery is empty</h4></center>';
+		echo '<div style="vertical-align:middle;">';
+		echo '<h4>Your gallery is empty</h4>';
         echo '<br><br>';
-        echo '<center><img src="img/sad.png" alt="sad face" class="sad-face"></center>';
+        echo '<img src="img/sad.png" alt="sad face" class="sad-face"></div>';
         echo '<br><br>';
         echo '<style> .feed {background-color: transparent;} .sad-face { filter: invert(); -webkit-filter: invert(); -moz-filter: invert(); -ms-filter: invert(); -o-filter: invert();} </style>';
     }

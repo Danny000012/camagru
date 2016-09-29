@@ -18,10 +18,10 @@
     <body>
 
         <div class="site-content">
-            <div class="site-cache" id="site-cache" onClick="hide()">
-                <div class="container" align="center" onClick="hide()">
+            <div class="site-cache" id="site-cache">
+                <div class="container" align="center">
 
-                    <div class="form-content" onClick="hide()">
+                    <div class="form-content">
                         <img text-align="center" src="img/locked.png" alt="user_logo" class="img_form">
                         <div class="title" align="center">Modify email</div>
                         <?php
