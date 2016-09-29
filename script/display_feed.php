@@ -3,7 +3,7 @@
     $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
     $login = $_SESSION['login'];
      
-    $req = $bdd->prepare("SELECT * FROM post");
+    $req = $bdd->prepare("SELECT * FROM post ORDER BY posix DESc");
 
     $req->execute(array($login));
       
