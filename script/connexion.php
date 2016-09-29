@@ -42,14 +42,17 @@ if (($_POST['inscription'] == "signup"))
 					$mdp = sha1(htmlentities($_POST['password']));
 					$mdp2 = sha1(htmlentities($_POST['confirmpassword']));
 					$token = sha1(uniqid());
-					if ($mdp == $mdp2)
+					if (preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/", $email))
 					{
-						$insert_user = $bdd->prepare("INSERT INTO users(login,confirmation, email, password, token) VALUES(?, 0, ?, ?, ?)");
-						$insert_user->execute(array($login, $email, $mdp, $token));
-						send_email($email, $login, $token);
-						$ret = "Account create, check your email to confirm your account !";
-					} else {$ret = "Passwords doesn't match !";}
-				} else {$ret = "Password is too weak !";}
+						if ($mdp == $mdp2)
+						{
+							$insert_user = $bdd->prepare("INSERT INTO users(login,confirmation, email, password, token) VALUES(?, 0, ?, ?, ?)");
+							$insert_user->execute(array($login, $email, $mdp, $token));
+							send_email($email, $login, $token);
+							$ret = "Account create, check your email to confirm your account !";
+						} else {$ret = "Passwords doesn't match !";}
+					} else {$ret = "Invalid Email format";}
+				}	else {$ret = "Password is too weak !";}
 			} else {$ret = "This email is already registred.";}
 		} else {$ret = "This login is already used, please try another one.";}
 	} else {$ret = "Please complete all the areas.";}
