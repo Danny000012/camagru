@@ -115,14 +115,18 @@
 								<div class="menu-cam">
 									<a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo"></a>
 									<a id="deletebutton"><img src="img/erase.png" alt="camera" class="img-logo"></a>
+                                    <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="formSubmit()"></a>
 									<a id="cancelmontage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
-                                    <a id="finish"><img src="img/check.png" class="img-logo"></a>
+									<a id="montage"><img src="img/check.png" alt="camera" class="img-logo"></a>
 								</div>
 								<div class="upload">
 									<h2>Upload an image</h2>
-								<input id="file" type="file" onchange="previewFile()"><br>
+									<input id="file" type="file" onchange="previewFile()"><br>
+								<form id="zdp" method="post" enctype="multipart/form-data" action="#" class="upload-form">
+										<br>
+										<input id="test" type="hidden" name="test"  value="">
 								<?php
-								//	include 'script/upload.php';
+									include 'script/upload.php';
 								?>
                                 </div>
                             </div>

@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-define('TARGET', './photos');
+define('TARGET', './photos/tmp/');
 define('MAX_SIZE', 50000000);
 $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 $valid_ext =array('jpg', 'gif', 'png', 'jpeg');
@@ -16,7 +16,7 @@ if (!is_dir(TARGET)) {
 		exit("Problem with the repertory");
 	}
 }
-
+/*
 if (!empty($_FILES['image']['name']))
 {
 	$extension= pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
@@ -26,7 +26,7 @@ if (!empty($_FILES['image']['name']))
 			if ($_FILES['image']['size'] <= MAX_SIZE) {
 				if(isset($_FILES['image']['error']) && UPLOAD_ERR_OK === $_FILES['image']['error']) {
 					$img_name = md5(uniqid()).'.'.$extension;
-					if (move_uploaded_file($_FILES['image']['tmp_name'], './photos/'.$img_name)) {
+					if (move_uploaded_file($_FILES['image']['tmp_name'], './photos/tmp/'.$img_name)) {
 						$message = "Upload suceed";
 						$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
 						$req->execute(array($login, $img_name, $date, $posix));
@@ -51,12 +51,14 @@ if (!empty($_FILES['image']['name']))
 		$message = "Wrong extension";
 	}
 }
-else if (isset($_POST['test']) && $_POST['test'] != "") {
+*/
+
+if (isset($_POST['test']) && $_POST['test'] != "") {
 	list($type, $data) = explode(';', $_POST['test']);
 	list(, $data) = explode(',', $data);
 	$data = base64_decode($data);
 	$image_name = md5(uniqid()).'.png';
-	file_put_contents( './photos/' .$image_name, $data);
+	file_put_contents( './photos/tmp/' .$image_name, $data);
 	$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
 	$req->execute(array($login, $image_name, $date, $posix));
 	$message= "Upload suceed";

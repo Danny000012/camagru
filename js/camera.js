@@ -54,7 +54,6 @@ function takepicture() {
 	canvas.height = height;
 	canvas.getContext('2d').drawImage(video, 0, 0, width, height);
 	var data = canvas.toDataURL('image/png');
-	console.log(data);
 }
 
 startbutton.addEventListener('click', function(ev){
@@ -79,10 +78,17 @@ finish.addEventListener('click', function(ev){
 // si img src="sadfg" ---> upload la photo img
 // else wallou
 	var data = canvas.toDataURL('image/png');
+	var data_img = photo.getAttribute('src');
 	var check = document.getElementById("video").getAttribute("style");
 	if (check == "display:none") {
+		test.setAttribute('value', data);
 	}
-}, false);
+	var check_canvas = document.getElementById("canvas").getAttribute("style")
+	if (check == "display:none" && check_canvas == "display:none") {
+		test.setAttribute('value', data_img);
+	}
+	console.log(test);
+		}, false);
 })();
 
 function previewFile() {
