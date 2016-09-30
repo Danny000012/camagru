@@ -75,6 +75,9 @@ deletebutton.addEventListener('click', function(ev){
 
 
 finish.addEventListener('click', function(ev){
+// si canvas--> on upload la photo du canvas
+// si img src="sadfg" ---> upload la photo img
+// else wallou
 	var data = canvas.toDataURL('image/png');
 	var check = document.getElementById("video").getAttribute("style");
 	if (check == "display:none") {
@@ -86,7 +89,6 @@ function previewFile() {
 	var preview = document.getElementById('photo');
 	var file    = document.querySelector('input[type=file]').files[0];
 	var reader  = new FileReader();
-	console.log(file);
 	reader.addEventListener("load", function () {
 		preview.src = reader.result;
 	}, false);
@@ -96,6 +98,5 @@ function previewFile() {
 		document.getElementById("canvas").setAttribute("style", "display:none");
 		document.getElementById("video").setAttribute("style", "display:none");
 		document.getElementById("photo").setAttribute("style", "display:block");
-		delete(file);
 	}
 }
