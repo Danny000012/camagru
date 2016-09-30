@@ -1,14 +1,15 @@
 (function() {
 
 	var streaming = false,
-video        = document.querySelector('#video'),
-cover        = document.querySelector('#cover'),
-canvas       = document.querySelector('#canvas'),
-photo       = document.querySelector('#photo'),
-test       = document.querySelector('#test'),
-startbutton  = document.querySelector('#startbutton'),
-deletebutton  = document.querySelector('#deletebutton'),
-finish  = document.querySelector('#finish'),
+video = document.getElementById('video'),
+cover = document.getElementById('cover'),
+canvas = document.getElementById('canvas'),
+photo = document.getElementById('photo'),
+test = document.getElementById('test'),
+startbutton = document.getElementById('startbutton'),
+deletebutton = document.getElementById('deletebutton'),
+finish = document.getElementById('finish'),
+imgInp = document.getElementById('imgInp'),
 width = 700,
 height = 220;
 
@@ -52,30 +53,49 @@ function takepicture() {
 	canvas.width = width;
 	canvas.height = height;
 	canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+	var data = canvas.toDataURL('image/png');
+	console.log(data);
 }
 
 startbutton.addEventListener('click', function(ev){
 	takepicture();
 	document.getElementById("video").setAttribute("style", "display:none");
 	document.getElementById("canvas").setAttribute("style", "display:block");
+	document.getElementById("photo").setAttribute("style", "display:none");
 	ev.preventDefault();
 }, false);
 
 deletebutton.addEventListener('click', function(ev){
 	document.getElementById("canvas").setAttribute("style", "display:none");
 	document.getElementById("video").setAttribute("style", "display:block");
+	document.getElementById("photo").setAttribute("style", "display:none");
+	document.getElementById("photo").setAttribute("src", "");
 	ev.preventDefault();
 }, false);
 
+
 finish.addEventListener('click', function(ev){
-	//fonction pour enregistrer la photos dans ./photos comme dans le formulaire upload.php
-	// trouver en js fonction desencode base 64 puis uniqid() et move uploaded file
 	var data = canvas.toDataURL('image/png');
 	var check = document.getElementById("video").getAttribute("style");
-	console.log(check);
 	if (check == "display:none") {
-		photo.setAttribute('src', data);
-		test.setAttribute('value', data);
 	}
 }, false);
 })();
+
+function previewFile() {
+	var preview = document.getElementById('photo');
+	var file    = document.querySelector('input[type=file]').files[0];
+	var reader  = new FileReader();
+	console.log(file);
+	reader.addEventListener("load", function () {
+		preview.src = reader.result;
+	}, false);
+
+	if (file) {
+		reader.readAsDataURL(file);
+		document.getElementById("canvas").setAttribute("style", "display:none");
+		document.getElementById("video").setAttribute("style", "display:none");
+		document.getElementById("photo").setAttribute("style", "display:block");
+		delete(file);
+	}
+}

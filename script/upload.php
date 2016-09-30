@@ -16,6 +16,7 @@ if (!is_dir(TARGET)) {
 		exit("Problem with the repertory");
 	}
 }
+
 if (!empty($_FILES['image']['name']))
 {
 	$extension= pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
@@ -56,8 +57,6 @@ else if (isset($_POST['test']) && $_POST['test'] != "") {
 	$data = base64_decode($data);
 	$image_name = md5(uniqid()).'.png';
 	file_put_contents( './photos/' .$image_name, $data);
-	$im = imagecreatefrompng('./photos/' .$image_name);
-	imagepng($im, './photos/'.$image_name);
 	$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
 	$req->execute(array($login, $image_name, $date, $posix));
 	$message= "Upload suceed";

@@ -111,7 +111,7 @@
                             <div class="hud">
 								<video id="video"></video>
 								<canvas id="canvas"></canvas>
-								<img id="photo" style="display:none" src="">
+								<img id="photo" height="525" width="700" style="display:none" src="">
 								<div class="menu-cam">
 									<a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo"></a>
 									<a id="deletebutton"><img src="img/erase.png" alt="camera" class="img-logo"></a>
@@ -119,16 +119,10 @@
                                     <a id="finish"><img src="img/check.png" class="img-logo"></a>
 								</div>
 								<div class="upload">
-                                    <h2>Upload an image</h2>
-                                <form method="post" enctype="multipart/form-data" action="#" class="upload-form">
-                                        <input id="file" type="file" name="image">
-										<br>
-										<input id="test" type="hidden" name="test"  value="">
-                                        <br>
-                                        <button type="submit"  class="upload-boutton" />Upload</button>
-                                    </form>
-                                    <?php
-									include 'script/upload.php';
+									<h2>Upload an image</h2>
+								<input id="file" type="file" onchange="previewFile()"><br>
+								<?php
+								//	include 'script/upload.php';
 								?>
                                 </div>
                             </div>
