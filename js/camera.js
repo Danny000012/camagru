@@ -71,24 +71,6 @@ deletebutton.addEventListener('click', function(ev){
 	document.getElementById("photo").setAttribute("src", "");
 	ev.preventDefault();
 }, false);
-
-
-finish.addEventListener('click', function(ev){
-// si canvas--> on upload la photo du canvas
-// si img src="sadfg" ---> upload la photo img
-// else wallou
-	var data = canvas.toDataURL('image/png');
-	var data_img = photo.getAttribute('src');
-	var check = document.getElementById("video").getAttribute("style");
-	if (check == "display:none") {
-		test.setAttribute('value', data);
-	}
-	var check_canvas = document.getElementById("canvas").getAttribute("style")
-	if (check == "display:none" && check_canvas == "display:none") {
-		test.setAttribute('value', data_img);
-	}
-	console.log(test);
-		}, false);
 })();
 
 function previewFile() {
@@ -106,3 +88,26 @@ function previewFile() {
 		document.getElementById("photo").setAttribute("style", "display:block");
 	}
 }
+
+function save() {
+
+	test = document.getElementById("test");
+	finish = document.getElementById('finish'),
+	finish.addEventListener('click', function(ev){
+	var data = canvas.toDataURL('image/png');
+	var data_img = photo.getAttribute('src');
+	var check = document.getElementById("video").getAttribute("style");
+	var check_img = document.getElementById("photo").getAttribute("style");
+	var check_canvas = document.getElementById("canvas").getAttribute("style")
+	if (check_canvas == "display:block") {
+		test.setAttribute('value', data);
+	}
+	if (check_img == "display:block") {
+		test.setAttribute('value', data_img);
+	}
+		}, false);
+	setTimeout(function(){
+		document.getElementById('zdp').submit();
+	}, 40);
+}
+

@@ -20,7 +20,3 @@ function deleteCom() {
     else {
     }
 }
-
-function formSubmit() {
-	document.getElementById('zdp').submit();
-}

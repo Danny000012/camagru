@@ -1,5 +1,6 @@
 <?php
-    include 'script/security.php';
+include 'script/security.php';
+session_start();
 ?>
 
     <html>
@@ -24,7 +25,7 @@
                     </a>
                     <nav class="menu">
                         <div class="a0" class="fix"></div>
-                        <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed" </a>
+                        <a href="feed.php" class="a2"><img class="logo-menu" src="img/feed.png" alt="feed"></a>
                             <a href="my_gallery.php" class="a1"><img class="logo-menu" src="img/mygallery.png" alt="man"></a>
                             <a href="post.php" class="a2"><img class="logo-menu" src="img/post.png" alt="eye"></a>
                             <a href="account.php" class="a1"><img class="logo-menu" src="img/account.png"></a>
@@ -115,7 +116,7 @@
 								<div class="menu-cam">
 									<a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo"></a>
 									<a id="deletebutton"><img src="img/erase.png" alt="camera" class="img-logo"></a>
-                                    <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="formSubmit()"></a>
+                                    <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
 									<a id="cancelmontage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
 									<a id="montage"><img src="img/check.png" alt="camera" class="img-logo"></a>
 								</div>
@@ -124,9 +125,10 @@
 									<input id="file" type="file" onchange="previewFile()"><br>
 								<form id="zdp" method="post" enctype="multipart/form-data" action="#" class="upload-form">
 										<br>
-										<input id="test" type="hidden" name="test"  value="">
+										<input id="test" type="hidden" name="test"  value=>
 								<?php
-									include 'script/upload.php';
+include 'script/upload.php';
+var_dump ($_SESSION);
 								?>
                                 </div>
                             </div>

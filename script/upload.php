@@ -7,7 +7,7 @@ $valid_ext =array('jpg', 'gif', 'png', 'jpeg');
 $img_info = array();
 $login = $_SESSION['login'];
 $extension = '';
-$message = '';
+$message = "Please select a file";
 $img_name = '';
 $date = date ('d/m/Y');
 $posix = date ('d/m/Y H:i:s');
@@ -52,19 +52,15 @@ if (!empty($_FILES['image']['name']))
 	}
 }
 */
-
-if (isset($_POST['test']) && $_POST['test'] != "") {
+if (!empty($_POST['test'])) {
 	list($type, $data) = explode(';', $_POST['test']);
+	list(, $type) = explode('/',$type);
 	list(, $data) = explode(',', $data);
 	$data = base64_decode($data);
-	$image_name = md5(uniqid()).'.png';
+	$image_name = md5(uniqid()).'.'.$type;
 	file_put_contents( './photos/tmp/' .$image_name, $data);
-	$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
-	$req->execute(array($login, $image_name, $date, $posix));
+	$_SESSION['img_name'] = $image_name;
 	$message= "Upload suceed";
-}
-else {
-	$message = "Please select a file";
 }
 echo $message;
 ?>
