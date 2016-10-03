@@ -62,25 +62,18 @@
         document.getElementById("photo").setAttribute("style", "display:none");
         ev.preventDefault();
     }, false);
-
-    deletebutton.addEventListener('click', function (ev) {
-        document.getElementById("canvas").setAttribute("style", "display:none");
-        document.getElementById("video").setAttribute("style", "display:block");
-        document.getElementById("photo").setAttribute("style", "display:none");
-        document.getElementById("photo").setAttribute("src", "");
-        ev.preventDefault();
-    }, false);
 })();
 
 function previewFile() {
     var preview = document.getElementById('photo');
     var file = document.querySelector('input[type=file]').files[0];
     var reader = new FileReader();
+	var check_montage = document.getElementById("montage-done").getAttribute("style");
     reader.addEventListener("load", function () {
         preview.src = reader.result;
     }, false);
 
-    if (file) {
+    if (file && check_montage == "display:none") {
         reader.readAsDataURL(file);
         document.getElementById("canvas").setAttribute("style", "display:none");
         document.getElementById("video").setAttribute("style", "display:none");
@@ -104,14 +97,13 @@ function save() {
             if (check_img == "display:block") {
                 test.setAttribute('value', data_img);
             }
-        document.getElementById("canvas").setAttribute("style", "display:none");
-        document.getElementById("video").setAttribute("style", "display:none");
-        document.getElementById("photo").setAttribute("style", "display:none");
-        document.getElementById("montage-done").setAttribute("style", "display:block");
-
+       // document.getElementById("canvas").setAttribute("style", "display:none");
+       // document.getElementById("video").setAttribute("style", "display:none");
+        document.getElementById("photo").setAttribute("src", "./script/image.php");
+       // document.getElementById("montage-done").setAttribute("style", "display:block");
         }, false);
     setTimeout(function () {
         document.getElementById('zdp').submit();
-    }, 400);
+    }, 40);
     
 }

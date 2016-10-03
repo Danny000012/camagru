@@ -69,5 +69,4 @@ if (!empty($_POST['test'])) {
 	$_SESSION['img_name'] = "../photos/tmp/".$image_name;
 	$message= "Upload suceed";
 }
-echo $message;
 ?>

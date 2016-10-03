@@ -1,6 +1,8 @@
 <?php
 include 'script/security.php';
 session_start();
+include 'script/upload.php';
+include 'script/montage.php';
 ?>
 
     <html>
@@ -126,14 +128,19 @@ session_start();
                                 </form>
                             </div>
                             <div class="hud">
-                               <?php
-if (!empty($_SESSION['img_name']))
+<?php
+if ($_SESSION['img_name'] !== "")
 {
-	echo '<img id="montage-done" style="dispay:block" src="script/image.php">';
+	echo '<img id="montage-done" height="525" width="700" style="display:block" src="script/image.php">';
+	echo '<video id="video" style="display:none"></video>';
+	echo'<canvas id="canvas" style="display:none"></canvas>';
 }
-else
-	echo '<video id="video"></video>';
-	echo'<canvas id="canvas"></canvas>';
+else 
+{
+	echo '<img id="montage-done" style="display:none" src="">';
+	echo '<video id="video" style="display:block"></video>';
+	echo'<canvas id="canvas" style="display:none"></canvas>';
+}
 ?>
 							<img id="photo" height="525" width="700" style="display:none" src="">
                                 <div class="menu-cam">
@@ -151,8 +158,7 @@ else
                                         <br>
                                         <input id="test" type="hidden" name="test" value=>
                                         <?php
-                                    include 'script/upload.php';
-                                    include 'script/montage.php';
+                                 echo $message; 
 								?>
                                 </div>
                             </div>
