@@ -158,8 +158,7 @@ else
                                         <br>
                                         <input id="test" type="hidden" name="test" value=>
                                         <?php
-echo $message;
-var_dump($_SESSION);
+									echo $message;
 								?>
                                 </div>
                             </div>

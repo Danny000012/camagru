@@ -12,6 +12,7 @@ if ($extension == "png") {
 }
 else 
 	$destination = imagecreatefromjpeg($_SESSION['img_name']);
+
 if(!empty($_SESSION['layer']))
 {	
 	$source = imagecreatefrompng($_SESSION['layer']);
@@ -38,25 +39,37 @@ else
 		imagejpeg($nolayer, $_SESSION['img_name']);
 	}
 }
+
 if (!empty($_SESSION['img_name']))
 {
 	if (rename($_SESSION['img_name'], "../photos/".$img_name))
 	{
 		$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
 		$req->execute(array($login, $img_name, $date, $posix));
-		$message = "Upload suceed";
 		$_SESSION['img_name'] = "";
 		$_SESSION['layer'] = "";
+		echo '<script language="JavaScript">
+			setTimeout(function(){
+document.location.href="../my_gallery.php";
+}, 40);
+</script>';
 	}
 	else {
 		$message = "Upload failed";
+		echo '<script language="JavaScript">
+			setTimeout(function(){
+document.location.href="../post.php";
+}, 40);
+</script>';
 	}
 }
-?>
-<script language="JavaScript">
-setTimeout(function(){
-document.location.href="../my_gallery.php";
+else 
+{
+	$message = "Please select a file";
+		echo '<script language="JavaScript">
+			setTimeout(function(){
+document.location.href="../post.php";
 }, 40);
-</script>
-
-
+</script>';
+}
+?>

@@ -97,10 +97,7 @@ function save() {
             if (check_img == "display:block") {
                 test.setAttribute('value', data_img);
             }
-       // document.getElementById("canvas").setAttribute("style", "display:none");
-       // document.getElementById("video").setAttribute("style", "display:none");
         document.getElementById("photo").setAttribute("src", "./script/image.php");
-       // document.getElementById("montage-done").setAttribute("style", "display:block");
         }, false);
     setTimeout(function () {
         document.getElementById('zdp').submit();
