@@ -147,7 +147,7 @@ else
                                     <a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo" onClick="buttonStart()"></a>
                                     <a id="deletebutton" href="script/clear.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
                                     <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
-                                    <a id="cancelmontage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
+                                    <a id="cancelmontage" href="script/eraselayer.php"><img src="img/reload.png" alt="camera" class="img-logo"></a>
                                     <a id="montage"><img src="img/check.png" alt="camera" class="img-logo"></a>
                                 </div>
                                 <div class="upload">
