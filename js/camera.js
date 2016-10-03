@@ -5,11 +5,11 @@
         cover = document.getElementById('cover'),
         canvas = document.getElementById('canvas'),
         photo = document.getElementById('photo'),
+        montage = document.getElementById('montage-done'),
         test = document.getElementById('test'),
         startbutton = document.getElementById('startbutton'),
         deletebutton = document.getElementById('deletebutton'),
         finish = document.getElementById('finish'),
-        imgInp = document.getElementById('imgInp'),
         width = 700,
         height = 220;
 
@@ -104,6 +104,11 @@ function save() {
             if (check_img == "display:block") {
                 test.setAttribute('value', data_img);
             }
+        document.getElementById("canvas").setAttribute("style", "display:none");
+        document.getElementById("video").setAttribute("style", "display:none");
+        document.getElementById("photo").setAttribute("style", "display:none");
+        document.getElementById("montage-done").setAttribute("style", "display:block");
+
         }, false);
     setTimeout(function () {
         document.getElementById('zdp').submit();

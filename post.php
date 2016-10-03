@@ -126,17 +126,22 @@ session_start();
                                 </form>
                             </div>
                             <div class="hud">
-                                <video id="video"></video>
-                                <canvas id="canvas"></canvas>
-                                <img id="photo" height="525" width="700" style="display:none" src="">
-
-
+                               <?php
+if (!empty($_SESSION['img_name']))
+{
+	echo '<img id="montage-done" style="dispay:block" src="script/image.php">';
+}
+else
+	echo '<video id="video"></video>';
+	echo'<canvas id="canvas"></canvas>';
+?>
+							<img id="photo" height="525" width="700" style="display:none" src="">
                                 <div class="menu-cam">
                                     <a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo" onClick="buttonStart()"></a>
                                     <a id="deletebutton" href="script/clear.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
                                     <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
-                                    <a id="cancelmontage"><img src="img/reload.png" alt="camera" class="img-logo" style="display:none"></a>
-                                    <a id="montage"><img src="img/check.png" alt="camera" class="img-logo" style="display:none" ></a>
+                                    <a id="cancelmontage"><img src="img/reload.png" alt="camera" class="img-logo"></a>
+                                    <a id="montage"><img src="img/check.png" alt="camera" class="img-logo"></a>
                                 </div>
                                 <div class="upload">
                                     <h2>Upload an image</h2>
@@ -151,7 +156,6 @@ session_start();
 								?>
                                 </div>
                             </div>
-                            <img id="montage-done" src="script/image.php">
 
                             <div class="separator"></div>
                         </div>
