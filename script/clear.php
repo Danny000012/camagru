@@ -2,5 +2,7 @@
     session_start();
     $_SESSION['img_name'] = "";
 	$_SESSION['layer'] = "";
-	echo '<script language="javascript">document.location.href="../post.php"</script>';
+	$_SESSION['calque'] = "";
+	$_SESSION['moove'] = "";
+	echo '<script language="javascript"></script>';
 ?>

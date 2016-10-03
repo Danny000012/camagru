@@ -126,8 +126,15 @@ include 'script/montage.php';
                                         <input type="submit" name="d6av" value="Select" />
                                     </div>
                                 </form>
-                            </div>
+                            </div>									
+						
                             <div class="hud">
+	<form method="get" class="menu-cam">
+                                        <input type="submit" name="moove" value="up"  style="border-radius:50px"/>
+                                        <input type="submit" name="moove" value="right"  style="border-radius:50px"/>
+                                        <input type="submit" name="moove" value="down"  style="border-radius:50px"/>
+                                        <input type="submit" name="moove" value="left" style="border-radius:50px" />
+										</form>
 <?php
 if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
 {
@@ -149,6 +156,11 @@ else
                                     <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
                                     <a id="cancelmontage" href="script/eraselayer.php"><img src="img/reload.png" alt="camera" class="img-logo"></a>
                                     <a id="montage" href="script/upload_db.php"><img src="img/check.png" alt="camera" class="img-logo"></a>
+									 <form method="get" class="menu-cam">
+                                        <input type="submit" name="calque" value="negative"  style="border-radius:50px"/>
+                                        <input type="submit" name="calque" value="grayscale"  style="border-radius:50px"/>
+                                        <input type="submit" name="calque" value="normal" style="border-radius:50px" />
+										</form>
                                 </div>
                                 <div class="upload">
                                     <h2>Upload an image</h2>
@@ -157,7 +169,8 @@ else
                                     <form id="zdp" method="post" enctype="multipart/form-data" action="#" class="upload-form">
                                         <br>
                                         <input id="test" type="hidden" name="test" value=>
-                                        <?php
+                                      </form>
+									  <?php
 									echo $message;
 								?>
                                 </div>

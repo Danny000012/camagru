@@ -15,6 +15,8 @@ if ($_POST['connect'] == "sign in")
 			$_SESSION['id'] = $user_info['id'];
 			$_SESSION['login'] = $user_info['login'];
 			$_SESSION['email'] = $user_info['email'];
+			$_SESSION['x_origin'] = 100;
+			$_SESSION['y_origin'] = 100;
 			echo '<script language="javascript">
 				document.location.href="post.php";
 </script>';
