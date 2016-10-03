@@ -59,7 +59,7 @@ if (!empty($_POST['test'])) {
 	$data = base64_decode($data);
 	$image_name = md5(uniqid()).'.'.$type;
 	file_put_contents( './photos/tmp/' .$image_name, $data);
-	$_SESSION['img_name'] = $image_name;
+	$_SESSION['img_name'] = "../photos/tmp/".$image_name;
 	$message= "Upload suceed";
 }
 echo $message;
