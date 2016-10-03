@@ -129,26 +129,26 @@ include 'script/montage.php';
                             </div>									
 						
                             <div class="hud">
-	<form method="get" class="menu-cam">
-                                        <input type="submit" name="moove" value="up"  style="border-radius:50px"/>
-                                        <input type="submit" name="moove" value="right"  style="border-radius:50px"/>
-                                        <input type="submit" name="moove" value="down"  style="border-radius:50px"/>
+								<form method="post" class="menu-cam">
                                         <input type="submit" name="moove" value="left" style="border-radius:50px" />
-										</form>
-<?php
-if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
-{
-	echo '<img id="montage-done" height="525" width="700" style="display:block" src="./script/image.php">';
-	echo '<video id="video" style="display:none"></video>';
-	echo'<canvas id="canvas" style="display:none"></canvas>';
-}
-else 
-{
-	echo '<img id="montage-done" style="display:none" src="">';
-	echo '<video id="video" style="display:block"></video>';
-	echo'<canvas id="canvas" style="display:none"></canvas>';
-}
-?>
+                                        <input type="submit" name="moove" value="up"  style="border-radius:50px"/>
+                                        <input type="submit" name="moove" value="down"  style="border-radius:50px"/>
+                                        <input type="submit" name="moove" value="right"  style="border-radius:50px"/>
+									</form>
+											<?php
+												if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
+												{
+													echo '<img id="montage-done" height="525" width="700" style="display:block" src="./script/image.php">';
+													echo '<video id="video" style="display:none"></video>';
+													echo'<canvas id="canvas" style="display:none"></canvas>';
+												}
+												else 
+												{
+													echo '<img id="montage-done" style="display:none" src="">';
+													echo '<video id="video" style="display:block"></video>';
+													echo'<canvas id="canvas" style="display:none"></canvas>';
+												}
+											?>
 							<img id="photo" height="525" width="700" style="display:none" src="">
                                 <div class="menu-cam">
                                     <a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo" onClick="buttonStart()"></a>
@@ -171,9 +171,10 @@ else
                                         <input id="test" type="hidden" name="test" value=>
                                       </form>
 									  <?php
-									echo $message;
-								?>
-                                </div>
+										echo $message;
+										var_dump($_POST);
+									 ?>
+								</div>
                             </div>
 
                             <div class="separator"></div>

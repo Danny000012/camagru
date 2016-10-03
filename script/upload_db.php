@@ -22,7 +22,7 @@ if(!empty($_SESSION['layer']))
 	$fond = imagecolorallocatealpha($rendu,  0, 128, 255, 0);
 	imagefill($rendu, 0, 0, $fond);
 	imagecopy($rendu, $destination, 0, 0, 0,0, $largeur_source, $hauteur_source);
-	imagecopy($rendu, $source, 100, 100, 0,0, 200, 200);
+	imagecopy($rendu, $source, $_SESSION['x_origin'], $_SESSION['y_origin'], 0,0, 200, 200);
 	imagesavealpha($rendu, true);
 	imagepng($rendu, $_SESSION['img_name']);
 }
@@ -48,6 +48,8 @@ if (!empty($_SESSION['img_name']))
 		$req->execute(array($login, $img_name, $date, $posix));
 		$_SESSION['img_name'] = "";
 		$_SESSION['layer'] = "";
+		$_SESSION['x_origin'] = 100;
+		$_SESSION['y_origin'] = 100;
 		echo '<script language="JavaScript">
 			setTimeout(function(){
 document.location.href="../my_gallery.php";

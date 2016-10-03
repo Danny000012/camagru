@@ -33,7 +33,7 @@ $i = 0;
 $moove = "none";
 while ($moove_set[$i])
 {
-	if ($_GET['moove'] === $moove_set[$i])
+	if ($_POST['moove'] === $moove_set[$i])
 	{
 		$_SESSION['moove'] = $moove_set[$i];
 		break;

@@ -4,5 +4,7 @@
 	$_SESSION['layer'] = "";
 	$_SESSION['calque'] = "";
 	$_SESSION['moove'] = "";
-	echo '<script language="javascript"></script>';
+	$_SESSION['x_origin'] = 100;
+	$_SESSION['y_origin'] = 100;
+	echo '<script language="javascript">document.location.href="../post.php";</script>';
 ?>
