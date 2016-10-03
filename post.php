@@ -148,7 +148,6 @@ session_start();
                                         <?php
                                     include 'script/upload.php';
                                     include 'script/montage.php';
-                                        var_dump($_SESSION);
 								?>
                                 </div>
                             </div>

@@ -11,9 +11,16 @@ $message = "Please select a file";
 $img_name = '';
 $date = date ('d/m/Y');
 $posix = date ('d/m/Y H:i:s');
-if (!is_dir(TARGET)) {
-	if ( !mkdir(TARGET, 0755)){
+if (!is_dir('./photos'))
+{
+	if (!mkdir('./photos', 0755))
+	{
 		exit("Problem with the repertory");
+	}
+	else if (!is_dir(TARGET)) {
+		if ( !mkdir(TARGET, 0755)){
+			exit("Problem with the repertory");
+		}
 	}
 }
 /*
