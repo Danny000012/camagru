@@ -129,9 +129,9 @@ include 'script/montage.php';
                             </div>
                             <div class="hud">
 <?php
-if ($_SESSION['img_name'] !== "")
+if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
 {
-	echo '<img id="montage-done" height="525" width="700" style="display:block" src="script/image.php">';
+	echo '<img id="montage-done" height="525" width="700" style="display:block" src="./script/image.php">';
 	echo '<video id="video" style="display:none"></video>';
 	echo'<canvas id="canvas" style="display:none"></canvas>';
 }
@@ -148,7 +148,7 @@ else
                                     <a id="deletebutton" href="script/clear.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
                                     <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
                                     <a id="cancelmontage" href="script/eraselayer.php"><img src="img/reload.png" alt="camera" class="img-logo"></a>
-                                    <a id="montage"><img src="img/check.png" alt="camera" class="img-logo"></a>
+                                    <a id="montage" href="script/upload_db.php"><img src="img/check.png" alt="camera" class="img-logo"></a>
                                 </div>
                                 <div class="upload">
                                     <h2>Upload an image</h2>
@@ -158,7 +158,8 @@ else
                                         <br>
                                         <input id="test" type="hidden" name="test" value=>
                                         <?php
-                                 echo $message; 
+echo $message;
+var_dump($_SESSION);
 								?>
                                 </div>
                             </div>

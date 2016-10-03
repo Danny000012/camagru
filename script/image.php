@@ -1,6 +1,6 @@
 <?php
 session_start();
-header("Content-type: image/png");
+header ("Content-type: image/png");
 $extension = pathinfo($_SESSION['img_name'], PATHINFO_EXTENSION);
 if ($extension == "png") {
 	$destination = imagecreatefrompng($_SESSION['img_name']);
