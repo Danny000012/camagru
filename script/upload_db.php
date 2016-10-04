@@ -11,8 +11,15 @@ if ($extension == "png") {
 	$destination = imagecreatefrompng($_SESSION['img_name']);
 }
 else 
-	$destination = imagecreatefromjpeg($_SESSION['img_name']);
+$destination = imagecreatefromjpeg($_SESSION['img_name']);
 
+if (!empty($_SESSION['calque']))
+{
+	if ($_SESSION['calque'] === "negative")
+		imagefilter($destination, IMG_FILTER_NEGATE);
+	else if ($_SESSION['calque'] === "grayscale")
+		imagefilter($destination, IMG_FILTER_GRAYSCALE);
+}
 if(!empty($_SESSION['layer']))
 {	
 	$source = imagecreatefrompng($_SESSION['layer']);
@@ -28,14 +35,28 @@ if(!empty($_SESSION['layer']))
 }
 else
 {
-		if ($extension == "png")
+	if ($extension == "png")
 	{
 		$nolayer = imagecreatefrompng($_SESSION['img_name']);
+		if (!empty($_SESSION['calque']))
+		{
+			if ($_SESSION['calque'] === "negative")
+				imagefilter($nolayer, IMG_FILTER_NEGATE);
+			else if ($_SESSION['calque'] === "grayscale")
+				imagefilter($nolayer, IMG_FILTER_GRAYSCALE);
+		}
 		imagepng($nolayer, $_SESSION['img_name']);
 	}
 	else
 	{
 		$nolayer = imagecreatefromjpeg($_SESSION['img_name']);
+		if (!empty($_SESSION['calque']))
+		{
+			if ($_SESSION['calque'] === "negative")
+				imagefilter($nolayer, IMG_FILTER_NEGATE);
+			else if ($_SESSION['calque'] === "grayscale")
+				imagefilter($nolayer, IMG_FILTER_GRAYSCALE);
+		}
 		imagejpeg($nolayer, $_SESSION['img_name']);
 	}
 }
@@ -48,30 +69,31 @@ if (!empty($_SESSION['img_name']))
 		$req->execute(array($login, $img_name, $date, $posix));
 		$_SESSION['img_name'] = "";
 		$_SESSION['layer'] = "";
+		$_SESSION['calque'] = "";
 		$_SESSION['x_origin'] = 100;
 		$_SESSION['y_origin'] = 100;
 		echo '<script language="JavaScript">
 			setTimeout(function(){
-document.location.href="../my_gallery.php";
-}, 40);
-</script>';
+					document.location.href="../my_gallery.php";
+					}, 40);
+		</script>';
 	}
 	else {
 		$message = "Upload failed";
 		echo '<script language="JavaScript">
 			setTimeout(function(){
-document.location.href="../post.php";
-}, 40);
-</script>';
+					document.location.href="../post.php";
+					}, 40);
+		</script>';
 	}
 }
 else 
 {
 	$message = "Please select a file";
-		echo '<script language="JavaScript">
-			setTimeout(function(){
-document.location.href="../post.php";
-}, 40);
-</script>';
+	echo '<script language="JavaScript">
+		setTimeout(function(){
+				document.location.href="../post.php";
+				}, 40);
+	</script>';
 }
 ?>
