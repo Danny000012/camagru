@@ -53,7 +53,6 @@ include 'config/setup.php';
                 ?>
                         <div class="separator"></div>
                         <?php
-										var_dump($_SERVER);
                         if (isset($ret))
                         {
 						  	echo $ret;
