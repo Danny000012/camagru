@@ -81,7 +81,7 @@ function send_email($mail, $login)
 	else
 		$passage_ligne = "\n";
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de demander la reinitialisation de vorte mot de passe. <br/>Pour changer votre mot de passe cliquez sur lien suivant: <br/> <a href='http://localhost:8080/branche_web/Camagru/confirm_newpassword.php'>Modification du mot de passe</a></body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de demander la reinitialisation de vorte mot de passe. <br/>Pour changer votre mot de passe cliquez sur lien suivant: <br/> <a href='http:/".$_SERVER['HTTP_HOST']."".$_SERVER['REQUEST_URI']."confirm_newpassword.php'>Modification du mot de passe</a></body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Modification du mot de passe de votre compte Camagru";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;

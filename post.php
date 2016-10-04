@@ -172,7 +172,6 @@ include 'script/montage.php';
                                       </form>
 									  <?php
 										echo $message;
-										var_dump($_POST);
 									 ?>
 								</div>
                             </div>
