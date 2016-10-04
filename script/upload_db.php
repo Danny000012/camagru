@@ -32,6 +32,7 @@ if(!empty($_SESSION['layer']))
 	imagecopy($rendu, $source, $_SESSION['x_origin'], $_SESSION['y_origin'], 0,0, 200, 200);
 	imagesavealpha($rendu, true);
 	imagepng($rendu, $_SESSION['img_name']);
+	unset($rendu);
 }
 else
 {
@@ -46,6 +47,7 @@ else
 				imagefilter($nolayer, IMG_FILTER_GRAYSCALE);
 		}
 		imagepng($nolayer, $_SESSION['img_name']);
+		unset($nolayer);	
 	}
 	else
 	{
@@ -58,6 +60,7 @@ else
 				imagefilter($nolayer, IMG_FILTER_GRAYSCALE);
 		}
 		imagejpeg($nolayer, $_SESSION['img_name']);
+		unset($nolayer);
 	}
 }
 

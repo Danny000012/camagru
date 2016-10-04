@@ -168,9 +168,15 @@
            
             echo '<div class="separator"></div>';
        
-        } else {$ret = "This post was deleted, or dosen't exist";}
+        } else {$ret = "This post was deleted, or dosen't exist"; 
+			}
     } else {$ret = "Error when trying to find this post";}
 	echo $ret;
+	if ($ret === "This post was deleted, or dosen't exist")
+	{
+		echo '<br><br>';
+		echo '<a href="my_gallery.php">Return</a>';
+	}
 	function send_email($mail, $login, $login_to_find)
 {
 	if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail))
