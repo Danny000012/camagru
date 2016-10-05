@@ -1,6 +1,10 @@
+body {
+    overflow: hidden;
+}
 
 .menu-cam {
-    height: 66px;
+    height: auto;
+    min-height: 66px;
     width: 100%;
     max-width: 700px;
     background: rgb(225, 82, 85);
@@ -33,9 +37,11 @@
 }
 
 #video {
-	display: block;
+    display: block;
+    width: 100%;
     max-width: 700px;
-    background-color: #666;
+    background-color: rgb(26, 26, 26);
+    vertical-align: bottom;
 }
 
 #video:after {
@@ -44,8 +50,20 @@
     padding-bottom: 100%;
 }
 
+#photo {
+    width: 100%;
+    max-width: 700px;
+}
+
 #canvas {
-	display: none;
+    display: none;
+    width: 100%;
+    max-width: 700px;
+}
+
+.hud {
+    width: 100%;
+    max-width: 700px;
 }
 
 .upload {
@@ -73,7 +91,7 @@ h2 {
 
 .selector {
     width: 200px;
-    height: 914px;
+    height: 900px;
     background: #424242;
     margin-right: 15px;
     overflow: scroll;
@@ -88,14 +106,41 @@ h2 {
     font-size: 15px;
 }
 
+.montage-option {
+    width: 100%;
+    height: auto;
+    min-height: 66px;
+    background: #424242;
+}
+
+.montage-option input {
+    width: 46px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.montage-option form {
+    width: 100%;
+}
+
+.montage-option input:hover {
+    filter: invert();
+    -webkit-filter: invert();
+    -moz-filter: invert();
+    -ms-filter: invert();
+    -o-filter: invert();
+}
+
 .selector input:hover {
     background: rgb(225, 82, 85);
 }
 
-.selector, .hud {
+.selector,
+.hud {
     display: inline-block;
-    vertical-align: top;
-    
+    vertical-align: bottom;
 }
 
 .collage-item {
@@ -117,25 +162,22 @@ h2 {
         overflow-x: scroll;
         white-space: nowrap;
     }
-    
     .collage-item {
         display: inline-block;
         width: 120px;
     }
-    
     .pkg {
         height: 180px;
         width: 200px;
         background: #606060;
         display: inline-block;
     }
-    
     .pkg input {
         display: block;
     }
 }
 
-video{
-  -webkit-transform: scaleX(-1);
+video {
+    -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-	}
+}

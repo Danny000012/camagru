@@ -1,5 +1,8 @@
-
-
+#image-feed {
+    background: red;
+    width: 300px;
+    height: 300px;
+}
 
 .post {
     width: 300px;
@@ -13,10 +16,11 @@
 
 .post div {
     display: inline-block;
+    text-align: center;
 }
 
 .post img {
-    width: 300px;
+    max-width: 300px;
     height: 300px;
     filter: none;
     -webkit-filter: none;
@@ -24,7 +28,6 @@
     -ms-filter: none;
     -o-filter: none;
 }
-
 
 .date {
     float: right;
@@ -74,6 +77,12 @@
     font-size: 15px;
 }
 
+.montage {
+    width: 300px;
+    height: 300px;
+    background: black;
+}
+
 .marks div,
 .marks img {
     display: inline-block;
@@ -106,7 +115,7 @@
         width: 270px;
     }
     .post img {
-        width: 270px;
+        max-width: 270px;
         height: 270px;
     }
     #like,
@@ -114,10 +123,14 @@
         height: 12px;
         width: 12px;
     }
+    .montage {
+        width: 270px;
+        height: 270px;
+    }
 }
 
-.marks,ç
-.date,
+.marks,
+ç .date,
 .interact {
     font-size: 12px;
 }

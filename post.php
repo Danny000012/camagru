@@ -126,16 +126,10 @@ include 'script/montage.php';
                                         <input type="submit" name="d6av" value="Select" />
                                     </div>
                                 </form>
-                            </div>									
-						
+                            </div>
+
                             <div class="hud">
-								<form method="post" class="menu-cam">
-                                        <input type="submit" name="moove" value="left" style="border-radius:50px" />
-                                        <input type="submit" name="moove" value="up"  style="border-radius:50px"/>
-                                        <input type="submit" name="moove" value="down"  style="border-radius:50px"/>
-                                        <input type="submit" name="moove" value="right"  style="border-radius:50px"/>
-									</form>
-											<?php
+                                <?php
 												if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
 												{
 													echo '<img id="montage-done" height="525" width="700" style="display:block" src="./script/image.php">';
@@ -149,31 +143,50 @@ include 'script/montage.php';
 													echo'<canvas id="canvas" style="display:none"></canvas>';
 												}
 											?>
-							<img id="photo" height="525" width="700" style="display:none" src="">
-                                <div class="menu-cam">
-                                    <a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo" onClick="buttonStart()"></a>
-                                    <a id="deletebutton" href="script/clear.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
-                                    <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
-                                    <a id="cancelmontage" href="script/eraselayer.php"><img src="img/reload.png" alt="camera" class="img-logo"></a>
-                                    <a id="montage" href="script/upload_db.php"><img src="img/check.png" alt="camera" class="img-logo"></a>
-									 <form method="get" class="menu-cam">
-                                        <input type="submit" name="calque" value="negative"  style="border-radius:50px"/>
-                                        <input type="submit" name="calque" value="grayscale"  style="border-radius:50px"/>
-                                        <input type="submit" name="calque" value="normal" style="border-radius:50px" />
-										</form>
-                                </div>
-                                <div class="upload">
-                                    <h2>Upload an image</h2>
-                                    <input id="file" type="file" onchange="previewFile()">
-                                    <br>
-                                    <form id="zdp" method="post" enctype="multipart/form-data" action="#" class="upload-form">
-                                        <br>
-                                        <input id="test" type="hidden" name="test" value=>
-                                      </form>
-									  <?php
+                                    <img id="photo" height="525" width="700" style="display:none" src="">
+                                    <div class="menu-cam">
+                                        <a id="startbutton"><img src="img/cam.png" alt="camera" class="img-logo" onClick="buttonStart()"></a>
+                                        <a id="deletebutton" href="script/clear.php"><img src="img/erase.png" alt="camera" class="img-logo"></a>
+                                        <a id="finish"><img src="img/montage.png" class="img-logo" onCLick="save()"></a>
+                                        <a id="cancelmontage" href="script/eraselayer.php"><img src="img/reload.png" alt="camera" class="img-logo"></a>
+                                        <a id="montage" href="script/upload_db.php"><img src="img/check.png" alt="camera" class="img-logo"></a>
+
+                                    </div>
+                                    <?php
+                                    if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
+                                    {
+                                        echo '<div class="montage-option">';
+                                        echo '<form method="post" action="post.php">';
+                                        echo '<input type="image" src="img/negative.png" name="calque" value="negative" style="border-radius:50px" />';
+                                        echo '<input type="image" src="img/grayscale.png" name="calque" value="grayscale" style="border-radius:50px" />';
+                                        echo '<input id="input-fix-r" type="image" src="img/none.png" name="calque" value="normal" style="border-radius:50px" />';
+                                        echo '<input type="image" src="img/left.png" name="moove" value="left" style="border-radius:50px" />';
+                                        echo '<input type="image" src="img/up.png" name="moove" value="up" style="border-radius:50px" />';
+                                        echo '<input type="image" src="img/down.png" name="moove" value="down" style="border-radius:50px" />';
+                                        echo '<input type="image" src="img/right.png" name="moove" value="right" style="border-radius:50px" />';
+                                        echo '</form>';
+                                        echo '</div>';
+                                    }
+                                    else 
+                                    {
+                                        echo '<style>';
+                                        echo '.selector {';
+                                        echo 'height: 830px;}';
+                                        echo '</style>';
+                                    }
+                                ?>
+                                        <div class="upload">
+                                            <h2>Upload an image</h2>
+                                            <input id="file" type="file" onchange="previewFile()">
+                                            <br>
+                                            <form id="zdp" method="post" enctype="multipart/form-data" action="#" class="upload-form">
+                                                <br>
+                                                <input id="test" type="hidden" name="test" value=>
+                                            </form>
+                                            <?php
 										echo $message;
 									 ?>
-								</div>
+                                        </div>
                             </div>
 
                             <div class="separator"></div>

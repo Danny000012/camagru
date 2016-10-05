@@ -7,7 +7,7 @@ if ($extension == "png") {
 	$destination = imagecreatefrompng($_SESSION['img_name']);
 }
 else 
-$destination = imagecreatefromjpeg($_SESSION['img_name']);
+    $destination = imagecreatefromjpeg($_SESSION['img_name']);
 if (!empty($_SESSION['calque']))
 {
 	if ($_SESSION['calque'] === "negative")
@@ -27,13 +27,13 @@ if (!empty($_SESSION['layer']))
 	if (!empty($_SESSION['moove']))
 	{
 		if ($_SESSION['moove'] === "up")
-			$_SESSION['y_origin'] -= 70;
+			$_SESSION['y_origin'] -= $hauteur_source / 5;
 		else if ($_SESSION['moove'] === "down")
-			$_SESSION['y_origin'] += 70;
+			$_SESSION['y_origin'] += $hauteur_source / 5;
 		else if ($_SESSION['moove'] === "left")
-			$_SESSION['x_origin'] -= 70;
+			$_SESSION['x_origin'] -= $largeur_source / 5;
 		else if ($_SESSION['moove'] === "right")
-			$_SESSION['x_origin'] += 70;
+			$_SESSION['x_origin'] += $largeur_source / 5;
 		$_SESSION['moove'] = "";
 	}
 	imagecopy($rendu, $source, 	$_SESSION['x_origin'] ,	$_SESSION['y_origin'], 0,0, 200, 200);

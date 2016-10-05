@@ -12,8 +12,10 @@
     while ($image_set[$i])
     {
         $encode_image = $image_set[$i]['image'];
-        echo '<div class="post">';   
+        echo '<div class="post">';
+        echo '<div class="montage">';
         echo '<img src="./photos/'.$encode_image.'">';
+        echo '</div>';
         echo '<div class="post-container">';
         echo '<div class="marks">';
         echo '<div class="num">'.$image_set[$i]['nb_likes'].'</div><img id="like" src="img/like.png">';

@@ -19,7 +19,7 @@ $i = 0;
 $calque = "none";
 while ($calque_set[$i])
 {
-	if ($_GET['calque'] === $calque_set[$i])
+	if ($_POST['calque'] === $calque_set[$i])
 	{
 		// $calque = ;
 		$_SESSION['calque'] = $calque_set[$i];
