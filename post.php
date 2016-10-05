@@ -131,7 +131,7 @@ include 'script/montage.php';
                             <div class="hud">
                                 <?php
 												if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
-												{
+												{ 	
 													echo '<img id="montage-done" height="525" width="700" style="display:block" src="./script/image.php">';
 													echo '<video id="video" style="display:none"></video>';
 													echo'<canvas id="canvas" style="display:none"></canvas>';
@@ -155,6 +155,10 @@ include 'script/montage.php';
                                     <?php
                                     if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
                                     {
+										echo '<style>';
+                                        echo '.selector {';
+                                        echo 'height: 900px;}';
+                                        echo '</style>';
                                         echo '<div class="montage-option">';
                                         echo '<form method="post" action="post.php">';
                                         echo '<input type="image" src="img/negative.png" name="calque" value="negative" style="border-radius:50px" />';

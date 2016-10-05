@@ -1,7 +1,3 @@
-body {
-    overflow: hidden;
-}
-
 .menu-cam {
     height: auto;
     min-height: 66px;
@@ -89,15 +85,15 @@ h2 {
     background: rgb(225, 82, 85);
 }
 
-.selector {
+#selector {
     width: 200px;
-    height: 900px;
+    height: 830px;
     background: #424242;
     margin-right: 15px;
     overflow: scroll;
 }
 
-.selector input {
+#selector input {
     border: none;
     width: 200px;
     height: 40px;
@@ -133,14 +129,14 @@ h2 {
     -o-filter: invert();
 }
 
-.selector input:hover {
+#selector input:hover {
     background: rgb(225, 82, 85);
 }
 
-.selector,
+#selector,
 .hud {
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: top;
 }
 
 .collage-item {
@@ -153,7 +149,7 @@ h2 {
 }
 
 @media only screen and (max-width: 960px) {
-    .selector {
+    #selector {
         height: 200px;
         width: 700px;
         margin-right: 0;
