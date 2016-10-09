@@ -148,7 +148,7 @@ h2 {
     width: 100%;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 975px) {
     #selector {
         height: 200px;
         width: 700px;

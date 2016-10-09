@@ -107,8 +107,8 @@ function save() {
 				   }
 				   document.getElementById("photo").setAttribute("src", "./script/image.php");
 				   }, false);
-	setTimeout(function () {
+		function () {
 			document.getElementById('zdp').submit();
-			}, 40);
+			};
 
 }
