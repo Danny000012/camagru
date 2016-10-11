@@ -1,39 +1,36 @@
 (function () {
 
- var streaming = false,
- video = document.getElementById('video'),
- cover = document.getElementById('cover'),
- canvas = document.getElementById('canvas'),
- photo = document.getElementById('photo'),
- montage = document.getElementById('montage-done'),
- test = document.getElementById('test'),
- startbutton = document.getElementById('startbutton'),
- deletebutton = document.getElementById('deletebutton'),
- finish = document.getElementById('finish'),
- width = 700,
+ var streaming = false;
+ video = document.getElementById('video');
+ cover = document.getElementById('cover');
+ canvas = document.getElementById('canvas');
+ photo = document.getElementById('photo');
+ montage = document.getElementById('montage-done');
+ test = document.getElementById('test');
+ startbutton = document.getElementById('startbutton');
+ deletebutton = document.getElementById('deletebutton');
+ finish = document.getElementById('finish');
+ width = 700;
  height = 220;
 
- navigator.getMedia = (navigator.getUserMedia ||
-		 navigator.webkitGetUserMedia ||
-		 navigator.mozGetUserMedia ||
-		 navigator.msGetUserMedia);
+ navigator.getMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
  navigator.getMedia({
 video: true,
 audio: false
 },
 function (stream) {
-	if (navigator.mozGetUserMedia) {
-		video.mozSrcObject = stream;
-	}
-	else {
-		var vendorURL = window.URL || window.webkitURL;
-	video.src = vendorURL.createObjectURL(stream);
-	}
-	video.play();
+if (navigator.mozGetUserMedia) {
+video.mozSrcObject = stream;
+}
+else {
+var vendorURL = window.URL || window.webkitURL;
+video.src = vendorURL.createObjectURL(stream);
+}
+video.play();
 },
 function (err) {
-	console.log("An error occured! " + err);
+console.log("An error occured! " + err);
 }
 );
 
@@ -52,7 +49,7 @@ function takepicture() {
 
 	canvas.width = width;
 	canvas.height = height;
-	var ctx = canvas.getContext('2d')
+	var ctx = canvas.getContext('2d');
 	ctx.translate(width, 0);
 	ctx.scale(-1, 1);
 	ctx.drawImage(video, 0, 0, width, height);
@@ -91,8 +88,8 @@ function save() {
 
 	test = document.getElementById("test");
 	finish = document.getElementById('finish'),
-		   finish.addEventListener('click', function (ev) {
-
+		   finish.addEventListener('click', 
+				   function (ev) {
 				   var data = canvas.toDataURL('image/png');
 				   var data_img = photo.getAttribute('src');
 				   var check = document.getElementById("video").getAttribute("style");
@@ -106,9 +103,6 @@ function save() {
 				   test.setAttribute('value', data_img);
 				   }
 				   document.getElementById("photo").setAttribute("src", "./script/image.php");
+				   setTimeout(document.getElementById('zdp').submit(), 40);
 				   }, false);
-		function () {
-			document.getElementById('zdp').submit();
-			};
-
 }

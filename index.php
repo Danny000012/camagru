@@ -21,7 +21,8 @@ include 'config/setup.php';
                 <input class="input-bar" type="text" name="login2" />
                 <div>Password</div>
                 <input class="input-bar" type="password" name="password2" />
-                <input type="submit" name="connect" value="sign in" id="sign" />
+                <div style="font-size:10px" style="display:inline-block">  <a href="reset_password.php">Forgot your Password?</a> </div>
+			<input type="submit" name="connect" value="sign in" id="sign" />
             </form>
         </div>
         <div class="site-content" id="site-content">
