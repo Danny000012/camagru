@@ -1,6 +1,6 @@
 <?PHP
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 $login = $_SESSION['login'];
 $message = "Please select a file";
 $img_name = basename($_SESSION['img_name']);
@@ -68,7 +68,8 @@ if (!empty($_SESSION['img_name']))
 {
 	if (rename($_SESSION['img_name'], "../photos/".$img_name))
 	{
-		$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
+		try {
+			$req = $bdd->prepare("INSERT INTO post(login, image, date_post, posix) VALUES(?, ?, ?, ?)");
 		$req->execute(array($login, $img_name, $date, $posix));
 		$_SESSION['img_name'] = "";
 		$_SESSION['layer'] = "";
@@ -80,6 +81,11 @@ if (!empty($_SESSION['img_name']))
 					document.location.href="../my_gallery.php";
 					}, 40);
 		</script>';
+		}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 	}
 	else {
 		$message = "Upload failed";

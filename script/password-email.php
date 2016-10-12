@@ -2,15 +2,21 @@
 session_start();
 if ($_POST['button'] == "Send mail")
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 	if (!empty($_POST['login']) AND !empty($_POST['email']))
 	{
 		$login = htmlentities($_POST['login']);
 		$email = htmlentities($_POST['email']);
-		$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ?");
+		try {
+			$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ?");
 		$req_user->execute(array($login));
 		$user_info = $req_user->fetch();
 		$user_check = $req_user->rowCount();
+		}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($user_check == 1)
 		{
 		if ($email == $user_info['email'])
@@ -24,16 +30,22 @@ if ($_POST['button'] == "Send mail")
 }
 if ($_POST['button'] == "Modify password")
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 	if (!empty($_POST['login']) AND !empty($_POST['oldpassword']) AND !empty($_POST['newpassword']) AND !empty($_POST['confirmnewpassword']))
 	{
 		$login = htmlentities($_POST['login']);
 		$oldpassword = sha1(htmlentities($_POST['oldpassword']));
 		$newpassword = sha1(htmlentities($_POST['newpassword']));
 		$conf = sha1(htmlentities($_POST['confirmnewpassword']));
-		$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
+		try {
+			$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
 		$req_user->execute(array($_SESSION['id']));
 		$user_info = $req_user->fetch();
+		}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($login == $_SESSION['login'])
 		{
 			if ($oldpassword == $user_info['password'])
@@ -41,9 +53,15 @@ if ($_POST['button'] == "Modify password")
 				if ($newpassword == $conf)
 				{
 					if (testpassword($_POST['confirmnewpassword'])) {
-					$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE id = ?");
+						try{
+							$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE id = ?");
 					$insert_new_passwwd->execute(array($conf, $_SESSION['id']));
-					$ret = "Password updated";
+							$ret = "Password updated";
+						}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 					} else {$ret = "Password is too weak";}
 				} else {$ret = "Your new password doesn 't match with the confirm one";}
 			} else {$ret = "Please verify your old password";}
@@ -52,24 +70,36 @@ if ($_POST['button'] == "Modify password")
 }
 if ($_POST['button'] == "Change Password")
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 	if (!empty($_POST['login'])  AND !empty($_POST['email']) AND !empty($_POST['newpassword']) AND !empty($_POST['confirmnewpassword']))
 	{
 		$login = htmlentities($_POST['login']);
 		$email = htmlentities($_POST['email']);
 		$newpassword = sha1(htmlentities($_POST['newpassword']));
 		$conf = sha1(htmlentities($_POST['confirmnewpassword']));
+		try {
 		$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ? AND email = ?");
 		$req_user->execute(array($login, $email));
 		$user_info = $req_user->rowCount();
+		}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($user_info)
 		{
 				if ($newpassword == $conf)
 				{
 					if (testpassword($_POST['confirmnewpassword'])) {
-						$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE login = ?");
+						try {
+							$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE login = ?");
 					$insert_new_passwwd->execute(array($conf, $login));
-						$ret = "Password updated";
+							$ret = "Password updated";
+						}
+								catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 					}		else {$ret = "Password is too weak";}
 				} else {$ret = "Your new password doesn 't match with the confirm one";}
 			} else {$ret = "Incorrect login or email";}
@@ -78,23 +108,41 @@ if ($_POST['button'] == "Change Password")
 
 if ($_POST['reset'] == "Change email")
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 	if (!empty($_POST['newemail']) AND !empty($_POST['confirmnewemail']))
 	{
 		$newemail = htmlentities($_POST['newemail']);
 		$conf = htmlentities($_POST['confirmnewemail']);
-		$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
+		try {
+			$req_user = $bdd->prepare("SELECT * FROM users WHERE id= ?");
 		$req_user->execute(array($_SESSION['id']));
-		$user_info = $req_user->fetch();
+			$user_info = $req_user->fetch();
+		}
+		catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($newemail == $conf)
 		{
-			$check_emails = $bdd->prepare("SELECT * FROM users WHERE email = ?");
+			try {
+				$check_emails = $bdd->prepare("SELECT * FROM users WHERE email = ?");
 			$check_emails->execute(array($conf));
-			$valid = $check_emails->rowCount();
+				$valid = $check_emails->rowCount();
+			}
+					catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 			if (!$valid) 
 			{
-				$insert_new_email = $bdd->prepare("UPDATE users SET email = ? WHERE id = ?");
-				$insert_new_email->execute(array($conf, $_SESSION['id']));
+				try {
+					$insert_new_email = $bdd->prepare("UPDATE users SET email = ? WHERE id = ?");
+					$insert_new_email->execute(array($conf, $_SESSION['id']));
+				}
+						catch (PDOexception $e) {
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 				$_SESSION['email'] = $conf;
 				header("Location: reset_email.php");
 			} else {$ret = "Email already used by another account";}

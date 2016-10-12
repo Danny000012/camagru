@@ -50,7 +50,7 @@ include 'config/setup.php';
                         </form>
                     </div>
                     <?PHP
-                    include 'script/connexion.php';
+include 'script/connexion.php';
                 ?>
                         <div class="separator"></div>
                         <?php

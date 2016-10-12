@@ -1,12 +1,18 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
     $login = $_SESSION['login'];
-     
+     try {
     $req = $bdd->prepare("SELECT * FROM post WHERE login = ? ORDER BY posix DESC");
 
     $req->execute(array($login));
-    $image_set = $req->fetchAll();
+	$image_set = $req->fetchAll();
+	 }
+	catch (PDOexception $e)
+	{
+		print "Erreur  : ".$e->getMessage()."";
+		die();
+	}
     $i = 0;
     if (!$image_set)
     {
@@ -15,7 +21,7 @@
         echo '<br><br>';
         echo '<center><img src="img/sad.png" alt="sad face" class="sad-face"></div></center>';
         echo '<br><br>';
-        echo '<style> .feed {background-color: transparent;} .sad-face { filter: invert(); -webkit-filter: invert(); -moz-filter: invert(); -ms-filter: invert(); -o-filter: invert();} </style>';
+        echo '<style> .feed {background-color: transparent;} .sad-face { filter: invert(100%); -webkit-filter: invert(100%);} </style>';
     }
     while ($image_set[$i])
     {

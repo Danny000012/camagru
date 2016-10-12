@@ -1,14 +1,21 @@
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
 if ($_POST['connect'] == "sign in")
 {
 	if (!empty($_POST['login2']) AND !empty($_POST['password2']))
 	{
 		$login2 = htmlentities($_POST['login2']);
 		$mdp3 = sha1(htmlentities($_POST['password2']));
-		$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ? AND password = ? AND confirmation= 1");
-		$req_user->execute(array($login2, $mdp3));
-		$user_exist = $req_user->rowCount();
+		try {
+			$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ? AND password = ? AND confirmation= 1");
+			$req_user->execute(array($login2, $mdp3));
+			$user_exist = $req_user->rowCount();
+		}
+		catch (PDOexception $e)
+		{
+			print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($user_exist == 1)
 		{
 			$user_info = $req_user->fetch();
@@ -30,12 +37,19 @@ if (($_POST['inscription'] == "signup"))
 	{
 		$login = trim(htmlentities($_POST['login']));
 		$email = trim(htmlentities($_POST['email']));
-		$check_email = $bdd->prepare("SELECT * FROM users WHERE email= ?");
+		try {
+			$check_email = $bdd->prepare("SELECT * FROM users WHERE email= ?");
 		$check_email->execute(array($email));
 		$email_exist =$check_email->rowCount();
 		$check_login = $bdd->prepare("SELECT * FROM users WHERE login= ?");
 		$check_login->execute(array($login));
 		$login_exist =$check_login->rowCount();
+		}
+		catch (PDOexception $e)
+		{
+	print "Erreur : ".$e->getMessage()."";
+			die();
+		}
 		if ($login_exist == 0)
 		{    
 			if ($email_exist == 0)
@@ -49,10 +63,16 @@ if (($_POST['inscription'] == "signup"))
 					{
 						if ($mdp == $mdp2)
 						{
+							try {
 							$insert_user = $bdd->prepare("INSERT INTO users(login,confirmation, email, password, token) VALUES(?, 0, ?, ?, ?)");
 							$insert_user->execute(array($login, $email, $mdp, $token));
 							send_email($email, $login, $token);
-							$ret = "Account create, check your email to confirm your account !";
+							$ret = "Account created, check your email to confirm your account !";
+							}
+							catch (PDOexception $e) {
+								print "Erreur : ".$e->getMessage()."";
+								die();
+							}
 						} else {$ret = "Passwords doesn't match !";}
 					} else {$ret = "Invalid Email format";}
 				}	else {$ret = "Password is too weak !";}

@@ -1,13 +1,18 @@
 <?php
     session_start();
-    $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+    $bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION ));
     $login = $_SESSION['login'];
-     
+     try{
     $req = $bdd->prepare("SELECT * FROM post ORDER BY posix DESc");
 
     $req->execute(array($login));
       
-    $image_set = $req->fetchAll();
+	$image_set = $req->fetchAll();
+	 }
+	catch (PDOexception $e){
+		print "Erreur : ".$e->getMessage()."";
+		die();
+	}
     $i = 0;
     while ($image_set[$i])
     {
@@ -27,11 +32,6 @@
         echo '<center><div class="info">Posted by : '.$image_set[$i]['login'].' </div></center>';        
         echo '</div>';
         echo '</div>';
-        
-        
-        
-
-        
         $i++;
     }
 ?>
