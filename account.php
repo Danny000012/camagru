@@ -51,7 +51,7 @@
 
                                 <div class="box">
                                     <div class="option_a">
-                                        <a href="reset_password.php"><img src="img/warning.png" alt="warning">Change Password</a>
+                                        <a href="change_password.php"><img src="img/warning.png" alt="warning">Change Password</a>
                                     </div>
                                     <div class="option_b">
                                         <a href="reset_email.php"><img src="img/envelope.png" alt="warning">Change e-mail</a>

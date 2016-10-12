@@ -40,9 +40,11 @@ if ($_POST['button'] == "Modify password")
 			{
 				if ($newpassword == $conf)
 				{
+					if (testpassword($_POST['confirmnewpassword'])) {
 					$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE id = ?");
 					$insert_new_passwwd->execute(array($conf, $_SESSION['id']));
 					$ret = "Password updated";
+					} else {$ret = "Password is too weak";}
 				} else {$ret = "Your new password doesn 't match with the confirm one";}
 			} else {$ret = "Please verify your old password";}
 		} else {$ret = "This login doesn't exist";}
@@ -64,9 +66,11 @@ if ($_POST['button'] == "Change Password")
 		{
 				if ($newpassword == $conf)
 				{
-					$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE login = ?");
+					if (testpassword($_POST['confirmnewpassword'])) {
+						$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE login = ?");
 					$insert_new_passwwd->execute(array($conf, $login));
-					$ret = "Password updated";
+						$ret = "Password updated";
+					}		else {$ret = "Password is too weak";}
 				} else {$ret = "Your new password doesn 't match with the confirm one";}
 			} else {$ret = "Incorrect login or email";}
 	} else {$ret = "Please type all the areas";}
@@ -94,7 +98,7 @@ if ($_POST['reset'] == "Change email")
 				$_SESSION['email'] = $conf;
 				header("Location: reset_email.php");
 			} else {$ret = "Email already used by another account";}
-		} else {$ret = "Emails dosen't match<br>";}
+		} else {$ret = "Emails dosen't match";}
 	} else {$ret = "Please type all the areas";}
 }
 
@@ -107,7 +111,7 @@ function send_email($mail, $login)
 	else
 		$passage_ligne = "\n";
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de demander la reinitialisation de vorte mot de passe. <br/>Pour changer votre mot de passe cliquez sur lien suivant: <br/> <a href='http://".$_SERVER['HTTP_HOST']."".$url."confirm_newpassword.php'>Modification du mot de passe</a></body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de demander la reinitialisation de vorte mot de passe. <br/>Pour changer votre mot de passe cliquez sur lien suivant: <br/> <a href='http://".$_SERVER['HTTP_HOST']."".$url."change_password.php'>Modification du mot de passe</a></body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Modification du mot de passe de votre compte Camagru";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;
@@ -125,5 +129,41 @@ function send_email($mail, $login)
 	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 	$message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 	mail($mail,$sujet,$message,$header);
+}
+
+function testpassword($mdp)	
+{
+$longueur = strlen($mdp);
+if ($longueur >= 5) {
+	for($i = 0; $i < $longueur; $i++) 	{
+		$lettre = $mdp[$i];
+		if ($lettre>='a' && $lettre<='z'){
+			$point = $point + 1;
+			$point_min = 1;
+		}
+		else if ($lettre>='A' && $lettre <='Z'){
+			$point = $point + 2;
+			$point_maj = 2;
+		}
+		else if ($lettre>='0' && $lettre<='9'){
+			$point = $point + 3;
+			$point_chiffre = 3;
+		}
+		else {
+			$point = $point + 5;
+			$point_caracteres = 5;
+		}
+	}
+}
+else 
+	return (0);
+$etape1 = $point / $longueur;
+$etape2 = $point_min + $point_maj + $point_chiffre + $point_caracteres;
+$resultat = $etape1 * $etape2;
+$final = $resultat * $longueur;
+if ($final >= 50)
+	return (1);
+else
+	return (0);
 }
 ?>
