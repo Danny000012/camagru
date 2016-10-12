@@ -16,6 +16,7 @@ if ($_POST['button'] == "Send mail")
 		if ($email == $user_info['email'])
 			{
 				send_email($email, $login);
+				$_SESSION['login'] = $_POST['login'];
 				$ret = "An email has been send to reset your password";
 			} else {$ret = "This email doesn't match your email";}
 		} else {$ret = "This login doesn't exist";}
