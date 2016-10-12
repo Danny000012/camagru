@@ -22,7 +22,7 @@ if ($_POST['button'] == "Send mail")
 		} else {$ret = "This login doesn't exist";}
 	} else {$ret = "Please Type all the areas";}
 }
-if ($_POST['button'] == "Change password")
+if ($_POST['button'] == "Modify password")
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
 	if (!empty($_POST['login']) AND !empty($_POST['oldpassword']) AND !empty($_POST['newpassword']) AND !empty($_POST['confirmnewpassword']))
@@ -46,6 +46,29 @@ if ($_POST['button'] == "Change password")
 				} else {$ret = "Your new password doesn 't match with the confirm one";}
 			} else {$ret = "Please verify your old password";}
 		} else {$ret = "This login doesn't exist";}
+	} else {$ret = "Please type all the areas";}
+}
+if ($_POST['button'] == "Change Password")
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=camagru', 'root', 'root');
+	if (!empty($_POST['login'])  AND !empty($_POST['email']) AND !empty($_POST['newpassword']) AND !empty($_POST['confirmnewpassword']))
+	{
+		$login = htmlentities($_POST['login']);
+		$email = htmlentities($_POST['email']);
+		$newpassword = sha1(htmlentities($_POST['newpassword']));
+		$conf = sha1(htmlentities($_POST['confirmnewpassword']));
+		$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ? AND email = ?");
+		$req_user->execute(array($login, $email));
+		$user_info = $req_user->rowCount();
+		if ($user_info)
+		{
+				if ($newpassword == $conf)
+				{
+					$insert_new_passwwd = $bdd->prepare("UPDATE users SET password = ? WHERE login = ?");
+					$insert_new_passwwd->execute(array($conf, $login));
+					$ret = "Password updated";
+				} else {$ret = "Your new password doesn 't match with the confirm one";}
+			} else {$ret = "Incorrect login or email";}
 	} else {$ret = "Please type all the areas";}
 }
 

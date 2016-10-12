@@ -39,7 +39,7 @@
                             <br>
                             <div align="center">
                                 <div>
-                                    <input type="submit" name="button" value="Change password" class="button" />
+                                    <input type="submit" name="button" value="Modify password" class="button" />
                                 </div>
                             </div>
                         </form>
