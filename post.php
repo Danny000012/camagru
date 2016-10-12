@@ -158,8 +158,11 @@ include 'script/montage.php';
                                     if (isset($_SESSION['img_name']) && $_SESSION['img_name'] !== "")
                                     {
 										echo '<style>';
-                                        echo '.selector {';
+                                        echo '#selector {';
                                         echo 'height: 900px;}';
+                                        echo '@media only screen and (max-width: 975px) {';
+                                        echo '#selector {height: 200px;}';
+                                        echo '}';
                                         echo '</style>';
                                         echo '<div class="montage-option">';
                                         echo '<form method="post" action="post.php">';
@@ -176,8 +179,11 @@ include 'script/montage.php';
                                     else 
                                     {
                                         echo '<style>';
-                                        echo '.selector {';
+                                        echo '#selector {';
                                         echo 'height: 830px;}';
+                                        echo '@media only screen and (max-width: 975px) {';
+                                        echo '#selector {height: 200px;}';
+                                        echo '}';
                                         echo '</style>';
                                     }
                                 ?>
