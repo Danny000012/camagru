@@ -26,7 +26,7 @@ body {
 .container {
     margin: 0 20px;
     overflow: hidden;
-    *zoom: 1;
+    zoom: 1;
 }
 
 a {
@@ -190,7 +190,6 @@ a {
     }
     .menu div {
         height: 58px;
-        width: px;
     }
     .width--sidebar .site-pusher {
         -moz-transform: translateX(250px);

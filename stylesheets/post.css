@@ -1,179 +1,198 @@
 .menu-cam {
-    height: auto;
-    min-height: 66px;
-    width: 100%;
-    max-width: 700px;
-    background: rgb(225, 82, 85);
+	height: auto;
+	min-height: 66px;
+	width: 100%;
+	max-width: 700px;
+	background: rgb(225, 82, 85);
 }
 
 .img-logo {
-    width: 46px;
-    padding-top: 10px;
-    margin-right: 20px;
-    margin-left: 20px;
+	width: 46px;
+	padding-top: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .menu-cam img:hover {
-    filter: invert();
-    -webkit-filter: invert();
-    -moz-filter: invert();
-    -ms-filter: invert();
-    -o-filter: invert();
+	filter: invert();
+	-webkit-filter: invert();
+	-moz-filter: invert();
+	-ms-filter: invert();
+	-o-filter: invert();
+}
+
+button {
+	background-color: rgba(66,66,66,1);
+	border: none;
+	width: 46px;
+	height: 56px;
+	margin: 0;
+	text-align:left;
+	margin-left: 20px;
+	margin-right: 10px;
+	padding: 0;
+	border-spacing: 0;
+	outline:none;
+}
+
+button:active {
+	background-color: rgba(66,66,66,1);
+	transform: translateY(4px);
 }
 
 .tape {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    background: rgb(225, 82, 85);
-    height: 66px;
-    line-height: 66px;
-    white-space: nowrap;
-    color: white;
+	display: block;
+	width: 100%;
+	max-width: 700px;
+	background: rgb(225, 82, 85);
+	height: 66px;
+	line-height: 66px;
+	white-space: nowrap;
+	color: white;
 }
 
 #video {
-    display: block;
-    width: 100%;
-    max-width: 700px;
-    background-color: rgb(26, 26, 26);
-    vertical-align: bottom;
+	display: block;
+	width: 100%;
+	max-width: 700px;
+	background-color: rgb(26, 26, 26);
+	vertical-align: bottom;
 }
 
 #video:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
+	content: "";
+	display: block;
+	padding-bottom: 100%;
 }
 
 #photo {
-    width: 100%;
-    max-width: 700px;
+	width: 100%;
+	max-width: 700px;
 }
 
 #canvas {
-    display: none;
-    width: 100%;
-    max-width: 700px;
+	display: none;
+	width: 100%;
+	max-width: 700px;
 }
 
 .hud {
-    width: 100%;
-    max-width: 700px;
+	width: 100%;
+	max-width: 700px;
 }
 
 .upload {
-    background: #424242;
-    width: 100%;
-    max-width: 700px;
-    height: 220px;
+	background: #424242;
+	width: 100%;
+	max-width: 700px;
+	height: 220px;
 }
 
 h2 {
-    padding-top: 20px;
-    color: lightblue;
+	padding-top: 20px;
+	color: lightblue;
 }
 
 .upload-boutton {
-    color: white;
-    border: none;
-    padding: 10px;
-    background-color: #00a99d;
+	color: white;
+	border: none;
+	padding: 10px;
+	background-color: #00a99d;
 }
 
 .upload-boutton:hover {
-    background: rgb(225, 82, 85);
+	background: rgb(225, 82, 85);
 }
 
 #selector {
-    width: 200px;
-    height: 830px;
-    background: #424242;
-    margin-right: 15px;
-    overflow: scroll;
+	width: 200px;
+	height: 830px;
+	background: #424242;
+	margin-right: 15px;
+	overflow: scroll;
 }
 
 #selector input {
-    border: none;
-    width: 200px;
-    height: 40px;
-    color: white;
-    background: #505050;
-    font-size: 15px;
+	border: none;
+	width: 200px;
+	height: 40px;
+	color: white;
+	background: #505050;
+	font-size: 15px;
 }
 
 .montage-option {
-    width: 100%;
-    height: auto;
-    min-height: 66px;
-    background: #424242;
+	width: 100%;
+	height: auto;
+	min-height: 66px;
+	background: #424242;
 }
 
 .montage-option input {
-    width: 46px;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border: none;
+	width: 46px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: none;
 }
 
 .montage-option form {
-    width: 100%;
+	width: 100%;
 }
 
 .montage-option input:hover {
-    filter: invert();
-    -webkit-filter: invert();
-    -moz-filter: invert();
-    -ms-filter: invert();
-    -o-filter: invert();
+	filter: invert();
+	-webkit-filter: invert();
+	-moz-filter: invert();
+	-ms-filter: invert();
+	-o-filter: invert();
 }
 
 #selector input:hover {
-    background: rgb(225, 82, 85);
+	background: rgb(225, 82, 85);
 }
 
 #selector,
 .hud {
-    display: inline-block;
-    vertical-align: top;
+	display: inline-block;
+	vertical-align: top;
 }
 
 .collage-item {
-    width: 120px;
-    padding: 20px;
+	width: 120px;
+	padding: 20px;
 }
 
 .collage-item img {
-    width: 100%;
+	width: 100%;
 }
 
 @media only screen and (max-width: 975px) {
-    #selector {
-        height: 200px;
-        width: 700px;
-        margin-right: 0;
-        margin-bottom: 15px;
-        overflow-y: inherit;
-        overflow-x: scroll;
-        white-space: nowrap;
-    }
-    .collage-item {
-        display: inline-block;
-        width: 120px;
-    }
-    .pkg {
-        height: 180px;
-        width: 200px;
-        background: #606060;
-        display: inline-block;
-    }
-    .pkg input {
-        display: block;
-    }
+	#selector {
+		height: 200px;
+		width: 700px;
+		margin-right: 0;
+		margin-bottom: 15px;
+		overflow-y: inherit;
+		overflow-x: scroll;
+		white-space: nowrap;
+}
+.collage-item {
+	display: inline-block;
+	width: 120px;
+}
+.pkg {
+	height: 180px;
+	width: 200px;
+	background: #606060;
+	display: inline-block;
+}
+.pkg input {
+	display: block;
+}
 }
 
 video {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
 }
