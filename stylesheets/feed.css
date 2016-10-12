@@ -61,17 +61,10 @@
     filter: none;
     max-width: 600px;
     -webkit-filter: none;
-    -moz-filter: none;
-    -ms-filter: none;
-    -o-filter: none;
 }
 
 .feed {
     margin-top: 5%;
-    /*padding-left: 5%;
-    padding-right: 5%;
-    max-width: 510px;
-    background: rgb(230, 230, 230);*/
 }
 
 .post-container {
@@ -83,7 +76,6 @@
 
 .comment textarea {
     background-image: linear-gradient(#eee, #eee);
-    /* margin-top: 30px;*/
     width: 90%;
     height: 100px;
     border-radius: 0px;

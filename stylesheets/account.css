@@ -38,9 +38,6 @@
     vertical-align: text-bottom;
     filter: invert();
     -webkit-filter: invert();
-    -moz-filter: invert();
-    -ms-filter: invert();
-    -o-filter: invert();
     padding-right: 10px;
 }
 

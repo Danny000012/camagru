@@ -16,23 +16,32 @@
 .menu-cam img:hover {
 	filter: invert();
 	-webkit-filter: invert();
-	-moz-filter: invert();
-	-ms-filter: invert();
-	-o-filter: invert();
 }
 
 button {
-	background-color: rgba(66,66,66,1);
 	border: none;
-	width: 46px;
-	height: 56px;
+    background: rgba(60, 60, 60, 0);
+	width: 86px;
+	height: 46px;
 	margin: 0;
 	text-align:left;
-	margin-left: 20px;
-	margin-right: 10px;
 	padding: 0;
 	border-spacing: 0;
 	outline:none;
+    vertical-align: middle;
+}
+
+button img {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+button:hover img {
+    filter: invert();
+    -webkit-filter: invert();
 }
 
 button:active {
@@ -143,9 +152,6 @@ h2 {
 .montage-option input:hover {
 	filter: invert();
 	-webkit-filter: invert();
-	-moz-filter: invert();
-	-ms-filter: invert();
-	-o-filter: invert();
 }
 
 #selector input:hover {

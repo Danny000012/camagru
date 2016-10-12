@@ -26,7 +26,6 @@ body {
 .container {
     margin: 0 20px;
     overflow: hidden;
-    zoom: 1;
 }
 
 a {
@@ -76,18 +75,12 @@ a {
     vertical-align: middle;
     filter: invert();
     -webkit-filter: invert();
-    -moz-filter: invert();
-    -ms-filter: invert();
-    -o-filter: invert();
 }
 
 .a1:hover img,
 .a2:hover img {
     filter: none;
     -webkit-filter: none;
-    -moz-filter: none;
-    -ms-filter: none;
-    -o-filter: none;
 }
 
 @media only screen and (max-width: 870px) {
@@ -95,17 +88,11 @@ a {
     .a2 img {
         filter: none;
         -webkit-filter: none;
-        -moz-filter: none;
-        -ms-filter: none;
-        -o-filter: none;
     }
     .a1:hover .logo-menu,
     .a2:hover .logo-menu {
         filter: invert();
         -webkit-filter: invert();
-        -moz-filter: invert();
-        -ms-filter: invert();
-        -o-filter: invert();
     }
     .site-container {
         height: 100%;
