@@ -52,7 +52,7 @@ include 'config/setup.php';
                     <?PHP
 include 'script/connexion.php';
                 ?>
-                        <div class="separator"></div>
+                        <div class="separator">
                         <?php
                         if (isset($ret))
                         {
