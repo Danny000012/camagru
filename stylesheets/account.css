@@ -36,8 +36,8 @@
 .box img {
     height: 25px;
     vertical-align: text-bottom;
-    filter: invert();
-    -webkit-filter: invert();
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
     padding-right: 10px;
 }
 

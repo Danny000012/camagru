@@ -14,8 +14,8 @@
 }
 
 .menu-cam img:hover {
-	filter: invert();
-	-webkit-filter: invert();
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
 }
 
 button {
@@ -40,8 +40,8 @@ button img {
 }
 
 button:hover img {
-    filter: invert();
-    -webkit-filter: invert();
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
 }
 
 button:active {
@@ -150,8 +150,8 @@ h2 {
 }
 
 .montage-option input:hover {
-	filter: invert();
-	-webkit-filter: invert();
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
 }
 
 #selector input:hover {
