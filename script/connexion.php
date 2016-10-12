@@ -66,8 +66,9 @@ function send_email($mail, $login, $token)
 		$passage_ligne = "\r\n";
 	else
 		$passage_ligne = "\n";
+	$url = str_replace("index.php", "", $_SERVER['REQUEST_URI']);
 	$message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://".$_SERVER['HTTP_HOST']."".$_SERVER['REQUEST_URI']."script/confirm_account.php?login=".$login."&token=".$token."'>Validation de votre compte</a></body></html>";
+	$message_html = "<html><head></head><body><b>Bonjour ".$login.",</b><br/>Vous venez de vous inscrire sur le site web Camagru ! <br/>Pour valider votre compte cliquez sur le lien suivant: <br/> <a href='http://".$_SERVER['HTTP_HOST']."".$url."script/confirm_account.php?login=".$login."&token=".$token."'>Validation de votre compte</a></body></html>";
 	$boundary = "-----=".md5(rand());
 	$sujet = "Validation du compte Camagru";
 	$header = "From: \"Camagru\"<camagru@42.fr>".$passage_ligne;

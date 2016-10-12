@@ -1,5 +1,4 @@
 <?php
-    include 'script/security.php';
     include 'script/password-email.php';
 ?>
 
