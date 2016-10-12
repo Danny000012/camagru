@@ -8,7 +8,7 @@ if ($_POST['button'] == "Send mail")
 		$login = htmlentities($_POST['login']);
 		$email = htmlentities($_POST['email']);
 		$req_user = $bdd->prepare("SELECT * FROM users WHERE login= ?");
-		$req_user->execute(array($_POST['login']));
+		$req_user->execute(array($login));
 		$user_info = $req_user->fetch();
 		$user_check = $req_user->rowCount();
 		if ($user_check == 1)
@@ -16,7 +16,7 @@ if ($_POST['button'] == "Send mail")
 		if ($email == $user_info['email'])
 			{
 				send_email($email, $login);
-				$_SESSION['login'] = $_POST['login'];
+				$_SESSION['login'] = $login;
 				$ret = "An email has been send to reset your password";
 			} else {$ret = "This email doesn't match your email";}
 		} else {$ret = "This login doesn't exist";}
