@@ -35,8 +35,8 @@
                     </nav>
                 </header>
                 <div class="site-content">
-                    <div class="site-cache" id="site-cache" onClick="hide()">
-                        <div class="container" align="center" onClick="hide()">
+                    <div class="site-cache" id="site-cache">
+                        <div class="container" align="center">
                             <div class="feed">
                                 <?php
                                     include 'script/interact.php';
