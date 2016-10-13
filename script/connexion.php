@@ -28,7 +28,7 @@ if ($_POST['connect'] == "sign in")
 			echo '<script language="javascript">
 				document.location.href="post.php";
 </script>';
-		} else {$ret = "User not registred or wrong password <br/> Don't forget to check your email in order to confirm your account!";}
+		} else {$ret = "User not registred or wrong password";}
 	} else {$ret = "Please complete all the areas";}
 }
 if (($_POST['inscription'] == "signup"))

@@ -10,12 +10,13 @@ if (!is_dir('./photos'))
 	{
 		exit("Problem with the repertory");
 	}
-	else if (!is_dir(TARGET)) {
+}
+if (!is_dir(TARGET)) {
 		if ( !mkdir(TARGET, 0755)){
 			exit("Problem with the repertory");
 		}
 	}
-}
+
 
 if (!empty($_POST['test'])) {
 	list($type, $data) = explode(';', $_POST['test']);

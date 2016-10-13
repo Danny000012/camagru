@@ -11,7 +11,8 @@ include 'config/setup.php';
         <link href="stylesheets/menu.css" rel="stylesheet">
         <link href="stylesheets/reset_password.css" rel="stylesheet">
         <link href="stylesheets/index.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/png" href="img/homelogo.png"/>
     </head>
     <body>
         <div class="sign-bar">

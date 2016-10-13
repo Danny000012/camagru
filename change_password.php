@@ -8,6 +8,7 @@
         <link href="stylesheets/sign_in.css" rel="stylesheet">
         <link href="stylesheets/menu.css" rel="stylesheet">
         <link href="stylesheets/reset_password.css" rel="stylesheet">
+		<link rel="icon" type="image/png" href="img/homelogo.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Reset Password</title>
     </head>

@@ -15,6 +15,7 @@ include 'script/montage.php';
         <link href="stylesheets/account.css" rel="stylesheet">
         <link href="stylesheets/post.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/png" href="img/homelogo.png"/>
     </head>
 
     <body>

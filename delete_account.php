@@ -9,6 +9,7 @@
     <head>
         <link href="stylesheets/delete.css" rel="stylesheet">
         <link href="stylesheets/menu.css" rel="stylesheet"> 
+		<link rel="icon" type="image/png" href="img/homelogo.png"/>
         <meta charset="utf-8">
     </head>
     <body>
