@@ -7,13 +7,13 @@ if ($_GET['id_post'])
 	$_SESSION['id_post'] = $_GET['id_post'];
 }
 
-if ($_GET['envoyer']  == 'Envoyer')
+if ($_POST['envoyer']  == 'Envoyer')
 {
-	if (!empty($_GET['comment']))
+	if (!empty($_POST['comment']))
 	{
 		$id_post = $_SESSION['id_post'];
 		$login = $_SESSION['login'];
-		$comment = htmlentities($_GET['comment']);
+		$comment = htmlentities($_POST['comment']);
 		try {
 			$req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
 			$req_com->execute(array($id_post, $login, $comment));
@@ -31,6 +31,8 @@ if ($_GET['envoyer']  == 'Envoyer')
 			print "Erreur : ".$e->getMessage()."";
 			die();
 		}
+		header("Location: "."http://".$_SERVER['HTTP_HOST']."/comment_like.php?id_post=" . $_SESSION['id_post']);
+		die();
 	} else {$ret = "Please enter a comment";}
 }
 
@@ -47,7 +49,7 @@ if ($_GET['delete-com'])
 	}
 }
 
-if ($_GET['like'] == "Like")
+if ($_POST['like'] == "Like")
 {
 	$id_post = $_SESSION['id_post'];
 	$login = $_SESSION['login'];
@@ -96,7 +98,7 @@ if ($_GET['like'] == "Like")
 	}
 }
 
-if ($_GET['like'] == "Unlike")
+if ($_POST['like'] == "Unlike")
 {
 	$id_post = $_SESSION['id_post'];
 	$login = $_SESSION['login'];
@@ -126,7 +128,7 @@ if ($_GET['like'] == "Unlike")
 	}
 }
 
-if ($_GET['delete-post'] == "Delete post")
+if ($_POST['delete-post'] == "Delete post")
 {
 	try{
 		$req_name = $bdd->prepare("SELECT * FROM post WHERE id = ?");
@@ -178,8 +180,8 @@ if ($_SESSION['id_post'])
 	if ($verif == 1)
 	{
 		$post = $req_image->fetch();
-		echo '<div class="post">';   
-		echo '<img src="./photos/'.$post['image'].'">';   
+		echo '<div class="post">';
+		echo '<img src="./photos/'.$post['image'].'">';
 		echo '<div class="post-container">';
 		echo '<div class="marks">';
 		echo '<div class="num">'.$post['nb_likes'].'</div><img src="img/like.png">';
@@ -210,7 +212,7 @@ if ($_SESSION['id_post'])
 
 
 
-		echo '<form method="get" action="" class="comment">';
+		echo '<form method="post" action="" class="comment">';
 		echo '<br>';
 		echo '<textarea type="text" name="comment"></textarea>';
 		echo '<br/>';
@@ -237,12 +239,12 @@ if ($_SESSION['id_post'])
 		echo '<a class="back" href="feed.php">Return</a>';
 		echo '</form>';
 		echo '</div>';
-		echo '</div>';  
+		echo '</div>';
 		echo '<div class="separator"></div>';
 
 		echo '<div class="separator"></div>';
 
-	} else {$ret = "This post was deleted, or dosen't exist"; 
+	} else {$ret = "This post was deleted, or dosen't exist";
 	}
 } else {$ret = "Error when trying to find this post";}
 echo $ret;

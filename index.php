@@ -1,4 +1,4 @@
-<?PHP 
+<?PHP
 session_start();
 include 'config/setup.php';
 ?>
