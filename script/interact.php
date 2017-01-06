@@ -14,9 +14,12 @@ if ($_POST['envoyer']  == 'Envoyer')
 		$id_post = $_SESSION['id_post'];
 		$login = $_SESSION['login'];
 		$comment = htmlentities($_POST['comment']);
+        if ($_SESSION['old_message'] != $comment) {
+            
 		try {
 			$req_com = $bdd->prepare("INSERT INTO commentaires(id_post, login, value) VALUES(?, ?, ?)");
 			$req_com->execute(array($id_post, $login, $comment));
+            $_SESSION['old_message'] = $comment;
 			$find_user = $bdd->prepare("SELECT * FROM post WHERE id = ?");
 			$find_user->execute(array($id_post));
 			$post = $find_user->fetch();
@@ -31,8 +34,7 @@ if ($_POST['envoyer']  == 'Envoyer')
 			print "Erreur : ".$e->getMessage()."";
 			die();
 		}
-		header("Location: "."http://".$_SERVER['HTTP_HOST']."/comment_like.php?id_post=" . $_SESSION['id_post']);
-		die();
+        }
 	} else {$ret = "Please enter a comment";}
 }
 
